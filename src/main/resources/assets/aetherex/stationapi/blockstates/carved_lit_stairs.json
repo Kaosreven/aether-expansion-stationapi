@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "aetherex:block/carved_lit_stairs"
+    },
+    "facing=south": {
+      "model": "aetherex:block/carved_lit_stairs",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "aetherex:block/carved_lit_stairs",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "aetherex:block/carved_lit_stairs",
+      "y": 270
+    }
+  }
+}

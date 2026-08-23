@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "authors": [
+    "Meefy",
+    "Kaosreven"
+  ],
+  "contributors": [
+    "mine_diver",
+    "Calmilamsy",
+    "LukeIsStuff",
+    "AONK",
+    "Kingbdogz",
+    "ShockAh",
+    "Kodaichi",
+    "Flan",
+    "303"
+  ],
+  "contact": {
+    "sources": "${mod_source}"
+  },
+
+  "license": "${mod_license}",
+  "icon": "assets/${mod_id}/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "${maven_group}.${mod_id}.events.AetherEx"
+    ],
+    "stationapi:event_bus": [
+      "${maven_group}.${mod_id}.item.AetherExItems",
+      "${maven_group}.${mod_id}.block.AetherExBlocks",
+      "${maven_group}.${mod_id}.events.AetherExRecipes",
+      "${maven_group}.${mod_id}.entity.AetherExEntities",
+      "${maven_group}.${mod_id}.blockentity.AetherExBlockEntities",
+      "${maven_group}.${mod_id}.achievement.AetherExAchievements"
+    ],
+    "stationapi:event_bus_client": [
+      "${maven_group}.${mod_id}.events.AetherExTextures",
+      "${maven_group}.${mod_id}.client.gui.AetherExGuis",
+      "${maven_group}.${mod_id}.events.AetherExKeybinds",
+      "${maven_group}.${mod_id}.client.entity.AetherExEntityRenderers"
+    ],
+    "stationapi:event_bus_server": [
+    ],
+    "bhcreative:event_bus": [
+      "${maven_group}.${mod_id}.optional.AetherExCreativeListener"
+    ],
+    "gcapi3": [
+      "${maven_group}.${mod_id}.optional.AetherExConfig"
+    ],
+    "mixinsquared": [
+    ]
+  },
+  "mixins": [
+    "${mod_id}.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "1.0.0-beta.7.3",
+    "aether": ">=1.5.0"
+  },
+  "breaks": {
+    "accessoryapi": ">=0.9.0"
+  }
+}

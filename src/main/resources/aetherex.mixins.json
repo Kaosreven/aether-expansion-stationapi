@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "${maven_group}.${mod_id}.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "${maven_group}.${mod_id}.mixin.AetherExMixinPlugin",
+  "mixins": [
+    "DropStackMixin",
+    "PlayerEntityMixin",
+    "CraftingResultSlotMixin",
+    "HijackTreasureChestLootMixin",
+    "HijackAetherChestLootMixin",
+    "HijackAetherDecorateMixin",
+    "UniTweaksStepAssistMixin",
+    "ItemCustomReachImplMixin",
+    "access.LivingEntityExAccessor"
+  ],
+  "server": [
+    "server.ServerPlayerEntityMixin"
+  ],
+  "client": [
+    "client.AetherJumpHudMixin",
+    "client.HijackAetherAchievementsMixin",
+    "client.ClientPlayerEntity"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

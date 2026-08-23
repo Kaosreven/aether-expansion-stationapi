@@ -1,0 +1,6 @@
+{
+  "parent": "aetherex:block/template/stairs",
+  "textures": {
+    "all": "aether:block/LightHellfireStone"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "aetherex:block/template/slab",
+  "textures": {
+    "all": "aether:block/LightCarvedStone"
+  }
+}

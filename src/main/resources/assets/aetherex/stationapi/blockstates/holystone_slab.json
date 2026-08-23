@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "slab_type=bottom": {
+      "model": "aetherex:block/holystone_slab"
+    },
+
+    "slab_type=top": {
+      "model": "aetherex:block/holystone_slab",
+      "x": 180
+    }
+  }
+}

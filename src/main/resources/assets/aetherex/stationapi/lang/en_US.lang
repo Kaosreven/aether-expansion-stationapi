@@ -1,0 +1,138 @@
+# Blocks
+tile.@.void_log.name=Void Log
+tile.@.void_leaves.name=Void Leaves
+tile.@.advanced_incubator.name=Advanced Incubator
+tile.@.lore_bookshelf.name=Bookshelf of Lore
+
+tile.@.skyroot_stairs.name=Skyroot Stairs
+tile.@.holystone_stairs.name=Holystone Stairs
+tile.@.mossy_holystone_stairs.name=Mossy Holystone Stairs
+tile.@.carved_stairs.name=Carved Stairs
+tile.@.carved_lit_stairs.name=Sentry Stairs
+tile.@.angelic_stairs.name=Angelic Stairs
+tile.@.angelic_lit_stairs.name=Angelic Light Stairs
+tile.@.hellfire_stairs.name=Hellfire Stairs
+tile.@.hellfire_lit_stairs.name=Hellfire Light Stairs
+tile.@.aerogel_stairs.name=\u00A7aAerogel Stairs
+
+tile.@.skyroot_slab.name=Skyroot Slab
+tile.@.holystone_slab.name=Holystone Slab
+tile.@.mossy_holystone_slab.name=Mossy Holystone Slab
+tile.@.carved_slab.name=Carved Slab
+tile.@.carved_lit_slab.name=Sentry Slab
+tile.@.angelic_slab.name=Angelic Slab
+tile.@.angelic_lit_slab.name=Angelic Light Slab
+tile.@.hellfire_slab.name=Hellfire Slab
+tile.@.hellfire_lit_slab.name=Hellfire Lit Slab
+tile.@.aerogel_slab.name=\u00A7aAerogel Slab
+
+tile.@.skyroot_plate.name=Skyroot Pressure Plate
+tile.@.holystone_plate.name=Holystone Pressure Plate
+tile.@.mossy_holystone_plate.name=Mossy Holystone Pressure Plate
+tile.@.carved_plate.name=Carved Pressure Plate
+tile.@.carved_lit_plate.name=Sentry Pressure Plate
+tile.@.angelic_plate.name=Angelic Pressure Plate
+tile.@.angelic_lit_plate.name=Angelic Light Pressure Plate
+tile.@.hellfire_plate.name=Hellfire Pressure Plate
+tile.@.hellfire_lit_plate.name=Hellfire Light Pressure Plate
+
+tile.@.holystone_wall.name=Holystone Wall
+tile.@.mossy_holystone_wall.name=Mossy Holystone Wall
+tile.@.carved_wall.name=Carved Wall
+tile.@.carved_lit_wall.name=Sentry Wall
+tile.@.angelic_wall.name=Angelic Wall
+tile.@.angelic_lit_wall.name=Angelic Light Wall
+tile.@.hellfire_wall.name=Hellfire Wall
+tile.@.hellfire_lit_wall.name=Hellfire Light Wall
+
+# Items
+## Accessories
+item.@.purple_cape.name=Purple Cape
+item.@.pink_cape.name=Pink Cape
+item.@.orange_cape.name=Orange Cape
+item.@.brown_cape.name=Brown Cape
+item.@.lime_cape.name=Lime Cape
+item.@.black_cape.name=Black Cape
+item.@.halloween_cape.name=\u00A74Halloween Cape
+item.@.speed_ring.name=\u00A7aRing of Speed
+item.@.valkyrie_ring.name=\u00A7aValkyrie Ring
+item.@.healing_matrix.name=\u00A7aHealing Matrix
+item.@.flame_gem.name=\u00A7eFlaming Gemstone
+item.@.aer_shield.name=\u00A7aAer Shield
+item.@.lucky_pendant.name=\u00A7aLucky Pendant
+item.@.jeb_shield.name=\u00A7aShield of Jeb
+item.@.resurrection_pendant.name=\u00A7aResurrection Pendant
+
+
+## Halloween Bags
+item.@.halloween_bag0.name=\u00A7aCommon Halloween Bag
+item.@.halloween_bag1.name=\u00A7aRare Halloween Bag
+item.@.halloween_bag2.name=\u00A7aLegendary Halloween Bag
+
+## Moa armor
+item.@.moa_armor0.name=Iron Moa Armor
+item.@.moa_armor1.name=Golden Moa Armor
+item.@.moa_armor2.name=Diamond Moa Armor
+item.@.moa_armor3.name=Zanite Moa Armor
+item.@.moa_armor4.name=Gravitite Moa Armor
+
+## Tools
+item.@.jeb_hammer.name=\u00A7bHammer of Jeb
+item.@.vile_sword.name=\u00A7aVile Blade
+item.@.mine_fist.name=\u00A7eFist of mine_diver
+item.@.moa_staff_blue.name=Blue Moa Staff
+item.@.moa_staff_white.name=White Moa Staff
+item.@.moa_staff_black.name=Black Moa Staff
+item.@.healing_staff.name=\u00A7aStaff of Healing
+item.@.lesser_healing_staff.name=\u00A7aStaff of Lesser Healing
+item.@.phoenix_pickaxe.name=\u00A7aPhoenix Pickaxe
+item.@.phoenix_axe.name=\u00A7aPhoenix Axe
+item.@.phoenix_shovel.name=\u00A7aPhoenix Shovel
+item.@.phoenix_sword.name=\u00A7aPhoenix Sword
+item.@.unholy_sword.name=\u00A74Unholy Sword
+item.@.unholy_bow.name=\u00A74Unholy Crossbow
+
+## Misc
+item.@.candy.name=Candy
+item.@.vile_essence.name=Vile Essence
+item.@.void_tomato.name=\u00A7eVoid Tomato
+item.@.golden_brew.name=\u00A7aGolden Brew
+item.@.golden_elixir.name=Golden Elixir
+item.@.orange_moa_egg.name=Orange Moa Egg
+item.@.unholy_arrow.name=\u00A74Unholy Arrow
+item.@.chain_gloves.name=Chain Gloves
+
+## Unfinished
+item.@.sentry_shield.name=\u00A7aSentry Shield
+item.@.aer_cape.name=\u00A7aAer Cape
+
+# Entities
+entity.@.OrangeMoa.name=Orange Moa
+entity.@.UnholyArrowLightning.name=Lightning Unholy Arrow
+entity.@.UnholyArrowExplosive.name=Explosive Unholy Arrow
+entity.@.UnholySwordDart.name=Unholy Sword Dart
+entity.@.FiroBallEx.name=Firoball
+
+# Keybinds
+key.aetherex.shieldtoggle=Enable/Disable Shields
+key.aetherex.sentrytoggle=Sentry Shield Activate
+key.aetherex.moagui=Orange Moa GUI
+key.aetherex.moaattack=Moa Fireball
+key.aetherex.speedringtoggle=Enable/Disable Speed Ring
+
+# Achievements
+gui.stationapi.achievementPage.aetherex.aetherex=Aether Expansion
+achievement.aetherex.evolution=Evolution
+achievement.aetherex.evolution.desc=Incubate an orange moa
+achievement.aetherex.pimpMoa=Pimp my moa
+achievement.aetherex.pimpMoa.desc=Upgrade an orange moa
+achievement.aetherex.secondChance=A second chance!
+achievement.aetherex.secondChance.desc=Use a resurrection pendant
+achievement.aetherex.knowledge=Knowledge is power
+achievement.aetherex.knowledge.desc=Craft a Bookshelf of Lore
+
+# Creative Tabs
+tab.aetherex.aetherExBlocks.name=Aether Expansion Blocks
+tab.aetherex.aetherExItems.name=Aether Expansion Items
+
+

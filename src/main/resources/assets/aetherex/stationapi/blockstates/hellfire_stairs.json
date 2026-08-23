@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "aetherex:block/hellfire_stairs"
+    },
+    "facing=south": {
+      "model": "aetherex:block/hellfire_stairs",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "aetherex:block/hellfire_stairs",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "aetherex:block/hellfire_stairs",
+      "y": 270
+    }
+  }
+}
