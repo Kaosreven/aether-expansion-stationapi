@@ -60,6 +60,7 @@ public abstract class PlayerEntityMixin {
                 int i = (new Random()).nextInt(20);
                 if(i == 1 && target.fireTicks < 160) {
                     target.fireTicks = 160;
+                    flameRandomReady = false;
                 }
             }
         }
