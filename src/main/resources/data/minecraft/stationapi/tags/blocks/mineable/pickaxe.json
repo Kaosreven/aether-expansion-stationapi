@@ -10,6 +10,7 @@
     "aetherex:angelic_lit_stairs",
     "aetherex:hellfire_stairs",
     "aetherex:hellfire_lit_stairs",
+    "aetherex:aerogel_stairs",
     "aetherex:holystone_slab",
     "aetherex:mossy_holystone_slab",
     "aetherex:carved_slab",
@@ -18,6 +19,7 @@
     "aetherex:angelic_lit_slab",
     "aetherex:hellfire_slab",
     "aetherex:hellfire_lit_slab",
+    "aetherex:aerogel_slab",
     "aetherex:holystone_plate",
     "aetherex:mossy_holystone_plate",
     "aetherex:carved_plate",
@@ -29,10 +31,7 @@
     "aetherex:holystone_wall",
     "aetherex:mossy_holystone_wall",
     "aetherex:carved_wall",
-    "aetherex:carved_lit_wall",
     "aetherex:angelic_wall",
-    "aetherex:angelic_lit_wall",
-    "aetherex:hellfire_wall",
-    "aetherex:hellfire_lit_wall"
+    "aetherex:hellfire_wall"
   ]
 }
