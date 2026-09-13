@@ -174,21 +174,17 @@ dependencies {
         }
     }
 
-    /* Restore this when aether updates
     if (project.hasProperty("aether_version")) {
         modImplementation("maven.modrinth:aether-stapi:${project.aether_version}-b1.7.3") {
             transitive = false
         }
     }
-    */
 
     if (project.hasProperty("stonewall_version")) {
         modImplementation("maven.modrinth:stone-walls-stationapi:${project.stonewall_version}-b1.7.3") {
             transitive = false
         }
     }
-
-    modImplementation(files("libs/aether-1.5.1.jar"))
 
     if (project.hasProperty("accessory_version")) {
         modImplementation("maven.modrinth:accessory-api:${project.accessory_version}") {

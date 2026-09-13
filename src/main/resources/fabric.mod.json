@@ -62,9 +62,6 @@
   ],
   "depends": {
     "minecraft": "1.0.0-beta.7.3",
-    "aether": ">=1.5.0"
-  },
-  "breaks": {
-    "accessoryapi": ">=0.9.0"
+    "aether": ">=1.6.0"
   }
 }
