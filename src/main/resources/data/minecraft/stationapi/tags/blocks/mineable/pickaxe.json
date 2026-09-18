@@ -1,7 +1,6 @@
 {
   "values": [
     "aetherex:advanced_incubator",
-    "aetherex:carved_plate",
     "aetherex:holystone_stairs",
     "aetherex:mossy_holystone_stairs",
     "aetherex:carved_stairs",
@@ -28,10 +27,25 @@
     "aetherex:angelic_lit_plate",
     "aetherex:hellfire_plate",
     "aetherex:hellfire_lit_plate",
-    "aetherex:holystone_wall",
-    "aetherex:mossy_holystone_wall",
-    "aetherex:carved_wall",
-    "aetherex:angelic_wall",
-    "aetherex:hellfire_wall"
+    {
+      "id": "aetherex:holystone_wall",
+      "required": false
+    },
+    {
+      "id": "aetherex:mossy_holystone_wall",
+      "required": false
+    },
+    {
+      "id": "aetherex:carved_wall",
+      "required": false
+    },
+    {
+      "id": "aetherex:angelic_wall",
+      "required": false
+    },
+    {
+      "id": "aetherex:hellfire_wall",
+      "required": false
+    }
   ]
 }
