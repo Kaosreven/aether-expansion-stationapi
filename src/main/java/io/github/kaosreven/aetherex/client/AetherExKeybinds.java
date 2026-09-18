@@ -1,12 +1,9 @@
-package io.github.kaosreven.aetherex.events;
+package io.github.kaosreven.aetherex.client;
 
-import com.matthewperiut.aether.item.AetherItems;
 import com.periut.accessoryapi.api.helper.AccessoryAccess;
 import io.github.kaosreven.aetherex.entity.EntityOrangeMoa;
 import io.github.kaosreven.aetherex.entity.projectile.EntityFiroBallEx;
 import io.github.kaosreven.aetherex.item.AetherExItems;
-import io.github.kaosreven.aetherex.item.accessory.ItemAerCape;
-import io.github.kaosreven.aetherex.mixin.access.LivingEntityExAccessor;
 import io.github.kaosreven.aetherex.util.Aerplosion;
 import net.fabricmc.loader.api.FabricLoader;
 import net.mine_diver.unsafeevents.listener.EventListener;
@@ -17,14 +14,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Vec3d;
 import net.modificationstation.stationapi.api.client.event.keyboard.KeyStateChangedEvent;
 import net.modificationstation.stationapi.api.client.event.option.KeyBindingRegisterEvent;
-import net.modificationstation.stationapi.api.registry.DimensionRegistry;
-import org.jetbrains.annotations.NotNull;
 import org.lwjgl.input.Keyboard;
 
 import java.util.List;
-import java.util.OptionalInt;
 
-import static com.matthewperiut.aether.gen.dim.AetherDimensions.MOD_ID;
 import static io.github.kaosreven.aetherex.events.AetherEx.*;
 import static io.github.kaosreven.aetherex.item.accessory.ItemAerCape.jumpsRemaining;
 import static io.github.kaosreven.aetherex.item.accessory.ItemSentryShield.sentryActiveReady;
@@ -55,7 +48,6 @@ public class AetherExKeybinds {
             Minecraft mc = ((Minecraft) FabricLoader.getInstance().getGameInstance());
             if(Keyboard.getEventKeyState()){
                 if(Keyboard.isKeyDown(keyShieldEnable.code)) {
-                    //Minecraft mc = ((Minecraft) FabricLoader.getInstance().getGameInstance());
                     shieldToggle = !shieldToggle;
                     if (!mc.world.isRemote) {
                         if (shieldToggle) mc.player.sendMessage("Shield has been enabled");
@@ -63,7 +55,6 @@ public class AetherExKeybinds {
                     }
                 }
                 if(Keyboard.isKeyDown(keySpeedRingToggle.code)) {
-                    //Minecraft mc = ((Minecraft) FabricLoader.getInstance().getGameInstance());
                     speedRingToggle = !speedRingToggle;
                     if (!mc.world.isRemote) {
                         if (speedRingToggle) mc.player.sendMessage("Speed ring has been enabled");
@@ -71,7 +62,6 @@ public class AetherExKeybinds {
                     }
                 }
                 if(Keyboard.isKeyDown(keyFireballMoa.code)) {
-                    //Minecraft mc = ((Minecraft) FabricLoader.getInstance().getGameInstance());
                     PlayerEntity player = mc.player;
                     if (player.vehicle instanceof EntityOrangeMoa moa) {
                         if (moa.getFireball()) {
@@ -79,20 +69,18 @@ public class AetherExKeybinds {
                             double x = player.x + vec3d.x * 1.5D;
                             double y = player.y - 0.5D + vec3d.y * 1.5D;
                             double z = player.z + vec3d.z * 1.5D;
-                            EntityFiroBallEx entityinfernoball = new EntityFiroBallEx(player.world, x, y, z, player);
+                            EntityFiroBallEx entityinfernoball = new EntityFiroBallEx(player.world, x, y, z, player, false);
                             player.world.spawnEntity(entityinfernoball);
                         }
                     }
                 }
                 if(Keyboard.isKeyDown(keyOrangeMoa.code)) {
-                    //Minecraft mc = ((Minecraft) FabricLoader.getInstance().getGameInstance());
                     if (mc.player.vehicle instanceof EntityOrangeMoa) {
                         moaGuiToogle = !moaGuiToogle;
                     }
                 }
                 if (shieldToggle) {
                     if(Keyboard.isKeyDown(keySentryShield.code)) {
-                        //Minecraft mc = ((Minecraft) FabricLoader.getInstance().getGameInstance());
                         ItemStack[] list = AccessoryAccess.getAccessories(mc.player, "shield");
                         ItemStack shield = null;
                         for (ItemStack itemStack : list) {

@@ -45,6 +45,9 @@ tile.@.angelic_lit_wall.name=Angelic Light Wall
 tile.@.hellfire_wall.name=Hellfire Wall
 tile.@.hellfire_lit_wall.name=Hellfire Light Wall
 
+tile.@.holystone_furnace.name=Holystone Furnace
+tile.@.holystone_furnace_lit.name=Holystone Furnace
+
 # Items
 ## Accessories
 item.@.purple_cape.name=Purple Cape
@@ -62,7 +65,8 @@ item.@.aer_shield.name=\u00A7aAer Shield
 item.@.lucky_pendant.name=\u00A7aLucky Pendant
 item.@.jeb_shield.name=\u00A7aShield of Jeb
 item.@.resurrection_pendant.name=\u00A7aResurrection Pendant
-
+item.@.aer_cape.name=\u00A7aAer Cape
+item.@.chain_gloves.name=Chain Gloves
 
 ## Halloween Bags
 item.@.halloween_bag0.name=\u00A7aCommon Halloween Bag
@@ -91,6 +95,7 @@ item.@.phoenix_shovel.name=\u00A7aPhoenix Shovel
 item.@.phoenix_sword.name=\u00A7aPhoenix Sword
 item.@.unholy_sword.name=\u00A74Unholy Sword
 item.@.unholy_bow.name=\u00A74Unholy Crossbow
+item.@.zanite_shears.name=Zanite Shears
 
 ## Misc
 item.@.candy.name=Candy
@@ -100,11 +105,17 @@ item.@.golden_brew.name=\u00A7aGolden Brew
 item.@.golden_elixir.name=Golden Elixir
 item.@.orange_moa_egg.name=Orange Moa Egg
 item.@.unholy_arrow.name=\u00A74Unholy Arrow
-item.@.chain_gloves.name=Chain Gloves
+
+item.@.clouds_disc.name=Clouds
+item.@.labyrinth_disc.name=\2474Labyrinth's Vengeance
+item.@.approaches_disc.name=\247aApproaches
+item.@.crepusculum_disc.name=\247cCrepusculum
+item.@.brise_disc.name=\247dBrise
+item.@.ascending_disc.name=\247bAscending Dawn
+item.@.light_night_disc.name=\2479A Light in the Night
 
 ## Unfinished
 item.@.sentry_shield.name=\u00A7aSentry Shield
-item.@.aer_cape.name=\u00A7aAer Cape
 
 # Entities
 entity.@.OrangeMoa.name=Orange Moa

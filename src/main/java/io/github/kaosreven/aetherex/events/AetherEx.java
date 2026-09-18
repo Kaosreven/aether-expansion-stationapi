@@ -43,23 +43,4 @@ public class AetherEx implements ModInitializer {
             isHal = true;
         }
     }
-
-
-    /*
-    @EventListener
-    private static void getReach(PlayerEvent.Reach event) {
-        ItemStack[] list = AccessoryAccess.getAccessories(event.player, "ring");
-        for (ItemStack itemStack : list) {
-            if (itemStack.itemId == AetherExItems.ValkyrieRing.id) {
-                if (itemStack.getItem() instanceof CustomReachProvider provider) {
-                    ItemStack stack = event.player.getHand();
-                    if (stack != null) {
-                        //if (!(stack.getItem() instanceof CustomReachProvider))
-                        event.currentReach = provider.getReach(itemStack, event.player, event.type, event.currentReach);
-                    }
-                }
-            }
-        }
-    }
-     */
 }

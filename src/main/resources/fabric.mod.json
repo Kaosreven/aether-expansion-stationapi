@@ -41,9 +41,9 @@
       "${maven_group}.${mod_id}.achievement.AetherExAchievements"
     ],
     "stationapi:event_bus_client": [
-      "${maven_group}.${mod_id}.events.AetherExTextures",
+      "${maven_group}.${mod_id}.client.AetherExTextures",
       "${maven_group}.${mod_id}.client.gui.AetherExGuis",
-      "${maven_group}.${mod_id}.events.AetherExKeybinds",
+      "${maven_group}.${mod_id}.client.AetherExKeybinds",
       "${maven_group}.${mod_id}.client.entity.AetherExEntityRenderers"
     ],
     "stationapi:event_bus_server": [

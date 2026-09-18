@@ -2,9 +2,8 @@ package io.github.kaosreven.aetherex.mixin;
 
 import com.bawnorton.mixinsquared.TargetHandler;
 import com.matthewperiut.aether.item.AetherItems;
-import com.periut.accessoryapi.api.helper.AccessoryAccess;
+import io.github.kaosreven.aetherex.util.AccessoryUtils;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -19,10 +18,6 @@ public class UniTweaksStepAssistMixin {
     )
     @Inject(method = "@MixinSquared:Handler", at = @At("HEAD"), cancellable = true)
     private void NukeUnitweaksHoldOnStepHeight(CallbackInfo ci) {
-        PlayerEntity player = (PlayerEntity) (Object) this;
-        ItemStack[] list = AccessoryAccess.getAccessories(player, "cape");
-        for (ItemStack itemStack : list) {
-            if (itemStack.itemId == AetherItems.AgilityCape.id) ci.cancel();
-        }
+        if (AccessoryUtils.DoesPlayerHave((PlayerEntity) (Object) this, AetherItems.AgilityCape)) ci.cancel();
     }
 }

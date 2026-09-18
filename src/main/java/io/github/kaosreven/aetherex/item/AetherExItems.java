@@ -12,6 +12,7 @@ import net.modificationstation.stationapi.api.item.tool.ToolLevel;
 import net.modificationstation.stationapi.api.item.tool.ToolMaterialFactory;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.template.item.TemplateItem;
+import net.modificationstation.stationapi.api.template.item.TemplateShearsItem;
 import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
@@ -63,13 +64,25 @@ public class AetherExItems {
     public static Item GoldenElixir;
     public static Item MoaArmor;
     public static Item ResurrectionPendant;
-    private static final ToolMaterial MineFistTool = ToolMaterialFactory.create("mine_fist", 3, 3000, 10.0F, 2);
-    private static final ToolMaterial JebHammerTool = ToolMaterialFactory.create("jeb_hammer", 3, 2000, 12.0F, 2);
-    private static final ToolMaterial PhoenixTools = ToolMaterialFactory.create("phoenix_tools", 3, 1500, 9.0F, 4).toolLevel(ToolLevel.getNumeric(3));
-    private static final ToolMaterial VileSwordTool = ToolMaterialFactory.create("vile_sword", 0, 200, 5.0F, 2);
-    private static final ToolMaterial UnholySwordTool = ToolMaterialFactory.create("unholy_sword", 0, 1750, 5.0F, 3);
+    public static Item CloudsDisc;
+    public static Item LabyrinthDisc;
+    public static Item ApproachesDisc;
+    public static Item CrepusculumDisc;
+    public static Item BriseDisc;
+    public static Item AscendingDisc;
+    public static Item LightNightDisc;
+    public static Item ZaniteShears;
+    public static Item ObsidianSword;
+    public static Item GoldenLeather;
 
-    //TODO: actually finish Valkyrie ring
+
+    public static final ToolMaterial MineFistTool = ToolMaterialFactory.create("MineFist", 3, 3000, 10.0F, 2);
+    public static final ToolMaterial JebHammerTool = ToolMaterialFactory.create("JebHammer", 3, 2000, 12.0F, 2);
+    public static final ToolMaterial PhoenixTools = ToolMaterialFactory.create("PhoenixTools", 3, 2000, 9.0F, 5).toolLevel(ToolLevel.getNumeric(3));
+    public static final ToolMaterial VileSwordTool = ToolMaterialFactory.create("VileSword", 0, 200, 5.0F, 2);
+    public static final ToolMaterial UnholySwordTool = ToolMaterialFactory.create("UnholySword", 0, 1750, 5.0F, 4);
+    public static final ToolMaterial ObsidianTools = ToolMaterialFactory.create("ObsidianTools", 3, 5000, 9.0F, 5).toolLevel(ToolLevel.getNumeric(3));
+
     //TODO: fix the moa dropping feathers when being put pack into staff on low health
     //TODO: Healing stuff left click
     //TODO: Phoenix Paxel in paxel mod
@@ -83,6 +96,7 @@ public class AetherExItems {
         GoldenBrew = (new TemplateItem(Identifier.of(MOD_ID, "golden_brew"))).setTranslationKey(MOD_ID, "golden_brew");
         GoldenElixir = (new TemplateItem(Identifier.of(MOD_ID, "golden_elixir"))).setTranslationKey(MOD_ID, "golden_elixir");
         UnholyArrow = (new TemplateItem(Identifier.of(MOD_ID, "unholy_arrow"))).setTranslationKey(MOD_ID, "unholy_arrow");
+        //GoldenLeather = (new TemplateItem(Identifier.of(MOD_ID, "golden_leather"))).setTranslationKey(MOD_ID, "golden_leather");
 
         Candy = (new ItemCandy(Identifier.of(MOD_ID, "candy"), 3, false)).setTranslationKey(MOD_ID, "candy");
         HalloweenBag = (new ItemHalloweenBag(Identifier.of(MOD_ID, "halloween_bag"))).setTranslationKey(MOD_ID, "halloween_bag");
@@ -121,8 +135,19 @@ public class AetherExItems {
         PhoenixSword = (new ItemPhoenixSword(Identifier.of(MOD_ID, "phoenix_sword"), PhoenixTools).setTranslationKey(MOD_ID, "phoenix_sword"));
         UnholySword = (new ItemUnholySword(Identifier.of(MOD_ID, "unholy_sword"), UnholySwordTool).setTranslationKey(MOD_ID, "unholy_sword"));
         UnholyBow = (new ItemUnholyBow(Identifier.of(MOD_ID, "unholy_bow")).setTranslationKey(MOD_ID, "unholy_bow").setMaxDamage(1500).setMaxCount(1).setHandheld());
+        ZaniteShears = (new TemplateShearsItem(Identifier.of(MOD_ID, "zanite_shears"))).setTranslationKey(MOD_ID, "zanite_shears").setMaxDamage(Item.SHEARS.getMaxDamage());
+        //ObsidianSword = (new ItemObsidianSword(Identifier.of(MOD_ID, "obsidian_sword"), ObsidianTools).setTranslationKey(MOD_ID, "obsidian_sword"));
 
         ChainGloves = (new ItemGloves(Identifier.of(MOD_ID, "chain_gloves"), 0, "aetherex:stationapi/textures/armor/chainglove.png", 10)).setTranslationKey(MOD_ID, "chain_gloves").setMaxDamage(50);
+
+        //Music Discs
+        //CloudsDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "clouds_disc"), "aetherex:clouds", "Emile Van Krieken - Clouds").setTranslationKey(MOD_ID, "clouds_disc");
+        LabyrinthDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "labyrinth_disc"), "aetherex:labyrinthsvengeance", "Emile Van Krieken - Labyrinth's Vengeance").setTranslationKey(MOD_ID, "labyrinth_disc");
+        ApproachesDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "approaches_disc"), "aetherex:approaches", "Emile Van Krieken - Approaches").setTranslationKey(MOD_ID, "approaches_disc");
+        CrepusculumDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "crepusculum_disc"), "aetherex:crepusculum", "Emile Van Krieken - Crepusculum").setTranslationKey(MOD_ID, "crepusculum_disc");
+        BriseDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "brise_disc"), "aetherex:brise", "Emile Van Krieken - Brise").setTranslationKey(MOD_ID, "brise_disc");
+        AscendingDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "ascending_disc"), "aetherex:ascendingdawn", "Emile Van Krieken - Ascending Dawn").setTranslationKey(MOD_ID, "ascending_disc");
+        LightNightDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "light_night_disc"), "aetherex:alightinthenight", "Emile Van Krieken - A Light in the Night").setTranslationKey(MOD_ID, "light_night_disc");
 
         //unfinished
         SentryShield = (new ItemSentryShield(Identifier.of(MOD_ID, "sentry_shield"), 0, 0, 6)).setTranslationKey(MOD_ID, "sentry_shield");

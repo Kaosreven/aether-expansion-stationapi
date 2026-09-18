@@ -13,7 +13,6 @@ import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
 
-
 public class AetherExBlocks {
     @Entrypoint.Namespace
     public static Namespace MOD_ID = Null.get();
@@ -58,11 +57,8 @@ public class AetherExBlocks {
     public static Block HolystoneWall;
     public static Block MossyHolystoneWall;
     public static Block CarvedWall;
-    public static Block CarvedLitWall;
     public static Block AngelicWall;
-    public static Block AngelicLitWall;
     public static Block HellfireWall;
-    public static Block HellfireLitWall;
 
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
@@ -107,11 +103,8 @@ public class AetherExBlocks {
             HolystoneWall = (new WallBlock(Identifier.of(MOD_ID, "holystone_wall"), Material.STONE).setTranslationKey(MOD_ID, "holystone_wall").setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP));
             MossyHolystoneWall = (new WallBlock(Identifier.of(MOD_ID, "mossy_holystone_wall"), Material.STONE).setTranslationKey(MOD_ID, "mossy_holystone_wall").setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP));
             CarvedWall = (new WallBlock(Identifier.of(MOD_ID, "carved_wall"), Material.STONE).setTranslationKey(MOD_ID, "carved_wall").setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP));
-            //CarvedLitWall = (new WallBlock(Identifier.of(MOD_ID, "carved_lit_wall"), Material.STONE).setTranslationKey(MOD_ID, "carved_lit_wall").setLuminance(0.75F).setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP));
             AngelicWall = (new WallBlock(Identifier.of(MOD_ID, "angelic_wall"), Material.STONE).setTranslationKey(MOD_ID, "angelic_wall").setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP));
-            //AngelicLitWall = (new WallBlock(Identifier.of(MOD_ID, "angelic_lit_wall"), Material.STONE).setTranslationKey(MOD_ID, "angelic_lit_wall").setLuminance(0.75F).setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP));
             HellfireWall = (new WallBlock(Identifier.of(MOD_ID, "hellfire_wall"), Material.STONE).setTranslationKey(MOD_ID, "hellfire_wall").setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP));
-            //HellfireLitWall = (new WallBlock(Identifier.of(MOD_ID, "hellfire_lit_wall"), Material.STONE).setTranslationKey(MOD_ID, "hellfire_lit_wall").setLuminance(0.75F).setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP));
         }
     }
 }

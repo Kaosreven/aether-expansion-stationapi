@@ -1,8 +1,8 @@
 package io.github.kaosreven.aetherex.item.tool;
 
 import com.matthewperiut.aether.block.AetherBlocks;
-import com.periut.accessoryapi.api.helper.AccessoryAccess;
 import io.github.kaosreven.aetherex.item.AetherExItems;
+import io.github.kaosreven.aetherex.util.AccessoryUtils;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.FabricLoader;
 import net.minecraft.block.Block;
@@ -34,6 +34,7 @@ public class ItemJebHammer extends ItemGenericAetherPaxel {
         return !areaMode ? 12.0F : 6.0F;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public ItemStack use(ItemStack stack, World world, PlayerEntity user) {
         if(FabricLoader.INSTANCE.getEnvironmentType() == EnvType.CLIENT && world.isRemote) return stack;
@@ -58,12 +59,7 @@ public class ItemJebHammer extends ItemGenericAetherPaxel {
                     miner.world.spawnEntity(result);
                     luckyRandomTick = 0;
                     luckyRandomReady = false;
-                    ItemStack[] list = AccessoryAccess.getAccessories((PlayerEntity) miner, "pendant");
-                    for (ItemStack itemStack : list) {
-                        if (itemStack.itemId == AetherExItems.LuckyPendant.id) {
-                            itemStack.damage(1, miner);
-                        }
-                    }
+                    AccessoryUtils.UseAccessory((PlayerEntity) miner, AetherExItems.LuckyPendant);
                 }
             }
         }

@@ -5,8 +5,10 @@ import static com.matthewperiut.aether.client.gui.GuiLore.lores;
 
 import io.github.kaosreven.aetherex.block.AetherExBlocks;
 import io.github.kaosreven.aetherex.item.AetherExItems;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemStack;
 
+@SuppressWarnings("UnnecessaryUnicodeEscape")
 public class AetherExLore {
     public static void registerLore() {
         lores.add(new Lore(AetherExItems.LuckyPendant, "\u00a7aLucky Pendant", "A pendant that has", "a 15% chance to", "negate damage that", "isn\'t from a mob.", "Also drops more ore", "with Jeb Hammer.", 2));
@@ -49,6 +51,7 @@ public class AetherExLore {
         lores.add(new Lore(AetherExItems.BlueMoaStaff, "Blue Moa Staff", "Used for capturing", "a blue moa. This is", "pog. Found in", "bronze dungeons.", "", "", 2));
         lores.add(new Lore(AetherExItems.WhiteMoaStaff, "White Moa Staff", "Used for capturing", "a white moa. This is", "pog. Found in silver", "dungeons.", "", "", 2));
         lores.add(new Lore(AetherExItems.BlackMoaStaff, "Black Moa Staff", "Used for capturing", "a black moa. This is", "pog. Found in gold", "dungeons.", "", "", 2));
+        lores.add(new Lore(AetherExItems.ZaniteShears, "Zanite Shears", "Used for getting", "leaves and other", "cool stuff :)", "", "", "", 2));
         lores.add(new Lore(AetherExItems.OrangeMoaEgg, "Orange Moa Egg", "Used in advanced", "incubator. Orange", "moa can be", "upgraded.", "", "", 2));
         lores.add(new Lore(AetherExItems.GoldenElixir, "Golden Elixir", "Has many uses.", "Use sparingly. This", "is not pog.", "", "", "", 2));
         lores.add(new Lore(new ItemStack(AetherExItems.MoaArmor, 1, 0), "Iron Moa Armor", "Strong Moa armor.", "I am stronk.", "Stronks = Stonks", "", "", "", 2));
@@ -56,14 +59,47 @@ public class AetherExLore {
         lores.add(new Lore(new ItemStack(AetherExItems.MoaArmor, 1, 2), "Diamond Moa Armor", "Strongest Moa", "armor. Does anyone", "actually read these?", "", "", "", 2));
         lores.add(new Lore(new ItemStack(AetherExItems.MoaArmor, 1, 3), "Zanite Moa Armor", "Strong Moa armor.", "Oh it\'s purple! So", "cute like Meefy-", "Chan! Ok sorry I\'m", "cringe.", "", 2));
         lores.add(new Lore(new ItemStack(AetherExItems.MoaArmor, 1, 4), "Gravitite Moa Armor", "Strongest Moa", "armor. Also makes", "moa jump higher.", "Proof that la", "cronge will prevail.", "", 2));
-        lores.add(new Lore(AetherExBlocks.VoidLeaves, "Void Leaves", "This is unobtainable.", "The fact that", "you\'re reading this", "is maaaad sus.", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.VoidWood, "Void Wood", "Unobtainable. But!", "La cronge shall", "prevail.", "", "", "", 2));
         lores.add(new Lore(AetherExItems.VoidTomato, "\u00a7eVoid Tomato", "If it\'s in the void,", "how are you reading", "this? Ok seriously", "it upgrades orange", "moas. Happy? K", "cool.", 2));
         lores.add(new Lore(AetherExItems.GoldenBrew, "\u00a7aGolden Brew", "When the imposter is", "sus, give him this.", "He will be speeedy", "", "", "", 2));
+        lores.add(new Lore(AetherExItems.AscendingDisc, "\247bAscending Dawn", "Courtesy of Emile", "van Krieken!", "Dropped by the", "Valkyrie Queen.", "", "", 2));
+        lores.add(new Lore(AetherExItems.LightNightDisc, "\2479A Light in the Night", "Courtesy of Emile", "van Krieken! Found", "in Rare Halloween", "bags.", "", "", 2));
+        lores.add(new Lore(AetherExItems.ApproachesDisc, "\247aApproaches", "Courtesy of Emile", "van Krieken! Found", "in Silver dungeons.", "", "", "", 2));
+        lores.add(new Lore(AetherExItems.BriseDisc, "\247dBrise", "Courtesy of Emile", "van Krieken!", "Dropped by the Sun", "Spirit.", "", "", 2));
+        lores.add(new Lore(AetherExItems.CrepusculumDisc, "\247cCrepusculum", "Courtesy of Emile", "van Krieken!", "Dropped by the", "Slider.", "", "", 2));
+        lores.add(new Lore(AetherExItems.LabyrinthDisc, "\2474Labyrinth's Vengeance", "Courtesy of Emile", "van Krieken! Found", "in Bronze dungeons.", "", "", "", 2));
+
         lores.add(new Lore(AetherExBlocks.AdvancedIncubator, "Advanced Incubator", "Incubates orange", "moa eggs. Evolution", "is great isn\'t it.", "", "", "", 2));
         lores.add(new Lore(AetherExItems.ResurrectionPendant, "\u00a7aResurrection Pendant", "Will save your life", "once when you die.", "Oh what a hero!", "Give him a bread", "sandwich. ", "", 2));
+        lores.add(new Lore(AetherExBlocks.VoidLeaves, "Void Leaves", "This is unobtainable.", "The fact that", "you\'re reading this", "is maaaad sus.", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.VoidWood, "Void Wood", "Unobtainable. But!", "La cronge shall", "prevail.", "", "", "", 2));
         lores.add(new Lore(AetherExBlocks.BookshelfOfLore, "Bookshelf of Lore", "Contains secrets", "to the universe, it", "knows all.", "", "", "", 0));
         lores.add(new Lore(AetherExBlocks.BookshelfOfLore, "Bookshelf of Lore", "Contains secrets", "to the universe, it", "knows all.", "", "", "", 1));
         lores.add(new Lore(AetherExBlocks.BookshelfOfLore, "Bookshelf of Lore", "Contains secrets", "to the universe, it", "knows all.", "", "", "", 2));
+
+        lores.add(new Lore(AetherExBlocks.CarvedStairs, "Carved Stairs", "Double it and give", "it to the next", "person.", "", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.AngelicStairs, "Angelic Stairs", "They're stairs, why", "you reading this?", "", "", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.HellfireStairs, "Hellfire Stairs", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", 2));
+        lores.add(new Lore(AetherExBlocks.CarvedLitStairs, "Sentry Stairs", "I'd like 5 whoppers,", "and 5 more", "whoppers.", "", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.AngelicLitStairs, "Light Angelic Stairs", "Morbius made 3", "morbillion dollars.", "", "", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.HellfireLitStairs, "Light Hellfire Stairs", "Spongebob", "spongebob. Patrick", "patrick.", "", "", "Gary.", 2));
+        lores.add(new Lore(AetherExBlocks.AerogelStairs, "\u00A7aAerogel Stairs", "██████", "█████", "████", "███", "██", "█", 2));
+
+        lores.add(new Lore(AetherExBlocks.SkyrootSlab, "Skyroot Slab", "When in doubt,", "follow Giovanni's", "conjecture.", "", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.HolystoneSlab, "Holystone Slab", "It's a problem with", "the whole way of", "life.", "", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.MossyHolystoneSlab, "Mossy Holystone Slab", "\"I am the yeast of", "thoughts and minds\"", "", "", "", "- Globglogabgalab", 2));
+        lores.add(new Lore(AetherExBlocks.CarvedSlab, "Carved Slab", "Value is subjective,", "time is absolute.", "", "", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.AngelicSlab, "Angelic Slab", "I cannot wait to", "finish this update.", "", "", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.HellfireSlab, "Hellfire Slab", "Roblox is a bad", "game. Minecraft", "superior.", "", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.CarvedLitSlab, "Sentry Slab", "Meefy ate the lore", "*burps*", "Sorry :(", "", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.AngelicLitSlab, "Light Angelic Slab", "As a wise man once", "said, you have less", "time than you had", "before.", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.HellfireLitSlab, "Light Hellfire Slab", "It's not clock...", "it's not clock.", "", "", "", "", 2));
+        lores.add(new Lore(AetherExBlocks.AerogelSlab, "\u00A7aAerogel Slab", "Let me be clear...", "", "", "", "", "", 2));
+        if (FabricLoader.getInstance().isModLoaded("stonewall")) {
+            lores.add(new Lore(AetherExBlocks.HolystoneWall, "Holystone Wall", "Walls are for", "people who hate", "open concept designs.", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.MossyHolystoneWall, "Mossy Holystone Wall", "Must have been", "the Aether.", "", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.CarvedWall, "Carved Wall", "Did you hear", "the joke about", "the high wall?", "I still can't", "get over it!", "", 2));
+            lores.add(new Lore(AetherExBlocks.AngelicWall, "Angelic Wall", "I tried to make", "the wall laugh.", "It cracked.", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.HellfireWall, "Hellfire Wall", "I was going to", "tell you a joke", "about a tall fence...", "but you probably", "wouldn't get over it.", "", 2));
+        }
     }
 }

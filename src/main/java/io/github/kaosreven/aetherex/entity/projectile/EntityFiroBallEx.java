@@ -13,8 +13,8 @@ public class EntityFiroBallEx extends EntityFiroBall {
         this.setBoundingBoxSpacing(1.2F, 1.2F);
     }
 
-    public EntityFiroBallEx(World world, double d, double d1, double d2, PlayerEntity entityplayer) {
-        super(world, d, d1, d2, false);
+    public EntityFiroBallEx(World world, double d, double d1, double d2, PlayerEntity entityplayer, boolean frosty) {
+        super(world, d, d1, d2, frosty);
         this.setBoundingBoxSpacing(1.2F, 1.2F);
         if (entityplayer != null) {
             Vec3d vec3d = entityplayer.getLookVector();
@@ -25,7 +25,7 @@ public class EntityFiroBallEx extends EntityFiroBall {
     }
 
     public EntityFiroBallEx(World world, double x, double y, double z) {
-        this(world, x, y, z, null);
+        this(world, x, y, z, null, false);
     }
 
     @Override
