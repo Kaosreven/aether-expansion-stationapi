@@ -12,7 +12,8 @@
     "HijackAetherChestLootMixin",
     "HijackAetherDecorateMixin",
     "ItemCustomReachImplMixin",
-    "access.LivingEntityExAccessor"
+    "access.LivingEntityExAccessor",
+    "HijackFireMonsterMixin"
   ],
   "server": [
     "server.ServerPlayerEntityMixin"
