@@ -88,6 +88,9 @@ public class AetherExItems {
     //TODO: Phoenix Paxel in paxel mod
     //TODO: Orange moa stuff
     //TODO: Make moa staff entity
+    //TODO: Reimplement Zanite Shears more thoroughly as just TemplateShearsItem is lackluster
+    //TODO: Redraw inventory gui to AccessoryAPI format to restrain myself from mixin cancelling AccessoryAPI draw calls
+
 
     @EventListener
     public void registerItems(ItemRegistryEvent event) {

@@ -11,11 +11,16 @@ import io.github.kaosreven.aetherex.item.misc.ItemCandy;
 import io.github.kaosreven.aetherex.item.misc.ItemHalloweenBag;
 import io.github.kaosreven.aetherex.item.misc.ItemMoaArmor;
 import io.github.kaosreven.aetherex.item.tool.ItemHealingStaff;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.modificationstation.stationapi.api.client.event.texture.TextureRegisterEvent;
 import net.modificationstation.stationapi.api.client.texture.atlas.Atlases;
 import net.modificationstation.stationapi.api.client.texture.atlas.ExpandableAtlas;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
+import net.modificationstation.stationapi.api.resource.ResourceManagerHelper;
+import net.modificationstation.stationapi.api.resource.ResourcePackActivationType;
+import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
 
@@ -24,17 +29,13 @@ import static net.modificationstation.stationapi.api.util.Identifier.of;
 public class AetherExTextures {
     @Entrypoint.Namespace
     public static Namespace MOD_ID = Null.get();
-
-    public static int Ring;
-    public static int Pendant;
-    public static int CapeTexture;
-    public static int Glove;
-    public static int GloveChain;
     public static int Shield;
     public static int MoaEgg;
 
     @EventListener
     public static void registerTextures(TextureRegisterEvent event) {
+        //ModContainer container = FabricLoader.getInstance().getModContainer("aetherex").orElseThrow();
+        //ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of(Namespace.of("aetherex"), "aether_expansion_gui"), container, ResourcePackActivationType.NORMAL);
         ExpandableAtlas terrain = Atlases.getTerrain();
         ExpandableAtlas items = Atlases.getGuiItems();
         setBlockTextures(terrain);
@@ -73,8 +74,6 @@ public class AetherExTextures {
     }
 
     public static void setItemTextures(ExpandableAtlas items) {
-        //Ring = items.addTexture(of(MOD_ID, "item/Ring")).index;
-        //CapeTexture = items.addTexture(of(MOD_ID, "item/Cape")).index;
         Shield = items.addTexture(of(MOD_ID, "item/Shield")).index;
         MoaEgg = items.addTexture(of(MOD_ID, "item/MoaEgg")).index;
 
@@ -146,4 +145,6 @@ public class AetherExTextures {
         AetherExItems.AscendingDisc.setTexture(of(MOD_ID, "item/discs/DiscAscending"));
         AetherExItems.LightNightDisc.setTexture(of(MOD_ID, "item/discs/DiscLightNight"));
     }
+
+
 }

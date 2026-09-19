@@ -20,7 +20,9 @@
   "client": [
     "client.AetherJumpHudMixin",
     "client.HijackAetherAchievementsMixin",
-    "client.ClientPlayerEntity"
+    "client.ClientPlayerEntity",
+    "HijackAetherGuiMixin",
+    "HijackLoreBookMixin"
   ],
   "injectors": {
     "defaultRequire": 1

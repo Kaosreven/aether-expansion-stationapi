@@ -1,24 +1,10 @@
 package io.github.kaosreven.aetherex.client.gui;
 
-import com.matthewperiut.aether.achievement.AetherAchievements;
-import com.matthewperiut.aether.block.AetherBlocks;
-import com.matthewperiut.aether.blockentity.container.ContainerLore;
 import com.matthewperiut.aether.client.gui.GuiLore;
-import com.matthewperiut.aether.item.AetherItems;
-import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.screen.slot.Slot;
-import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
-import java.util.ArrayList;
-
-public class GuiLoreBookshelf extends GuiLore {
+public class GuiLoreBookshelf extends GuiLoreAlt {
 
     public GuiLoreBookshelf(PlayerInventory inv, int i) {
         super(inv, i);
@@ -31,13 +17,13 @@ public class GuiLoreBookshelf extends GuiLore {
         this.backgroundHeight = 195;
         int i;
         if (this.type == 0) {
-            i = minecraft.textureManager.getTextureId("/assets/aetherex/stationapi/textures/gui/OverworldLore.png");
+            i = minecraft.textureManager.getTextureId("/assets/aetherex/stationapi/textures/gui/OverworldLoreAlt.png");
         }
         else if (this.type == 1) {
-            i = minecraft.textureManager.getTextureId("/assets/aetherex/stationapi/textures/gui/NetherLore.png");
+            i = minecraft.textureManager.getTextureId("/assets/aetherex/stationapi/textures/gui/NetherLoreAlt.png");
         }
         else {
-            i = minecraft.textureManager.getTextureId("/assets/aetherex/stationapi/textures/gui/AetherLore.png");
+            i = minecraft.textureManager.getTextureId("/assets/aetherex/stationapi/textures/gui/AetherLoreAlt.png");
         }
         GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
         minecraft.textureManager.bindTexture(i);

@@ -14,6 +14,9 @@ public class AetherExConfig {
         @ConfigEntry(name = "Heal amount for strong heal staff", requiresRestart = true)
         public Integer strongHeal = 12;
 
+        @ConfigEntry(name = "Enable new fancy guis", requiresRestart = true)
+        public Boolean EnableFancyGui = false;
+
         @ConfigEntry(name = "Advanced Incubator bonus processing speed for eggs below the machine tier", requiresRestart = true)
         public Integer advancedIncubatorSpeed = 2;
     }
