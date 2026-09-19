@@ -40,6 +40,7 @@ public class GuiLoreBookshelf extends GuiLoreAlt {
         i -= l;
         j -= i1;
         if (i >= 219 && i <= 238 && j <= 99 && j >= 86) {
+            minecraft.soundManager.playSound("aetherex:other.page", 1.0F, 1.0F);
             if (k == 0) {
                 if (this.type != 0 && this.type != 1) {
                     this.type = 0;

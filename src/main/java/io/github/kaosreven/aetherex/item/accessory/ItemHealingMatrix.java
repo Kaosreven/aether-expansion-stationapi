@@ -14,20 +14,6 @@ public class ItemHealingMatrix extends ItemMoreArmor {
         super(i, j, k, l);
     }
 
-    /*
-    public void onAccessoryAdded(PlayerEntity player, ItemStack accessory) {
-        ItemStack[] list = AccessoryAccess.getAccessories(player, "misc");
-        for (ItemStack itemStack : list) {
-            if (itemStack.itemId == AetherExItems.HealMatrix.id) {
-                itemStack.getStationNbt().putBoolean("occupied", false);
-            }
-        }
-    }
-
-    public void onAccessoryRemoved(PlayerEntity player, ItemStack accessory) {
-    }
-     */
-
     @Override
     public ItemStack tickWhileWorn(PlayerEntity player, ItemStack itemstack) {
         ItemStack[] list = AccessoryAccess.getAccessories(player, "misc");
