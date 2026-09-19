@@ -33,7 +33,7 @@ public class AetherExRecipes {
             CraftingRegistry.addShapedRecipe(new ItemStack(AetherExBlocks.AdvancedIncubator), "XYX", "YZY", "XYX", 'X', AetherBlocks.EnchantedGravitite, 'Y', AetherExItems.GoldenElixir, 'Z', AetherBlocks.Incubator);
             CraftingRegistry.addShapedRecipe(new ItemStack(AetherExBlocks.BookshelfOfLore), "XXX", "ABC", "XXX", 'X', AetherBlocks.Plank, 'A', new ItemStack(AetherItems.LoreBook, 1, 0), 'B', new ItemStack(AetherItems.LoreBook, 1, 1), 'C', new ItemStack(AetherItems.LoreBook, 1, 2));
             CraftingRegistry.addShapedRecipe(new ItemStack(AetherExItems.GoldenBrew), "XYX", "YZY", "XYX", 'X', AetherItems.GoldenAmber, 'Y', AetherExItems.GoldenElixir, 'Z', new ItemStack(AetherItems.Bucket, 1, 3));
-            CraftingRegistry.addShapedRecipe(new ItemStack(AetherExItems.ZaniteShears), "X ", " X", 'X', AetherItems.Zanite);
+            CraftingRegistry.addShapedRecipe(new ItemStack(AetherExItems.ZaniteShears), " X", "X ", 'X', AetherItems.Zanite);
             CraftingRegistry.addShapedRecipe(new ItemStack(AetherExBlocks.SkyrootStairs, 4), "X  ", "XX ", "XXX", 'X', AetherBlocks.Plank);
             CraftingRegistry.addShapedRecipe(new ItemStack(AetherExBlocks.HolystoneStairs, 4), "X  ", "XX ", "XXX", 'X', new ItemStack(AetherBlocks.Holystone, 1, 1));
             CraftingRegistry.addShapedRecipe(new ItemStack(AetherExBlocks.MossyHolystoneStairs, 4), "X  ", "XX ", "XXX", 'X', new ItemStack(AetherBlocks.Holystone, 1, 3));
