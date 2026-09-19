@@ -90,6 +90,7 @@ public class AetherExItems {
     //TODO: Make moa staff entity
     //TODO: Reimplement Zanite Shears more thoroughly as just TemplateShearsItem is lackluster
     //TODO: Redraw inventory gui to AccessoryAPI format to restrain myself from mixin cancelling AccessoryAPI draw calls
+    //TODO: restore particles for freezer and enchanter
 
 
     @EventListener

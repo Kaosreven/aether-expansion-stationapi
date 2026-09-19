@@ -19,7 +19,10 @@ public class ItemPhoenixPickaxe extends TemplatePickaxeItem {
     @Override
     public boolean postMine(ItemStack stack, int blockId, int x, int y, int z, LivingEntity miner) {
         Block toBreak = BlockRegistry.INSTANCE.get(blockId);
-        if (!this.isSuitableFor(toBreak)) return false;
+        if (!this.isSuitableFor(toBreak)) {
+            dropSmelted = false;
+            return false;
+        }
         return dropSmelted(stack, blockId, x, y, z, miner);
     }
 }
