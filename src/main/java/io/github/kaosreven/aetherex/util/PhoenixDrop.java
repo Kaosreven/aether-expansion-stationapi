@@ -7,6 +7,8 @@ import net.minecraft.item.ItemStack;
 import net.modificationstation.stationapi.api.recipe.SmeltingRegistry;
 import net.modificationstation.stationapi.api.registry.BlockRegistry;
 
+import java.util.Random;
+
 public class PhoenixDrop {
     public static ItemStack smelted;
     public static boolean dropSmelted;
@@ -17,7 +19,7 @@ public class PhoenixDrop {
         smelted = SmeltingRegistry.getResultFor(new ItemStack(Dropped, 1, 0));
         stack.damage(1, miner);
         if (smelted != null) {
-            ItemEntity result = new ItemEntity(miner.world, x, y, z, new ItemStack(smelted.itemId, 1, 0));
+            ItemEntity result = new ItemEntity(miner.world, x, y, z, new ItemStack(smelted.itemId, toBreak.getDroppedItemCount(new Random()), 0));
             miner.world.spawnEntity(result);
             dropSmelted = true;
         }

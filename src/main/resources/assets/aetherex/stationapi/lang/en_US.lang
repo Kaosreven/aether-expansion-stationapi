@@ -107,12 +107,12 @@ item.@.orange_moa_egg.name=Orange Moa Egg
 item.@.unholy_arrow.name=\u00A74Unholy Arrow
 
 item.@.clouds_disc.name=Clouds
-item.@.labyrinth_disc.name=\2474Labyrinth's Vengeance
-item.@.approaches_disc.name=\247aApproaches
-item.@.crepusculum_disc.name=\247cCrepusculum
-item.@.brise_disc.name=\247dBrise
-item.@.ascending_disc.name=\247bAscending Dawn
-item.@.light_night_disc.name=\2479A Light in the Night
+item.@.labyrinth_disc.name=\u00A74Labyrinth's Vengeance
+item.@.approaches_disc.name=\u00A7aApproaches
+item.@.crepusculum_disc.name=\u00A7cCrepusculum
+item.@.brise_disc.name=\u00A7dBrise
+item.@.ascending_disc.name=\u00A7bAscending Dawn
+item.@.light_night_disc.name=\u00A79A Light in the Night
 
 ## Unfinished
 item.@.sentry_shield.name=\u00A7aSentry Shield

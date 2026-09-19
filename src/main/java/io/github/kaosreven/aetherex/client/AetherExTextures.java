@@ -12,16 +12,11 @@ import io.github.kaosreven.aetherex.item.misc.ItemHalloweenBag;
 import io.github.kaosreven.aetherex.item.misc.ItemMoaArmor;
 import io.github.kaosreven.aetherex.item.tool.ItemHealingStaff;
 import io.github.kaosreven.aetherex.item.tool.ItemPhoenixSword;
-import net.fabricmc.loader.api.FabricLoader;
-import net.fabricmc.loader.api.ModContainer;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.modificationstation.stationapi.api.client.event.texture.TextureRegisterEvent;
 import net.modificationstation.stationapi.api.client.texture.atlas.Atlases;
 import net.modificationstation.stationapi.api.client.texture.atlas.ExpandableAtlas;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
-import net.modificationstation.stationapi.api.resource.ResourceManagerHelper;
-import net.modificationstation.stationapi.api.resource.ResourcePackActivationType;
-import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
 
@@ -35,8 +30,6 @@ public class AetherExTextures {
 
     @EventListener
     public static void registerTextures(TextureRegisterEvent event) {
-        //ModContainer container = FabricLoader.getInstance().getModContainer("aetherex").orElseThrow();
-        //ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of(Namespace.of("aetherex"), "aether_expansion_gui"), container, ResourcePackActivationType.NORMAL);
         ExpandableAtlas terrain = Atlases.getTerrain();
         ExpandableAtlas items = Atlases.getGuiItems();
         setBlockTextures(terrain);

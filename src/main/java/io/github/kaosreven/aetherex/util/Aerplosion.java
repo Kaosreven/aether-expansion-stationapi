@@ -19,8 +19,7 @@ public class Aerplosion extends Explosion {
     @Override
     public void playExplosionSound(boolean aerplosion) {
         this.aerworldObj.playSound(this.x, this.y, this.z, "random.explode", 4.0F, (1.0F + (this.aerworldObj.random.nextFloat() - this.aerworldObj.random.nextFloat()) * 0.2F) * 0.7F);
-        ArrayList var2 = new ArrayList();
-        var2.addAll(this.damagedBlocks);
+        ArrayList var2 = new ArrayList(this.damagedBlocks);
 
         for(int var3 = var2.size() - 1; var3 >= 0; --var3) {
             BlockPos var4 = (BlockPos)var2.get(var3);
@@ -45,7 +44,7 @@ public class Aerplosion extends Explosion {
                 var17 *= var23;
                 var19 *= var23;
                 if(!this.aerworldObj.isRemote) {
-                    this.aerworldObj.addParticle("explode", (var9 + this.x * 1.0D) / 2.0D, (var11 + this.y * 1.0D) / 2.0D, (var13 + this.z * 1.0D) / 2.0D, var15, var17, var19);
+                    this.aerworldObj.addParticle("explode", (var9 + this.x) / 2.0D, (var11 + this.y) / 2.0D, (var13 + this.z) / 2.0D, var15, var17, var19);
                     this.aerworldObj.addParticle("smoke", var9, var11, var13, var15, var17, var19);
                 }
             }

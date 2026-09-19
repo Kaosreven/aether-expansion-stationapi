@@ -102,26 +102,28 @@ public abstract class PlayerEntityMixin {
         } else if (!mineReady) {
             ++mineTick;
         }
-        if(unholyBowTick / 20 == 1) {
+        if(((unholyBowTick * 0x66666667L) >> 35) == 1) {
             unholyBowReady = true;
         } else {
             ++unholyBowTick;
         }
-        if(unholySwordTick / 60 == 1) {
+        if(((unholySwordTick * 0x88888889L) >> 37) == 1) {
             unholySwordReady = true;
         } else {
             ++unholySwordTick;
         }
-        if(phoenixSwordTick / 60 == 1) {
+        if(((phoenixSwordTick * 0x88888889L) >> 37) == 1) {
             phoenixSwordReady = true;
         } else {
             ++phoenixSwordTick;
         }
+        /*
         if(obsidianSwordTick / 60 == 1) {
             obsidianSwordReady = true;
         } else {
             ++obsidianSwordTick;
         }
+         */
         if (AccessoryUtils.DoesPlayerHave(player, AetherExItems.SpeedRing)) {
             if (speedRingToggle) {
                 if (player.onGround) {
