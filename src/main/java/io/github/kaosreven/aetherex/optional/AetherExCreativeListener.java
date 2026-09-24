@@ -2,6 +2,8 @@ package io.github.kaosreven.aetherex.optional;
 
 import static io.github.kaosreven.aetherex.block.AetherExBlocks.*;
 import static io.github.kaosreven.aetherex.block.AetherExBlocks.MOD_ID;
+import static io.github.kaosreven.aetherex.events.AetherEx.isNFCAddonPresent;
+import static io.github.kaosreven.aetherex.events.AetherEx.isStoneWallPresent;
 import static io.github.kaosreven.aetherex.item.AetherExItems.*;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
@@ -24,26 +26,37 @@ public class AetherExCreativeListener {
         add(VoidLeaves);
         add(AdvancedIncubator);
         add(BookshelfOfLore);
-        add(CarvedStairs);
-        add(CarvedLitStairs);
-        add(AngelicStairs);
-        add(AngelicLitStairs);
-        add(HellfireStairs);
-        add(HellfireLitStairs);
-        add(AerogelStairs);
-        add(CarvedSlab);
-        add(CarvedLitSlab);
-        add(AngelicSlab);
-        add(AngelicLitSlab);
-        add(HellfireSlab);
-        add(HellfireLitSlab);
-        add(AerogelSlab);
-        add(CarvedPlate);
-        add(CarvedLitPlate);
-        add(AngelicPlate);
-        add(AngelicLitPlate);
-        add(HellfirePlate);
-        add(HellfireLitPlate);
+        if (!isNFCAddonPresent) {
+            add(CarvedStairs);
+            add(CarvedLitStairs);
+            add(AngelicStairs);
+            add(AngelicLitStairs);
+            add(HellfireStairs);
+            add(HellfireLitStairs);
+            add(AerogelStairs);
+
+            add(CarvedSlab);
+            add(CarvedLitSlab);
+            add(AngelicSlab);
+            add(AngelicLitSlab);
+            add(HellfireSlab);
+            add(HellfireLitSlab);
+            add(AerogelSlab);
+
+            add(CarvedPlate);
+            add(CarvedLitPlate);
+            add(AngelicPlate);
+            add(AngelicLitPlate);
+            add(HellfirePlate);
+            add(HellfireLitPlate);
+        }
+        if (isStoneWallPresent) {
+            add(HolystoneWall);
+            add(MossyHolystoneWall);
+            add(CarvedWall);
+            add(AngelicWall);
+            add(HellfireWall);
+        }
 
         aetherExItems = new SimpleTab(MOD_ID.id("aetherExItems"), GoldenElixir);
         event.register(aetherExItems);

@@ -20,6 +20,7 @@ import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
 
+import static io.github.kaosreven.aetherex.events.AetherEx.isNFCAddonPresent;
 import static net.modificationstation.stationapi.api.util.Identifier.of;
 
 public class AetherExTextures {
@@ -45,26 +46,28 @@ public class AetherExTextures {
         LoreBookshelf.topTexture = terrain.addTexture(of(MOD_ID, "block/BookshelfOfLoreTop")).index;
         LoreBookshelf.sideTexture = terrain.addTexture(of(MOD_ID, "block/BookshelfOfLoreSide")).index;
 
-        AetherExBlocks.SkyrootPlate.textureId = AetherBlocks.Plank.textureId;
-        AetherExBlocks.HolystonePlate.textureId = Holystone.sprNormal;
-        AetherExBlocks.MossyHolystonePlate.textureId = Holystone.sprMossy;
-        AetherExBlocks.CarvedPlate.textureId = DungeonBlock.sprBronze;
-        AetherExBlocks.CarvedLitPlate.textureId = DungeonBlock.sprBronzeLit;
-        AetherExBlocks.AngelicPlate.textureId = DungeonBlock.sprSilver;
-        AetherExBlocks.AngelicLitPlate.textureId = DungeonBlock.sprSilverLit;
-        AetherExBlocks.HellfirePlate.textureId = DungeonBlock.sprGold;
-        AetherExBlocks.HellfireLitPlate.textureId = DungeonBlock.sprGoldLit;
+        if (!isNFCAddonPresent) {
+            AetherExBlocks.SkyrootPlate.textureId = AetherBlocks.Plank.textureId;
+            AetherExBlocks.HolystonePlate.textureId = Holystone.sprNormal;
+            AetherExBlocks.MossyHolystonePlate.textureId = Holystone.sprMossy;
+            AetherExBlocks.CarvedPlate.textureId = DungeonBlock.sprBronze;
+            AetherExBlocks.CarvedLitPlate.textureId = DungeonBlock.sprBronzeLit;
+            AetherExBlocks.AngelicPlate.textureId = DungeonBlock.sprSilver;
+            AetherExBlocks.AngelicLitPlate.textureId = DungeonBlock.sprSilverLit;
+            AetherExBlocks.HellfirePlate.textureId = DungeonBlock.sprGold;
+            AetherExBlocks.HellfireLitPlate.textureId = DungeonBlock.sprGoldLit;
 
-        AetherExBlocks.SkyrootSlab.textureId = AetherBlocks.Plank.textureId;
-        AetherExBlocks.HolystoneSlab.textureId = Holystone.sprNormal;
-        AetherExBlocks.MossyHolystoneSlab.textureId = Holystone.sprMossy;
-        AetherExBlocks.CarvedSlab.textureId = DungeonBlock.sprBronze;
-        AetherExBlocks.CarvedLitSlab.textureId = DungeonBlock.sprBronzeLit;
-        AetherExBlocks.AngelicSlab.textureId = DungeonBlock.sprSilver;
-        AetherExBlocks.AngelicLitSlab.textureId = DungeonBlock.sprSilverLit;
-        AetherExBlocks.HellfireSlab.textureId = DungeonBlock.sprGold;
-        AetherExBlocks.HellfireLitSlab.textureId = DungeonBlock.sprGoldLit;
-        AetherExBlocks.AerogelSlab.textureId = AetherBlocks.Aerogel.textureId;
+            AetherExBlocks.SkyrootSlab.textureId = AetherBlocks.Plank.textureId;
+            AetherExBlocks.HolystoneSlab.textureId = Holystone.sprNormal;
+            AetherExBlocks.MossyHolystoneSlab.textureId = Holystone.sprMossy;
+            AetherExBlocks.CarvedSlab.textureId = DungeonBlock.sprBronze;
+            AetherExBlocks.CarvedLitSlab.textureId = DungeonBlock.sprBronzeLit;
+            AetherExBlocks.AngelicSlab.textureId = DungeonBlock.sprSilver;
+            AetherExBlocks.AngelicLitSlab.textureId = DungeonBlock.sprSilverLit;
+            AetherExBlocks.HellfireSlab.textureId = DungeonBlock.sprGold;
+            AetherExBlocks.HellfireLitSlab.textureId = DungeonBlock.sprGoldLit;
+            AetherExBlocks.AerogelSlab.textureId = AetherBlocks.Aerogel.textureId;
+        }
     }
 
     public static void setItemTextures(ExpandableAtlas items) {

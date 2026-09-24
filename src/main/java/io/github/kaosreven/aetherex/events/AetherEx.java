@@ -21,6 +21,8 @@ public class AetherEx implements ModInitializer {
     public static boolean speedRingToggle = true;
     public static boolean shieldToggle = true;
     public static boolean moaGuiToogle = false;
+    public static boolean isNFCAddonPresent = FabricLoader.getInstance().isModLoaded("nfccompataddon");
+    public static boolean isStoneWallPresent = FabricLoader.getInstance().isModLoaded("stonewall");
 
     @Override
     public void onInitialize() {

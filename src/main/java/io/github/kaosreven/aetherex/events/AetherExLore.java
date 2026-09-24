@@ -2,10 +2,11 @@ package io.github.kaosreven.aetherex.events;
 
 import static com.matthewperiut.aether.client.gui.GuiLore.Lore;
 import static com.matthewperiut.aether.client.gui.GuiLore.lores;
+import static io.github.kaosreven.aetherex.events.AetherEx.isNFCAddonPresent;
+import static io.github.kaosreven.aetherex.events.AetherEx.isStoneWallPresent;
 
 import io.github.kaosreven.aetherex.block.AetherExBlocks;
 import io.github.kaosreven.aetherex.item.AetherExItems;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemStack;
 
 @SuppressWarnings("UnnecessaryUnicodeEscape")
@@ -76,25 +77,27 @@ public class AetherExLore {
         lores.add(new Lore(AetherExBlocks.BookshelfOfLore, "Bookshelf of Lore", "Contains secrets", "to the universe, it", "knows all.", "", "", "", 1));
         lores.add(new Lore(AetherExBlocks.BookshelfOfLore, "Bookshelf of Lore", "Contains secrets", "to the universe, it", "knows all.", "", "", "", 2));
 
-        lores.add(new Lore(AetherExBlocks.CarvedStairs, "Carved Stairs", "Double it and give", "it to the next", "person.", "", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.AngelicStairs, "Angelic Stairs", "They're stairs, why", "you reading this?", "", "", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.HellfireStairs, "Hellfire Stairs", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", 2));
-        lores.add(new Lore(AetherExBlocks.CarvedLitStairs, "Sentry Stairs", "I'd like 5 whoppers,", "and 5 more", "whoppers.", "", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.AngelicLitStairs, "Light Angelic Stairs", "Morbius made 3", "morbillion dollars.", "", "", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.HellfireLitStairs, "Light Hellfire Stairs", "Spongebob", "spongebob. Patrick", "patrick.", "", "", "Gary.", 2));
-        lores.add(new Lore(AetherExBlocks.AerogelStairs, "\u00A7aAerogel Stairs", "██████", "█████", "████", "███", "██", "█", 2));
+        if (!isNFCAddonPresent) {
+            lores.add(new Lore(AetherExBlocks.CarvedStairs, "Carved Stairs", "Double it and give", "it to the next", "person.", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.AngelicStairs, "Angelic Stairs", "They're stairs, why", "you reading this?", "", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.HellfireStairs, "Hellfire Stairs", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", "I'm Glenn Quagmire.", 2));
+            lores.add(new Lore(AetherExBlocks.CarvedLitStairs, "Sentry Stairs", "I'd like 5 whoppers,", "and 5 more", "whoppers.", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.AngelicLitStairs, "Light Angelic Stairs", "Morbius made 3", "morbillion dollars.", "", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.HellfireLitStairs, "Light Hellfire Stairs", "Spongebob", "spongebob. Patrick", "patrick.", "", "", "Gary.", 2));
+            lores.add(new Lore(AetherExBlocks.AerogelStairs, "\u00A7aAerogel Stairs", "██████", "█████", "████", "███", "██", "█", 2));
 
-        lores.add(new Lore(AetherExBlocks.SkyrootSlab, "Skyroot Slab", "When in doubt,", "follow Giovanni's", "conjecture.", "", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.HolystoneSlab, "Holystone Slab", "It's a problem with", "the whole way of", "life.", "", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.MossyHolystoneSlab, "Mossy Holystone Slab", "\"I am the yeast of", "thoughts and minds\"", "", "", "", "- Globglogabgalab", 2));
-        lores.add(new Lore(AetherExBlocks.CarvedSlab, "Carved Slab", "Value is subjective,", "time is absolute.", "", "", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.AngelicSlab, "Angelic Slab", "I cannot wait to", "finish this update.", "", "", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.HellfireSlab, "Hellfire Slab", "Roblox is a bad", "game. Minecraft", "superior.", "", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.CarvedLitSlab, "Sentry Slab", "Meefy ate the lore", "*burps*", "Sorry :(", "", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.AngelicLitSlab, "Light Angelic Slab", "As a wise man once", "said, you have less", "time than you had", "before.", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.HellfireLitSlab, "Light Hellfire Slab", "It's not clock...", "it's not clock.", "", "", "", "", 2));
-        lores.add(new Lore(AetherExBlocks.AerogelSlab, "\u00A7aAerogel Slab", "Let me be clear...", "", "", "", "", "", 2));
-        if (FabricLoader.getInstance().isModLoaded("stonewall")) {
+            lores.add(new Lore(AetherExBlocks.SkyrootSlab, "Skyroot Slab", "When in doubt,", "follow Giovanni's", "conjecture.", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.HolystoneSlab, "Holystone Slab", "It's a problem with", "the whole way of", "life.", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.MossyHolystoneSlab, "Mossy Holystone Slab", "\"I am the yeast of", "thoughts and minds\"", "", "", "", "- Globglogabgalab", 2));
+            lores.add(new Lore(AetherExBlocks.CarvedSlab, "Carved Slab", "Value is subjective,", "time is absolute.", "", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.AngelicSlab, "Angelic Slab", "I cannot wait to", "finish this update.", "", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.HellfireSlab, "Hellfire Slab", "Roblox is a bad", "game. Minecraft", "superior.", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.CarvedLitSlab, "Sentry Slab", "Meefy ate the lore", "*burps*", "Sorry :(", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.AngelicLitSlab, "Light Angelic Slab", "As a wise man once", "said, you have less", "time than you had", "before.", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.HellfireLitSlab, "Light Hellfire Slab", "It's not clock...", "it's not clock.", "", "", "", "", 2));
+            lores.add(new Lore(AetherExBlocks.AerogelSlab, "\u00A7aAerogel Slab", "Let me be clear...", "", "", "", "", "", 2));
+        }
+        if (isStoneWallPresent) {
             lores.add(new Lore(AetherExBlocks.HolystoneWall, "Holystone Wall", "Walls are for", "people who hate", "open concept designs.", "", "", "", 2));
             lores.add(new Lore(AetherExBlocks.MossyHolystoneWall, "Mossy Holystone Wall", "Must have been", "the Aether.", "", "", "", "", 2));
             lores.add(new Lore(AetherExBlocks.CarvedWall, "Carved Wall", "Did you hear", "the joke about", "the high wall?", "I still can't", "get over it!", "", 2));
