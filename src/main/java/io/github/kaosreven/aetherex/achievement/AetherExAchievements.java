@@ -2,8 +2,10 @@ package io.github.kaosreven.aetherex.achievement;
 
 import io.github.kaosreven.aetherex.block.AetherExBlocks;
 import io.github.kaosreven.aetherex.item.AetherExItems;
+import net.fabricmc.loader.api.FabricLoader;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.achievement.Achievement;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -31,7 +33,13 @@ public class AetherExAchievements {
     public static Achievement knowledge;
 
     public static void giveAchievement(Achievement achievement, PlayerEntity player) {
-        player.incrementStat(achievement);
+        if (FabricLoader.getInstance().getGameInstance() instanceof Minecraft mc) {
+            if (!mc.stats.hasAchievement(achievement)) {
+                if (player == null) player = mc.player;
+                mc.soundManager.playSound("aether:other.achievement.achievementgen", 1.0F, 1.0F);
+                player.incrementStat(achievement);
+            }
+        }
     }
 
     @EventListener

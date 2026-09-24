@@ -39,6 +39,7 @@
       "${maven_group}.${mod_id}.entity.AetherExEntities",
       "${maven_group}.${mod_id}.blockentity.AetherExBlockEntities",
       "${maven_group}.${mod_id}.achievement.AetherExAchievements",
+      "${maven_group}.${mod_id}.events.AetherExChunkListener",
       "${maven_group}.${mod_id}.events.AetherExResourcePack"
     ],
     "stationapi:event_bus_client": [

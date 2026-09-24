@@ -2,6 +2,7 @@ package io.github.kaosreven.aetherex.block;
 
 import com.slainlight.stonewall.block.WallBlock;
 import io.github.kaosreven.aetherex.block.template.*;
+import io.github.kaosreven.aetherex.optional.AetherExConfig;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
 import net.minecraft.block.PressurePlateActivationRule;
@@ -109,6 +110,10 @@ public class AetherExBlocks {
             CarvedWall = (new WallBlock(Identifier.of(MOD_ID, "carved_wall"), Material.STONE).setTranslationKey(MOD_ID, "carved_wall").setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP));
             AngelicWall = (new WallBlock(Identifier.of(MOD_ID, "angelic_wall"), Material.STONE).setTranslationKey(MOD_ID, "angelic_wall").setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP));
             HellfireWall = (new WallBlock(Identifier.of(MOD_ID, "hellfire_wall"), Material.STONE).setTranslationKey(MOD_ID, "hellfire_wall").setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP));
+        }
+
+        if (AetherExConfig.CONFIG.EnableNewContent) {
+
         }
     }
 }

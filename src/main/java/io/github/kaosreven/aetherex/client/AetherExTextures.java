@@ -12,6 +12,7 @@ import io.github.kaosreven.aetherex.item.misc.ItemHalloweenBag;
 import io.github.kaosreven.aetherex.item.misc.ItemMoaArmor;
 import io.github.kaosreven.aetherex.item.tool.ItemHealingStaff;
 import io.github.kaosreven.aetherex.item.tool.ItemPhoenixSword;
+import io.github.kaosreven.aetherex.optional.AetherExConfig;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.modificationstation.stationapi.api.client.event.texture.TextureRegisterEvent;
 import net.modificationstation.stationapi.api.client.texture.atlas.Atlases;
@@ -68,6 +69,10 @@ public class AetherExTextures {
             AetherExBlocks.HellfireLitSlab.textureId = DungeonBlock.sprGoldLit;
             AetherExBlocks.AerogelSlab.textureId = AetherBlocks.Aerogel.textureId;
         }
+
+        if (AetherExConfig.CONFIG.EnableNewContent) {
+
+        }
     }
 
     public static void setItemTextures(ExpandableAtlas items) {
@@ -109,7 +114,6 @@ public class AetherExTextures {
         ItemMoaArmor.GravititeMoaArmor = items.addTexture(of(MOD_ID, "item/GravititeMoaArmor")).index;
         AetherExItems.OrangeMoaEgg.setTextureId(MoaEgg);
         AetherExItems.UnholyArrow.setTexture(of(MOD_ID, "item/UnholyArrow"));
-        //AetherExItems.GoldenLeather.setTexture(of(MOD_ID, "item/GoldenLeather"));
 
         AetherExItems.JebHammer.setTexture(of(MOD_ID, "item/HammerOfJeb"));
         AetherExItems.VileSword.setTexture(of(MOD_ID, "item/VileBlade"));
@@ -144,6 +148,10 @@ public class AetherExTextures {
         AetherExItems.BriseDisc.setTexture(of(MOD_ID, "item/discs/DiscBrise"));
         AetherExItems.AscendingDisc.setTexture(of(MOD_ID, "item/discs/DiscAscending"));
         AetherExItems.LightNightDisc.setTexture(of(MOD_ID, "item/discs/DiscLightNight"));
+
+        if (AetherExConfig.CONFIG.EnableNewContent) {
+            AetherExItems.GoldenLeather.setTexture(of(MOD_ID, "item/GoldenLeather"));
+        }
     }
 
 

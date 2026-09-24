@@ -4,6 +4,7 @@ import com.matthewperiut.aether.item.accessory.ItemMoreArmor;
 import io.github.kaosreven.aetherex.item.accessory.*;
 import io.github.kaosreven.aetherex.item.misc.*;
 import io.github.kaosreven.aetherex.item.tool.*;
+import io.github.kaosreven.aetherex.optional.AetherExConfig;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
@@ -100,7 +101,6 @@ public class AetherExItems {
         GoldenBrew = (new TemplateItem(Identifier.of(MOD_ID, "golden_brew"))).setTranslationKey(MOD_ID, "golden_brew");
         GoldenElixir = (new TemplateItem(Identifier.of(MOD_ID, "golden_elixir"))).setTranslationKey(MOD_ID, "golden_elixir");
         UnholyArrow = (new TemplateItem(Identifier.of(MOD_ID, "unholy_arrow"))).setTranslationKey(MOD_ID, "unholy_arrow");
-        //GoldenLeather = (new TemplateItem(Identifier.of(MOD_ID, "golden_leather"))).setTranslationKey(MOD_ID, "golden_leather");
 
         Candy = (new ItemCandy(Identifier.of(MOD_ID, "candy"), 3, false)).setTranslationKey(MOD_ID, "candy");
         HalloweenBag = (new ItemHalloweenBag(Identifier.of(MOD_ID, "halloween_bag"))).setTranslationKey(MOD_ID, "halloween_bag");
@@ -155,5 +155,9 @@ public class AetherExItems {
 
         //unfinished
         SentryShield = (new ItemSentryShield(Identifier.of(MOD_ID, "sentry_shield"), 0, 0, 6)).setTranslationKey(MOD_ID, "sentry_shield");
+
+        if (AetherExConfig.CONFIG.EnableNewContent) {
+            GoldenLeather = (new TemplateItem(Identifier.of(MOD_ID, "golden_leather"))).setTranslationKey(MOD_ID, "golden_leather");
+        }
     }
 }

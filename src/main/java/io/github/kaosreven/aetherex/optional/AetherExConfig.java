@@ -19,6 +19,9 @@ public class AetherExConfig {
 
         @ConfigEntry(name = "Advanced Incubator bonus processing speed for eggs below the machine tier", requiresRestart = true)
         public Integer advancedIncubatorSpeed = 2;
+
+        @ConfigEntry(name = "Enable new content (Unfinished)", requiresRestart = true)
+        public Boolean EnableNewContent = false;
     }
 
     @ConfigRoot(value = "general", visibleName = "Aether Expansion Config")
