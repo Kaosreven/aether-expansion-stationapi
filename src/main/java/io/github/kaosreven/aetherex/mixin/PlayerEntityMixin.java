@@ -1,8 +1,11 @@
 package io.github.kaosreven.aetherex.mixin;
 
 import com.matthewperiut.aether.block.AetherBlocks;
-import com.periut.accessoryapi.api.helper.AccessoryAccess;
+import com.matthewperiut.aether.entity.living.EntityFireMonster;
+import com.matthewperiut.aether.entity.living.EntitySlider;
+import com.matthewperiut.aether.entity.living.EntityValkyrie;
 import io.github.kaosreven.aetherex.item.AetherExItems;
+import io.github.kaosreven.aetherex.util.AccessoryUtils;
 import io.github.kaosreven.aetherex.util.Aerplosion;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -21,13 +24,13 @@ import java.util.Random;
 
 import static io.github.kaosreven.aetherex.events.AetherEx.*;
 import static io.github.kaosreven.aetherex.item.accessory.ItemAerShield.aerShieldRandomReady;
-import static io.github.kaosreven.aetherex.item.accessory.ItemFlameGem.flameRandomReady;
-import static io.github.kaosreven.aetherex.item.accessory.ItemFlameGem.flameRandomTick;
+import static io.github.kaosreven.aetherex.item.accessory.ItemFlameGem.*;
 import static io.github.kaosreven.aetherex.item.accessory.ItemJebShield.jebShieldRandomReady;
 import static io.github.kaosreven.aetherex.item.accessory.ItemLuckyPendant.*;
 import static io.github.kaosreven.aetherex.item.accessory.ItemSentryShield.*;
 import static io.github.kaosreven.aetherex.item.tool.ItemHealingStaff.*;
 import static io.github.kaosreven.aetherex.item.tool.ItemMineFist.*;
+import static io.github.kaosreven.aetherex.item.tool.ItemObsidianSword.*;
 import static io.github.kaosreven.aetherex.item.tool.ItemPhoenixSword.*;
 import static io.github.kaosreven.aetherex.item.tool.ItemUnholyBow.*;
 import static io.github.kaosreven.aetherex.item.tool.ItemUnholySword.*;
@@ -64,6 +67,22 @@ public abstract class PlayerEntityMixin {
                 }
             }
         }
+        if (target != null && target instanceof LivingEntity) {
+            if (luckyRandomReady && ((LivingEntity)target).health <= 0 && (new Random()).nextInt(5) == 0) {
+                if (target instanceof EntitySlider) {
+                    target.dropItem(new ItemStack(AetherExItems.CrepusculumDisc), 0F);
+                    AccessoryUtils.UseAccessory(player, AetherExItems.LuckyPendant);
+                }
+                else if (target instanceof EntityValkyrie && ((EntityValkyrie)target).boss) {
+                    target.dropItem(new ItemStack(AetherExItems.AscendingDisc), 0F);
+                    AccessoryUtils.UseAccessory(player, AetherExItems.LuckyPendant);
+                }
+                else if (target instanceof EntityFireMonster) {
+                    target.dropItem(new ItemStack(AetherExItems.BriseDisc), 0F);
+                    AccessoryUtils.UseAccessory(player, AetherExItems.LuckyPendant);
+                }
+            }
+        }
     }
 
     @Inject(method = "tick", at = @At("TAIL"))
@@ -83,52 +102,55 @@ public abstract class PlayerEntityMixin {
         } else if (!mineReady) {
             ++mineTick;
         }
-        if(unholyBowTick / 20 == 1) {
+        if(((unholyBowTick * 0x66666667L) >> 35) == 1) {
             unholyBowReady = true;
         } else {
             ++unholyBowTick;
         }
-        if(unholySwordTick / 60 == 1) {
+        if(((unholySwordTick * 0x88888889L) >> 37) == 1) {
             unholySwordReady = true;
         } else {
             ++unholySwordTick;
         }
-        if(phoenixSwordTick / 60 == 1) {
+        if(((phoenixSwordTick * 0x88888889L) >> 37) == 1) {
             phoenixSwordReady = true;
         } else {
             ++phoenixSwordTick;
         }
-        ItemStack[] list = AccessoryAccess.getAccessories(player, "ring");
-        for (ItemStack itemStack : list) {
-            if (itemStack.itemId == AetherExItems.SpeedRing.id) {
-                if (speedRingToggle) {
-                    if (player.onGround) {
-                        int i = player.world.getBlockId((int) player.x, (int) (player.y - 2.0D), (int) player.z);
-                        if (i == Block.ICE.id) {
-                            player.velocityX *= 1.1F;
-                            player.velocityZ *= 1.1F;
-                        } else if (i != AetherBlocks.Quicksoil.id && i != AetherBlocks.QuicksoilGlass.id) {
-                            if (!player.isSubmergedInWater()) {
-                                player.velocityX *= 1.45F;
-                                player.velocityZ *= 1.45F;
-                            } else {
-                                player.velocityX *= 1.15F;
-                                player.velocityZ *= 1.15F;
-                            }
+        /*
+        if(obsidianSwordTick / 60 == 1) {
+            obsidianSwordReady = true;
+        } else {
+            ++obsidianSwordTick;
+        }
+         */
+        if (AccessoryUtils.DoesPlayerHave(player, AetherExItems.SpeedRing)) {
+            if (speedRingToggle) {
+                if (player.onGround) {
+                    int i = player.world.getBlockId((int) player.x, (int) (player.y - 2.0D), (int) player.z);
+                    if (i == Block.ICE.id) {
+                        player.velocityX *= 1.1F;
+                        player.velocityZ *= 1.1F;
+                    } else if (i != AetherBlocks.Quicksoil.id && i != AetherBlocks.QuicksoilGlass.id) {
+                        if (!player.isSubmergedInWater()) {
+                            player.velocityX *= 1.45F;
+                            player.velocityZ *= 1.45F;
                         } else {
-                            player.velocityX *= 1.0500000238418579D;
-                            player.velocityZ *= 1.0500000238418579D;
+                            player.velocityX *= 1.15F;
+                            player.velocityZ *= 1.15F;
                         }
-                    } else if (player.isSubmergedInWater()) {
-                        player.velocityX *= 1.15F;
-                        player.velocityZ *= 1.15F;
-                    } else if (!player.onGround) {
-                        player.velocityX *= 1.044999976158142D;
-                        player.velocityZ *= 1.044999976158142D;
+                    } else {
+                        player.velocityX *= 1.0500000238418579D;
+                        player.velocityZ *= 1.0500000238418579D;
                     }
+                } else if (player.isSubmergedInWater()) {
+                    player.velocityX *= 1.15F;
+                    player.velocityZ *= 1.15F;
+                } else if (!player.onGround) {
+                    player.velocityX *= 1.044999976158142D;
+                    player.velocityZ *= 1.044999976158142D;
                 }
             }
-            break;
         }
     }
 
@@ -149,12 +171,7 @@ public abstract class PlayerEntityMixin {
                 if(next == 1) {
                     aerShieldRandomReady = false;
                     ++damageSource.velocityY;
-                    ItemStack[] list = AccessoryAccess.getAccessories(player, "shield");
-                    for (ItemStack itemStack : list) {
-                        if (itemStack.itemId == AetherExItems.AerShield.id) {
-                            itemStack.damage(1, player);
-                        }
-                    }
+                    AccessoryUtils.UseAccessory(player, AetherExItems.AerShield);
                     amount = 0;
                     cir.setReturnValue(true);
                 }
@@ -163,12 +180,7 @@ public abstract class PlayerEntityMixin {
                 int next = (new Random()).nextInt(5);
                 if(next == 1) {
                     jebShieldRandomReady = false;
-                    ItemStack[] list = AccessoryAccess.getAccessories(player, "shield");
-                    for (ItemStack itemStack : list) {
-                        if (itemStack.itemId == AetherExItems.JebShield.id) {
-                            itemStack.damage(1, player);
-                        }
-                    }
+                    AccessoryUtils.UseAccessory(player, AetherExItems.JebShield);
                     damageSource.damage(player, amount * 4);
                     amount = 0;
                     cir.setReturnValue(true);
@@ -178,12 +190,7 @@ public abstract class PlayerEntityMixin {
                 int next = (new Random()).nextInt(20);
                 if (next == 1 || next == 2 || next == 3) {
                     sentryRandomReady = false;
-                    ItemStack[] list = AccessoryAccess.getAccessories(player, "shield");
-                    for (ItemStack itemStack : list) {
-                        if (itemStack.itemId == AetherExItems.SentryShield.id) {
-                            itemStack.damage(1, player);
-                        }
-                    }
+                    AccessoryUtils.UseAccessory(player, AetherExItems.SentryShield);
                     Aerplosion aerplosion = new Aerplosion(player.world, player, player.x, player.y, player.z, 2.5F);
                     aerplosion.fire = false;
                     aerplosion.explode();
@@ -199,12 +206,7 @@ public abstract class PlayerEntityMixin {
                 if (next == 1 || next == 2 || next == 3) {
                     luckyRandomTick = 0;
                     luckyRandomReady = false;
-                    ItemStack[] list = AccessoryAccess.getAccessories(player, "pendant");
-                    for (ItemStack itemStack : list) {
-                        if (itemStack.itemId == AetherExItems.LuckyPendant.id) {
-                            itemStack.damage(1, player);
-                        }
-                    }
+                    AccessoryUtils.UseAccessory(player, AetherExItems.LuckyPendant);
                     amount = 0;
                     cir.setReturnValue(true);
                 }

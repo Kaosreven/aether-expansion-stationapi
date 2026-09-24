@@ -38,12 +38,13 @@
       "${maven_group}.${mod_id}.events.AetherExRecipes",
       "${maven_group}.${mod_id}.entity.AetherExEntities",
       "${maven_group}.${mod_id}.blockentity.AetherExBlockEntities",
-      "${maven_group}.${mod_id}.achievement.AetherExAchievements"
+      "${maven_group}.${mod_id}.achievement.AetherExAchievements",
+      "${maven_group}.${mod_id}.events.AetherExResourcePack"
     ],
     "stationapi:event_bus_client": [
-      "${maven_group}.${mod_id}.events.AetherExTextures",
+      "${maven_group}.${mod_id}.client.AetherExTextures",
       "${maven_group}.${mod_id}.client.gui.AetherExGuis",
-      "${maven_group}.${mod_id}.events.AetherExKeybinds",
+      "${maven_group}.${mod_id}.client.AetherExKeybinds",
       "${maven_group}.${mod_id}.client.entity.AetherExEntityRenderers"
     ],
     "stationapi:event_bus_server": [

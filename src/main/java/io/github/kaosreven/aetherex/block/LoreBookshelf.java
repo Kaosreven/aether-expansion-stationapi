@@ -36,9 +36,7 @@ public class LoreBookshelf extends TemplateBlockWithEntity {
     @Override
     public boolean onUse(World world, int i, int j, int k, PlayerEntity player) {
         if (!world.isRemote) {
-            //BlockEntityLoreBookshelf blockEntityLoreBookshelf = (BlockEntityLoreBookshelf) world.getBlockEntity(i, j, k);
             SideUtil.run(() -> useLoreClient(player), () -> useLoreServer(player));
-            //GuiHelper.openGUI(player, MOD_ID.id("lore_bookshelf"), blockEntityLoreBookshelf, new ContainerLore(player.inventory));
         }
         return true;
     }

@@ -12,7 +12,6 @@ import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.ScreenScaler;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.modificationstation.stationapi.api.item.CustomReachProvider;
 import org.lwjgl.opengl.GL11;
 
 public class JumpsDisplay {
@@ -48,16 +47,6 @@ public class JumpsDisplay {
                 }
                 else aerCape = null;
             }
-            /*
-            ItemStack hand = client.player.getHand();
-            if (hand != null) {
-                if (hand.getItem() == AetherExItems.VileSword) {
-                    maxJumps = 3;
-                    jumps = maxJumps - 2;
-                }
-            }
-             */
-            //else return;
         }
 
         if (aerCape != null && !client.player.hasVehicle()) GL11.glBindTexture(3553, client.textureManager.getTextureId("aetherex:stationapi/textures/gui/AerJump.png"));

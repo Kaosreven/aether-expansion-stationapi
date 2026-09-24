@@ -21,6 +21,8 @@ public class AetherEx implements ModInitializer {
     public static boolean speedRingToggle = true;
     public static boolean shieldToggle = true;
     public static boolean moaGuiToogle = false;
+    public static boolean isNFCAddonPresent = FabricLoader.getInstance().isModLoaded("nfccompataddon");
+    public static boolean isStoneWallPresent = FabricLoader.getInstance().isModLoaded("stonewall");
 
     @Override
     public void onInitialize() {
@@ -43,23 +45,4 @@ public class AetherEx implements ModInitializer {
             isHal = true;
         }
     }
-
-
-    /*
-    @EventListener
-    private static void getReach(PlayerEvent.Reach event) {
-        ItemStack[] list = AccessoryAccess.getAccessories(event.player, "ring");
-        for (ItemStack itemStack : list) {
-            if (itemStack.itemId == AetherExItems.ValkyrieRing.id) {
-                if (itemStack.getItem() instanceof CustomReachProvider provider) {
-                    ItemStack stack = event.player.getHand();
-                    if (stack != null) {
-                        //if (!(stack.getItem() instanceof CustomReachProvider))
-                        event.currentReach = provider.getReach(itemStack, event.player, event.type, event.currentReach);
-                    }
-                }
-            }
-        }
-    }
-     */
 }

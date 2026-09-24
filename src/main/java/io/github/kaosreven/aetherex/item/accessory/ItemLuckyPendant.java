@@ -1,11 +1,12 @@
 package io.github.kaosreven.aetherex.item.accessory;
 
-import com.matthewperiut.aether.item.accessory.ItemMoreArmor;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.modificationstation.stationapi.api.util.Identifier;
 
-public class ItemLuckyPendant extends ItemMoreArmor {
+import java.awt.*;
+
+public class ItemLuckyPendant extends ItemPendant {
     public static int luckyRandomTick = 0;
     public static boolean luckyRandomReady = false;
     public ItemLuckyPendant(Identifier i, int j, String path, int l) {

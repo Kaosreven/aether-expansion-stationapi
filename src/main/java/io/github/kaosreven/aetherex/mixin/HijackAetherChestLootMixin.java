@@ -19,7 +19,7 @@ public class HijackAetherChestLootMixin {
      */
     @Overwrite
     private ItemStack getNormalLootBronze(Random random){
-        int item = random.nextInt(16);
+        int item = random.nextInt(17);
         switch (item) {
             case 0:
                 return new ItemStack(AetherItems.PickZanite);
@@ -60,10 +60,16 @@ public class HijackAetherChestLootMixin {
                 if (random.nextInt(10) == 0) {
                     return new ItemStack(AetherItems.GoldRing);
                 }
+                break;
             case 14:
                 return new ItemStack(AetherExItems.GoldenElixir, random.nextInt(3)+1);
             case 15:
                 return new ItemStack(AetherExItems.MoaArmor, 1, 1);
+            case 16:
+                if (random.nextInt(15) == 0) {
+                    return new ItemStack(AetherExItems.LabyrinthDisc);
+                }
+                break;
         }
         return new ItemStack(AetherBlocks.AmbrosiumTorch);
     }
@@ -74,7 +80,7 @@ public class HijackAetherChestLootMixin {
      */
     @Overwrite
     private ItemStack getNormalLootSilver(final Random random) {
-        final int item = random.nextInt(17);
+        final int item = random.nextInt(18);
         switch (item) {
             case 0:
                 return new ItemStack(AetherItems.PickZanite);
@@ -122,10 +128,12 @@ public class HijackAetherChestLootMixin {
                 if (random.nextInt(4) == 0) {
                     return new ItemStack(AetherItems.IronPendant);
                 }
+                break;
             case 13:
                 if (random.nextInt(10) == 0) {
                     return new ItemStack(AetherItems.GoldPendant);
                 }
+                break;
             case 14:
                 if (random.nextInt(15) == 0) {
                     return new ItemStack(AetherItems.ZaniteRing);
@@ -135,6 +143,11 @@ public class HijackAetherChestLootMixin {
                 return new ItemStack(AetherExItems.GoldenElixir, random.nextInt(3)+1);
             case 16:
                 return new ItemStack(AetherExItems.MoaArmor, 1, 1);
+            case 17:
+                if (random.nextInt(15) == 0) {
+                    return new ItemStack(AetherExItems.ApproachesDisc);
+                }
+                break;
         }
         return new ItemStack(AetherBlocks.AmbrosiumTorch, random.nextInt(5));
     }

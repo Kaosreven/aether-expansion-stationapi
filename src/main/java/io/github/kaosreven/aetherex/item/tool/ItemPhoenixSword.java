@@ -15,6 +15,8 @@ import java.util.Random;
 public class ItemPhoenixSword extends TemplateSwordItem {
     public static int phoenixSwordTick = 0;
     public static boolean phoenixSwordReady = true;
+    public static int PhoenixSwordTexture;
+    public static int PhoenixAnimTexture;
     public ItemPhoenixSword(Identifier identifier, ToolMaterial material) {
         super(identifier, material);
     }
@@ -55,10 +57,15 @@ public class ItemPhoenixSword extends TemplateSwordItem {
             double x = user.x + vec3d.x * 1.5D;
             double y = user.y - 0.5D + vec3d.y * 1.5D;
             double z = user.z + vec3d.z * 1.5D;
-            EntityFiroBallEx entityinfernoball = new EntityFiroBallEx(world, x, y, z, user);
-            world.spawnEntity(entityinfernoball);
+            EntityFiroBallEx ball = new EntityFiroBallEx(world, x, y, z, user, false);
+            world.spawnEntity(ball);
             stack.damage(20, user);
             user.swingHand();
+            if(vec3d != null) {
+                ball.smotionX = vec3d.x * 2.5D;
+                ball.smotionY = vec3d.y * 2.5D;
+                ball.smotionZ = vec3d.z * 2.5D;
+            }
             phoenixSwordTick = 0;
             phoenixSwordReady = false;
         } else if(stack.getDamage() < stack.getMaxDamage()-100) {
@@ -67,5 +74,10 @@ public class ItemPhoenixSword extends TemplateSwordItem {
             user.sendMessage("You must wait seconds " + display + " seconds before doing that.");
         } else user.sendMessage("Insufficient durability!");
         return stack;
+    }
+
+    @Override
+    public int getTextureId(int damage) {
+        return damage >= this.getMaxDamage() - 100 ? PhoenixSwordTexture : PhoenixAnimTexture;
     }
 }

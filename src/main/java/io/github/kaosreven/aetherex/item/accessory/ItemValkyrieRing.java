@@ -17,7 +17,7 @@ public class ItemValkyrieRing extends ItemMoreArmor implements CustomReachProvid
         return itemStack;
     }
 
-    @Override //FIXME: doesn't work actually
+    @Override
     public double getReach(ItemStack itemStack, PlayerEntity playerEntity, HitResultType hitType, double v) {
         return 7.0F;
     }

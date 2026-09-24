@@ -11,7 +11,6 @@ import net.modificationstation.stationapi.api.util.Identifier;
 import static io.github.kaosreven.aetherex.util.PhoenixDrop.dropSmelted;
 
 public class ItemPhoenixPickaxe extends TemplatePickaxeItem {
-    public static ItemStack smelted;
     public ItemPhoenixPickaxe(Identifier identifier, ToolMaterial material) {
         super(identifier, material);
         this.setMaxDamage(material.getDurability());
@@ -20,7 +19,10 @@ public class ItemPhoenixPickaxe extends TemplatePickaxeItem {
     @Override
     public boolean postMine(ItemStack stack, int blockId, int x, int y, int z, LivingEntity miner) {
         Block toBreak = BlockRegistry.INSTANCE.get(blockId);
-        if (!this.isSuitableFor(toBreak)) return false;
+        if (!this.isSuitableFor(toBreak)) {
+            dropSmelted = false;
+            return false;
+        }
         return dropSmelted(stack, blockId, x, y, z, miner);
     }
 }

@@ -9,7 +9,6 @@ import net.modificationstation.stationapi.api.util.Identifier;
 import static io.github.kaosreven.aetherex.util.PhoenixDrop.dropSmelted;
 
 public class ItemPhoenixShovel extends TemplateShovelItem {
-    public static ItemStack smelted;
     public ItemPhoenixShovel(Identifier identifier, ToolMaterial material) {
         super(identifier, material);
         this.setMaxDamage(material.getDurability());

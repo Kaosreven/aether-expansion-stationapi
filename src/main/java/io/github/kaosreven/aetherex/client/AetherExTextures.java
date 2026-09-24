@@ -1,8 +1,9 @@
-package io.github.kaosreven.aetherex.events;
+package io.github.kaosreven.aetherex.client;
 
 import com.matthewperiut.aether.block.AetherBlocks;
 import com.matthewperiut.aether.block.DungeonBlock;
 import com.matthewperiut.aether.block.Holystone;
+import com.matthewperiut.aether.client.texture.AetherTextures;
 import io.github.kaosreven.aetherex.block.*;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import io.github.kaosreven.aetherex.item.misc.ItemBaseMoaStaff;
@@ -10,6 +11,7 @@ import io.github.kaosreven.aetherex.item.misc.ItemCandy;
 import io.github.kaosreven.aetherex.item.misc.ItemHalloweenBag;
 import io.github.kaosreven.aetherex.item.misc.ItemMoaArmor;
 import io.github.kaosreven.aetherex.item.tool.ItemHealingStaff;
+import io.github.kaosreven.aetherex.item.tool.ItemPhoenixSword;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.modificationstation.stationapi.api.client.event.texture.TextureRegisterEvent;
 import net.modificationstation.stationapi.api.client.texture.atlas.Atlases;
@@ -18,17 +20,12 @@ import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
 
+import static io.github.kaosreven.aetherex.events.AetherEx.isNFCAddonPresent;
 import static net.modificationstation.stationapi.api.util.Identifier.of;
 
 public class AetherExTextures {
     @Entrypoint.Namespace
     public static Namespace MOD_ID = Null.get();
-
-    public static int Ring;
-    public static int Pendant;
-    public static int CapeTexture;
-    public static int Glove;
-    public static int GloveChain;
     public static int Shield;
     public static int MoaEgg;
 
@@ -49,41 +46,42 @@ public class AetherExTextures {
         LoreBookshelf.topTexture = terrain.addTexture(of(MOD_ID, "block/BookshelfOfLoreTop")).index;
         LoreBookshelf.sideTexture = terrain.addTexture(of(MOD_ID, "block/BookshelfOfLoreSide")).index;
 
-        AetherExBlocks.SkyrootPlate.textureId = AetherBlocks.Plank.textureId;
-        AetherExBlocks.HolystonePlate.textureId = Holystone.sprNormal;
-        AetherExBlocks.MossyHolystonePlate.textureId = Holystone.sprMossy;
-        AetherExBlocks.CarvedPlate.textureId = DungeonBlock.sprBronze;
-        AetherExBlocks.CarvedLitPlate.textureId = DungeonBlock.sprBronzeLit;
-        AetherExBlocks.AngelicPlate.textureId = DungeonBlock.sprSilver;
-        AetherExBlocks.AngelicLitPlate.textureId = DungeonBlock.sprSilverLit;
-        AetherExBlocks.HellfirePlate.textureId = DungeonBlock.sprGold;
-        AetherExBlocks.HellfireLitPlate.textureId = DungeonBlock.sprGoldLit;
+        if (!isNFCAddonPresent) {
+            AetherExBlocks.SkyrootPlate.textureId = AetherBlocks.Plank.textureId;
+            AetherExBlocks.HolystonePlate.textureId = Holystone.sprNormal;
+            AetherExBlocks.MossyHolystonePlate.textureId = Holystone.sprMossy;
+            AetherExBlocks.CarvedPlate.textureId = DungeonBlock.sprBronze;
+            AetherExBlocks.CarvedLitPlate.textureId = DungeonBlock.sprBronzeLit;
+            AetherExBlocks.AngelicPlate.textureId = DungeonBlock.sprSilver;
+            AetherExBlocks.AngelicLitPlate.textureId = DungeonBlock.sprSilverLit;
+            AetherExBlocks.HellfirePlate.textureId = DungeonBlock.sprGold;
+            AetherExBlocks.HellfireLitPlate.textureId = DungeonBlock.sprGoldLit;
 
-        AetherExBlocks.SkyrootSlab.textureId = AetherBlocks.Plank.textureId;
-        AetherExBlocks.HolystoneSlab.textureId = Holystone.sprNormal;
-        AetherExBlocks.MossyHolystoneSlab.textureId = Holystone.sprMossy;
-        AetherExBlocks.CarvedSlab.textureId = DungeonBlock.sprBronze;
-        AetherExBlocks.CarvedLitSlab.textureId = DungeonBlock.sprBronzeLit;
-        AetherExBlocks.AngelicSlab.textureId = DungeonBlock.sprSilver;
-        AetherExBlocks.AngelicLitSlab.textureId = DungeonBlock.sprSilverLit;
-        AetherExBlocks.HellfireSlab.textureId = DungeonBlock.sprGold;
-        AetherExBlocks.HellfireLitSlab.textureId = DungeonBlock.sprGoldLit;
-        AetherExBlocks.AerogelSlab.textureId = AetherBlocks.Aerogel.textureId;
+            AetherExBlocks.SkyrootSlab.textureId = AetherBlocks.Plank.textureId;
+            AetherExBlocks.HolystoneSlab.textureId = Holystone.sprNormal;
+            AetherExBlocks.MossyHolystoneSlab.textureId = Holystone.sprMossy;
+            AetherExBlocks.CarvedSlab.textureId = DungeonBlock.sprBronze;
+            AetherExBlocks.CarvedLitSlab.textureId = DungeonBlock.sprBronzeLit;
+            AetherExBlocks.AngelicSlab.textureId = DungeonBlock.sprSilver;
+            AetherExBlocks.AngelicLitSlab.textureId = DungeonBlock.sprSilverLit;
+            AetherExBlocks.HellfireSlab.textureId = DungeonBlock.sprGold;
+            AetherExBlocks.HellfireLitSlab.textureId = DungeonBlock.sprGoldLit;
+            AetherExBlocks.AerogelSlab.textureId = AetherBlocks.Aerogel.textureId;
+        }
     }
 
     public static void setItemTextures(ExpandableAtlas items) {
-        Ring = items.addTexture(of(MOD_ID, "item/Ring")).index;
-        CapeTexture = items.addTexture(of(MOD_ID, "item/Cape")).index;
         Shield = items.addTexture(of(MOD_ID, "item/Shield")).index;
         MoaEgg = items.addTexture(of(MOD_ID, "item/MoaEgg")).index;
-        AetherExItems.PurpleCape.setTextureId(CapeTexture);
-        AetherExItems.PinkCape.setTextureId(CapeTexture);
-        AetherExItems.OrangeCape.setTextureId(CapeTexture);
-        AetherExItems.BrownCape.setTextureId(CapeTexture);
-        AetherExItems.LimeCape.setTextureId(CapeTexture);
-        AetherExItems.BlackCape.setTextureId(CapeTexture);
+
+        AetherExItems.PurpleCape.setTextureId(AetherTextures.CapeTexture);
+        AetherExItems.PinkCape.setTextureId(AetherTextures.CapeTexture);
+        AetherExItems.OrangeCape.setTextureId(AetherTextures.CapeTexture);
+        AetherExItems.BrownCape.setTextureId(AetherTextures.CapeTexture);
+        AetherExItems.LimeCape.setTextureId(AetherTextures.CapeTexture);
+        AetherExItems.BlackCape.setTextureId(AetherTextures.CapeTexture);
         AetherExItems.HalloweenCape.setTexture(of(MOD_ID, "item/HalloweenCape"));
-        AetherExItems.SpeedRing.setTextureId(Ring);
+        AetherExItems.SpeedRing.setTextureId(AetherTextures.Ring);
         AetherExItems.ValkyrieRing.setTexture(of(MOD_ID, "item/ValkyrieRing"));
         AetherExItems.HealMatrix.setTexture(of(MOD_ID, "item/HealingMatrix"));
         AetherExItems.FlameGem.setTexture(of(MOD_ID, "item/FlamingGemstone"));
@@ -111,6 +109,7 @@ public class AetherExTextures {
         ItemMoaArmor.GravititeMoaArmor = items.addTexture(of(MOD_ID, "item/GravititeMoaArmor")).index;
         AetherExItems.OrangeMoaEgg.setTextureId(MoaEgg);
         AetherExItems.UnholyArrow.setTexture(of(MOD_ID, "item/UnholyArrow"));
+        //AetherExItems.GoldenLeather.setTexture(of(MOD_ID, "item/GoldenLeather"));
 
         AetherExItems.JebHammer.setTexture(of(MOD_ID, "item/HammerOfJeb"));
         AetherExItems.VileSword.setTexture(of(MOD_ID, "item/VileBlade"));
@@ -127,11 +126,25 @@ public class AetherExTextures {
         AetherExItems.PhoenixPick.setTexture(of(MOD_ID, "item/PhoenixPickaxe"));
         AetherExItems.PhoenixAxe.setTexture(of(MOD_ID, "item/PhoenixAxe"));
         AetherExItems.PhoenixShovel.setTexture(of(MOD_ID, "item/PhoenixShovel"));
-
-        AetherExItems.PhoenixSword.setTexture(of(MOD_ID, "item/PhoenixSword"));
+        //AetherExItems.PhoenixSword.setTexture(of(MOD_ID, "item/PhoenixSword"));
+        AetherExItems.PhoenixSword.setTexture(of(MOD_ID, "item/animations/PhoenixFlameAnim"));
+        ItemPhoenixSword.PhoenixSwordTexture = items.addTexture(of(MOD_ID, "item/PhoenixSword")).index;
+        ItemPhoenixSword.PhoenixAnimTexture = items.addTexture(of(MOD_ID, "item/animations/PhoenixFlameAnim")).index;
         AetherExItems.SentryShield.setTexture(of(MOD_ID, "item/SentryShield"));
         AetherExItems.AerCape.setTexture(of(MOD_ID, "item/AerCape"));
         AetherExItems.UnholySword.setTexture(of(MOD_ID, "item/UnholySword"));
         AetherExItems.UnholyBow.setTexture(of(MOD_ID, "item/UnholyBow"));
+        AetherExItems.ZaniteShears.setTexture(of(MOD_ID, "item/ZaniteShears"));
+        //AetherExItems.ObsidianSword.setTexture(of(MOD_ID, "item/ObsidianSword"));
+
+        //AetherExItems.CloudsDisc.setTexture(of(MOD_ID, "item/discs/DiscClouds"));
+        AetherExItems.LabyrinthDisc.setTexture(of(MOD_ID, "item/discs/DiscLabyrinth"));
+        AetherExItems.ApproachesDisc.setTexture(of(MOD_ID, "item/discs/DiscApproaches"));
+        AetherExItems.CrepusculumDisc.setTexture(of(MOD_ID, "item/discs/DiscCrepusculum"));
+        AetherExItems.BriseDisc.setTexture(of(MOD_ID, "item/discs/DiscBrise"));
+        AetherExItems.AscendingDisc.setTexture(of(MOD_ID, "item/discs/DiscAscending"));
+        AetherExItems.LightNightDisc.setTexture(of(MOD_ID, "item/discs/DiscLightNight"));
     }
+
+
 }

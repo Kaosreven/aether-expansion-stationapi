@@ -11,9 +11,9 @@
     "HijackTreasureChestLootMixin",
     "HijackAetherChestLootMixin",
     "HijackAetherDecorateMixin",
-    "UniTweaksStepAssistMixin",
     "ItemCustomReachImplMixin",
-    "access.LivingEntityExAccessor"
+    "access.LivingEntityExAccessor",
+    "HijackFireMonsterMixin"
   ],
   "server": [
     "server.ServerPlayerEntityMixin"
@@ -21,7 +21,9 @@
   "client": [
     "client.AetherJumpHudMixin",
     "client.HijackAetherAchievementsMixin",
-    "client.ClientPlayerEntity"
+    "client.ClientPlayerEntity",
+    "HijackAetherGuiMixin",
+    "HijackLoreBookMixin"
   ],
   "injectors": {
     "defaultRequire": 1
