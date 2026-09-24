@@ -112,7 +112,7 @@ public class AetherExItems {
         PinkCape = (new ItemCape(Identifier.of(MOD_ID, "pink_cape"), 0, "aetherex:stationapi/textures/other/PinkCape.png", 5, 9705348, false)).setTranslationKey(MOD_ID, "pink_cape");
         OrangeCape = (new ItemCape(Identifier.of(MOD_ID, "orange_cape"), 0, "aetherex:stationapi/textures/other/OrangeCape.png", 5, 13395456, false)).setTranslationKey(MOD_ID, "orange_cape");
         BrownCape = (new ItemCape(Identifier.of(MOD_ID, "brown_cape"), 0, "aetherex:stationapi/textures/other/BrownCape.png", 5, 6237199, false)).setTranslationKey(MOD_ID, "brown_cape");
-        LimeCape = (new ItemCape(Identifier.of(MOD_ID, "lime_cape"), 0, "aetherex:stationapi/textures/other/LimeCape.png", 5, '\ued18', false)).setTranslationKey(MOD_ID, "lime_cape");
+        LimeCape = (new ItemCape(Identifier.of(MOD_ID, "lime_cape"), 0, "aetherex:stationapi/textures/other/GreenCape.png", 5, '\ued18', false)).setTranslationKey(MOD_ID, "lime_cape");
         BlackCape = (new ItemCape(Identifier.of(MOD_ID, "black_cape"), 0, "aetherex:stationapi/textures/other/BlackCape.png", 5, 2562843, false)).setTranslationKey(MOD_ID, "black_cape");
         HalloweenCape = (new ItemCape(Identifier.of(MOD_ID, "halloween_cape"), 0, "aetherex:stationapi/textures/other/HalloweenCape.png", 5)).setTranslationKey(MOD_ID, "halloween_cape");
         SpeedRing = (new ItemMoreArmor(Identifier.of(MOD_ID, "speed_ring"), 0, 0, 8, 2359040)).setTranslationKey(MOD_ID, "speed_ring");
