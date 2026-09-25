@@ -30,7 +30,6 @@ public class AetherExKeybinds {
     public static KeyBinding keyOrangeMoa;
     public static KeyBinding keyFireballMoa;
     public static KeyBinding keySpeedRingToggle;
-    public static KeyBinding keyGainLore;
 
     @EventListener
     public void registerKeyBindings(KeyBindingRegisterEvent event) {

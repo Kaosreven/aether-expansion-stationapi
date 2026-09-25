@@ -74,8 +74,14 @@ public class AetherExItems {
     public static Item LightNightDisc;
     public static Item ZaniteShears;
     public static Item ObsidianSword;
-    public static Item GoldenLeather;
 
+    public static Item GoldenLeather;
+    public static Item PlatinumKey;
+    public static Item VoidStick;
+    public static Item AetherialHelmet;
+    public static Item AetherialChestplate;
+    public static Item AetherialLeggings;
+    public static Item AetherialBoots;
 
     public static final ToolMaterial MineFistTool = ToolMaterialFactory.create("MineFist", 3, 3000, 10.0F, 2);
     public static final ToolMaterial JebHammerTool = ToolMaterialFactory.create("JebHammer", 3, 2000, 12.0F, 2);
@@ -158,6 +164,10 @@ public class AetherExItems {
 
         if (AetherExConfig.CONFIG.EnableNewContent) {
             GoldenLeather = (new TemplateItem(Identifier.of(MOD_ID, "golden_leather"))).setTranslationKey(MOD_ID, "golden_leather");
+            AetherialHelmet = new PlatinumArmorItem(Identifier.of(MOD_ID, "aetherial_helmet"), 2, 0).setTranslationKey(MOD_ID, "aetherial_helmet");
+            AetherialChestplate = new PlatinumArmorItem(Identifier.of(MOD_ID, "aetherial_chestplate"), 2, 1).setTranslationKey(MOD_ID, "aetherial_chestplate");
+            AetherialLeggings = new PlatinumArmorItem(Identifier.of(MOD_ID, "aetherial_leggings"), 2, 2).setTranslationKey(MOD_ID, "aetherial_leggings");
+            AetherialBoots = new PlatinumArmorItem(Identifier.of(MOD_ID, "aetherial_boots"), 2, 3).setTranslationKey(MOD_ID, "aetherial_boots");
         }
     }
 }

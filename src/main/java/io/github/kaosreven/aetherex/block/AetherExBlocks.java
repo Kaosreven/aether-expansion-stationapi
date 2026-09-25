@@ -63,6 +63,11 @@ public class AetherExBlocks {
     public static Block AngelicWall;
     public static Block HellfireWall;
 
+    public static Block DungeonStone;
+    public static Block LightDungeonStone;
+    public static Block LockedDungeonStone;
+    public static Block LockedLightDungeonStone;
+
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
         VoidWood = (new VoidLog(Identifier.of(MOD_ID, "void_log"))).setHardness(2.0F).setSoundGroup(Block.WOOD_SOUND_GROUP).setTranslationKey(MOD_ID, "void_log");
@@ -113,7 +118,10 @@ public class AetherExBlocks {
         }
 
         if (AetherExConfig.CONFIG.EnableNewContent) {
-
+            DungeonStone = (new AetherExDungeonBlock(Identifier.of(MOD_ID, "dungeon_stone"))).setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP).setTranslationKey(MOD_ID, "dungeon_stone");
+            LightDungeonStone = (new AetherExDungeonBlock(Identifier.of(MOD_ID, "light_dungeon_stone"))).setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP).setLuminance(0.75F).setTranslationKey(MOD_ID, "light_dungeon_stone");
+            LockedDungeonStone = (new AetherExDungeonBlock(Identifier.of(MOD_ID, "locked_dungeon_stone"))).setHardness(-1.0F).setResistance(1000000.0F).setSoundGroup(Block.STONE_SOUND_GROUP).setTranslationKey(MOD_ID, "locked_dungeon_stone");
+            LockedLightDungeonStone = (new AetherExDungeonBlock(Identifier.of(MOD_ID, "light_locked_dungeon_stone"))).setHardness(-1.0F).setResistance(1000000.0F).setSoundGroup(Block.STONE_SOUND_GROUP).setLuminance(0.5F).setTranslationKey(MOD_ID, "light_locked_dungeon_stone");
         }
     }
 }

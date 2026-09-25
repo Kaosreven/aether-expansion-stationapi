@@ -14,8 +14,8 @@ public class AetherExChunkListener {
 
     public void populateAether (WorldGenEvent.ChunkDecoration event) {
         int x = event.x + event.random.nextInt(16);
-        int y = event.random.nextInt(64) + 32;
+        //int y = event.random.nextInt(64) + 32;
         int z = event.z + event.random.nextInt(16);
-        (new VoidTreeNewFeature()).generate(event.world, event.random, x, y, z);
+        (new VoidTreeNewFeature()).generate(event.world, event.random, x, 0, z);
     }
 }

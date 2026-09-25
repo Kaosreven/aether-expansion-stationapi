@@ -71,7 +71,8 @@ public class AetherExTextures {
         }
 
         if (AetherExConfig.CONFIG.EnableNewContent) {
-
+            AetherExDungeonBlock.sprPlatinum = terrain.addTexture(of(MOD_ID, "block/AetherialStone")).index;
+            AetherExDungeonBlock.sprPlatinumLit = terrain.addTexture(of(MOD_ID, "block/animations/LightAetherialStone")).index;
         }
     }
 

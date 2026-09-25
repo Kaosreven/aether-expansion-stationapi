@@ -1,22 +1,18 @@
 package io.github.kaosreven.aetherex.block;
 
-import io.github.kaosreven.aetherex.blockentity.block.BlockEntityLoreBookshelf;
 import io.github.kaosreven.aetherex.client.gui.GuiLoreBookshelf;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
-import net.modificationstation.stationapi.api.template.block.TemplateBlockWithEntity;
+import net.modificationstation.stationapi.api.template.block.TemplateBlock;
 import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.SideUtil;
 
-public class LoreBookshelf extends TemplateBlockWithEntity {
+public class LoreBookshelf extends TemplateBlock {
     public static int topTexture;
     public static int sideTexture;
 
@@ -39,11 +35,6 @@ public class LoreBookshelf extends TemplateBlockWithEntity {
             SideUtil.run(() -> useLoreClient(player), () -> useLoreServer(player));
         }
         return true;
-    }
-
-    @Override
-    protected BlockEntity createBlockEntity() {
-        return new BlockEntityLoreBookshelf();
     }
 
     @Environment(EnvType.SERVER)
