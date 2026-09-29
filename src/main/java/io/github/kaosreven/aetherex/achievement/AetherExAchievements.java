@@ -49,36 +49,15 @@ public class AetherExAchievements {
         secondChance = create("secondChance", AetherExItems.ResurrectionPendant, 0, 2, null);
         knowledge = create("knowledge", AetherExBlocks.BookshelfOfLore.asItem(), 0, -2, null);
 
-        AchievementTemplate.onConstructor(evolution, NAMESPACE.id("evolution"));
-        AchievementTemplate.onConstructor(pimpMoa, NAMESPACE.id("pimpMoa"));
-        AchievementTemplate.onConstructor(secondChance, NAMESPACE.id("secondChance"));
-        AchievementTemplate.onConstructor(knowledge, NAMESPACE.id("knowledge"));
-        acOff = 900;
-
         achievementPage = new AetherExAchievementPage(NAMESPACE.id("aetherex"));
         event.achievements.addAll(AetherExAchievements.ACHIEVEMENTS);
         achievementPage.addAchievements(AetherExAchievements.ACHIEVEMENTS.toArray(Achievement[]::new));
     }
 
     public Achievement create(String name, Item icon, int x, int y, Achievement parent){
-        Achievement achievement = new Achievement(acOff, "aetherex." + name, x, y, new ItemStack(icon), parent);
-        ACHIEVEMENTS.add(achievement);
-        acOff++;
-        return achievement;
-    }
-
-    /*
-    public static Achievement create(String name, Item icon, int x, int y, Achievement parent){
-        Achievement achievement = new TemplateAchievement(NAMESPACE.id(name), "aetherex." + name, x, y, new ItemStack(icon), parent);
+        Achievement achievement = new Achievement(acOff++, "aetherex." + name, x, y, new ItemStack(icon), parent);
+        AchievementTemplate.onConstructor(achievement, NAMESPACE.id(name));
         ACHIEVEMENTS.add(achievement);
         return achievement;
     }
-
-
-    public static Achievement create(String name, Block icon, int x, int y, Achievement parent){
-        Achievement achievement = new TemplateAchievement(NAMESPACE.id(name), "aetherex." + name, x, y, new ItemStack(icon), parent);
-        ACHIEVEMENTS.add(achievement);
-        return achievement;
-    }
-     */
 }

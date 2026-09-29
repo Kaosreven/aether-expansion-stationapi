@@ -87,11 +87,10 @@ public class SlabBlockTemplate extends TemplateBlock {
         ArrayList<ItemStack> drops = new ArrayList<>();
         if (state.get(SLAB_TYPE) == SlabType.DOUBLE) {
             drops.add(new ItemStack(this, 2));
-            return drops;
         } else {
             drops.add(new ItemStack(this, 1));
-            return drops;
         }
+        return drops;
     }
 
     @Override

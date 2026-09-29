@@ -1,6 +1,5 @@
 package io.github.kaosreven.aetherex.block;
 
-import com.matthewperiut.aether.block.AetherBlocks;
 import net.minecraft.block.material.Material;
 import net.modificationstation.stationapi.api.block.MetaNamedBlockItemProvider;
 import net.modificationstation.stationapi.api.template.block.TemplateBlock;
@@ -14,6 +13,7 @@ public class AetherExDungeonBlock extends TemplateBlock implements MetaNamedBloc
         super(identifier, Material.STONE);
     }
 
+    @Override
     public int getTexture(int i, int j) {
         return this.isLit() ? sprPlatinumLit : sprPlatinum;
     }

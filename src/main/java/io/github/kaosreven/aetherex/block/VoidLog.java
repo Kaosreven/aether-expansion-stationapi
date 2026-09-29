@@ -12,7 +12,6 @@ import net.modificationstation.stationapi.api.util.Identifier;
 import java.util.Random;
 
 public class VoidLog extends TemplateBlock {
-    private static final Random rand = new Random();
     public static int sprTop;
     public static int sprSide;
 

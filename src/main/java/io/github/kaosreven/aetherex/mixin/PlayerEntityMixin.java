@@ -30,7 +30,6 @@ import static io.github.kaosreven.aetherex.item.accessory.ItemLuckyPendant.*;
 import static io.github.kaosreven.aetherex.item.accessory.ItemSentryShield.*;
 import static io.github.kaosreven.aetherex.item.tool.ItemHealingStaff.*;
 import static io.github.kaosreven.aetherex.item.tool.ItemMineFist.*;
-import static io.github.kaosreven.aetherex.item.tool.ItemObsidianSword.*;
 import static io.github.kaosreven.aetherex.item.tool.ItemPhoenixSword.*;
 import static io.github.kaosreven.aetherex.item.tool.ItemUnholyBow.*;
 import static io.github.kaosreven.aetherex.item.tool.ItemUnholySword.*;
@@ -102,17 +101,17 @@ public abstract class PlayerEntityMixin {
         } else if (!mineReady) {
             ++mineTick;
         }
-        if(((unholyBowTick * 0x66666667L) >> 35) == 1) {
+        if((unholyBowTick / 20) == 1) {
             unholyBowReady = true;
         } else {
             ++unholyBowTick;
         }
-        if(((unholySwordTick * 0x88888889L) >> 37) == 1) {
+        if((unholySwordTick / 60) == 1) {
             unholySwordReady = true;
         } else {
             ++unholySwordTick;
         }
-        if(((phoenixSwordTick * 0x88888889L) >> 37) == 1) {
+        if((phoenixSwordTick / 60) == 1) {
             phoenixSwordReady = true;
         } else {
             ++phoenixSwordTick;
