@@ -77,7 +77,8 @@ public class ItemHealingStaff extends TemplateFoodItem implements CustomReachPro
     }
      */
 
-    public int getHealAmount() {
+    @Override
+    public int getHealthRestored() {
         return this.healAmount;
     }
 }
