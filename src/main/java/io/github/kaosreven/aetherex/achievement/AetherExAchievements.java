@@ -10,6 +10,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.modificationstation.stationapi.api.event.achievement.AchievementRegisterEvent;
+import net.modificationstation.stationapi.api.event.container.slot.ItemUsedInCraftingEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.template.achievement.AchievementTemplate;
 import net.modificationstation.stationapi.api.util.Namespace;
@@ -52,6 +53,11 @@ public class AetherExAchievements {
         achievementPage = new AetherExAchievementPage(NAMESPACE.id("aetherex"));
         event.achievements.addAll(AetherExAchievements.ACHIEVEMENTS);
         achievementPage.addAchievements(AetherExAchievements.ACHIEVEMENTS.toArray(Achievement[]::new));
+    }
+
+    @EventListener
+    public static void itemCrafted(ItemUsedInCraftingEvent event) {
+        //Item crafted = event.itemCrafted.getItem();
     }
 
     public Achievement create(String name, Item icon, int x, int y, Achievement parent){

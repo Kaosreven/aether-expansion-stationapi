@@ -46,7 +46,7 @@ tile.@.hellfire_wall.name=Hellfire Wall
 tile.@.hellfire_lit_wall.name=Hellfire Light Wall
 
 tile.@.holystone_furnace.name=Holystone Furnace
-tile.@.holystone_furnace_lit.name=Holystone Furnace
+tile.@.skyroot_sign.name=Skyroot Sign
 
 # Items
 ## Accessories

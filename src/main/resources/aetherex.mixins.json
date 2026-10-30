@@ -12,7 +12,9 @@
     "HijackAetherChestLootMixin",
     "ItemCustomReachImplMixin",
     "access.LivingEntityExAccessor",
-    "HijackFireMonsterMixin"
+    "HijackFireMonsterMixin",
+    "access.FurnaceBlockAccessor",
+    "FurnaceBlockMixin"
   ],
   "server": [
     "server.ServerPlayerEntityMixin"
@@ -21,7 +23,10 @@
     "client.AetherJumpHudMixin",
     "client.ClientPlayerEntity",
     "HijackAetherGuiMixin",
-    "HijackLoreBookMixin"
+    "HijackLoreBookMixin",
+    "client.SignBlockEntityRendererMixin",
+    "client.SignEditScreenMixin",
+    "client.CraftingScreenHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -28,6 +28,7 @@
   "icon": "assets/${mod_id}/icon.png",
 
   "environment": "*",
+  "accessWidener": "${mod_id}.accessWidener",
   "entrypoints": {
     "main": [
       "${maven_group}.${mod_id}.events.AetherEx"
@@ -49,6 +50,9 @@
       "${maven_group}.${mod_id}.client.entity.AetherExEntityRenderers"
     ],
     "stationapi:event_bus_server": [
+    ],
+    "alwaysmoreitems:plugin": [
+      "${maven_group}.${mod_id}.optional.AetherExAMICompat"
     ],
     "bhcreative:event_bus": [
       "${maven_group}.${mod_id}.optional.AetherExCreativeListener"

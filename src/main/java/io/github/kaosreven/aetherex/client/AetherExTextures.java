@@ -29,6 +29,8 @@ public class AetherExTextures {
     public static Namespace MOD_ID = Null.get();
     public static int Shield;
     public static int MoaEgg;
+    public static int SkyrootLadder;
+    public static int VoidLadder;
 
     @EventListener
     public static void registerTextures(TextureRegisterEvent event) {
@@ -73,6 +75,19 @@ public class AetherExTextures {
         if (AetherExConfig.CONFIG.EnableNewContent) {
             AetherExDungeonBlock.sprPlatinum = terrain.addTexture(of(MOD_ID, "block/AetherialStone")).index;
             AetherExDungeonBlock.sprPlatinumLit = terrain.addTexture(of(MOD_ID, "block/animations/LightAetherialStone")).index;
+            AetherExBlocks.Plank.textureId = terrain.addTexture(of(MOD_ID, "block/Plank")).index;
+            AetherExBlocks.SkyrootWallSign.textureId = AetherExBlocks.SkyrootSign.textureId = AetherBlocks.Plank.textureId;
+            AetherExBlocks.HolystoneFurnace.textureId = AetherExBlocks.HolystoneFurnaceLit.textureId = terrain.addTexture(of(MOD_ID, "block/HolystoneFurnaceSide")).index;
+            HolystoneFurnaceBlock.furnaceFront = terrain.addTexture(of(MOD_ID, "block/HolystoneFurnaceFront")).index;
+            HolystoneFurnaceBlock.furnaceFrontLit = terrain.addTexture(of(MOD_ID, "block/HolystoneFurnaceFrontOn")).index;
+            HolystoneFurnaceBlock.furnaceTop = terrain.addTexture(of(MOD_ID, "block/HolystoneFurnaceTB")).index;
+            VoidWorkbenchBlock.bottomTexture = terrain.addTexture(of(MOD_ID, "block/VoidWorkbenchBottom")).index;
+            VoidWorkbenchBlock.topTexture = terrain.addTexture(of(MOD_ID, "block/VoidWorkbenchTop")).index;
+            VoidWorkbenchBlock.sideTexture = terrain.addTexture(of(MOD_ID, "block/VoidWorkbenchSide")).index;
+            SkyrootWorkbenchBlock.bottomTexture = terrain.addTexture(of(MOD_ID, "block/SkyrootWorkbenchBottom")).index;
+            SkyrootWorkbenchBlock.topTexture = terrain.addTexture(of(MOD_ID, "block/SkyrootWorkbenchTop")).index;
+            SkyrootWorkbenchBlock.sideTexture = terrain.addTexture(of(MOD_ID, "block/SkyrootWorkbenchSide")).index;
+            AetherExBlocks.SkyrootLadder.textureId = SkyrootLadder = terrain.addTexture(of(MOD_ID, "block/SkyrootLadder")).index;
         }
     }
 
@@ -152,6 +167,8 @@ public class AetherExTextures {
 
         if (AetherExConfig.CONFIG.EnableNewContent) {
             AetherExItems.GoldenLeather.setTexture(of(MOD_ID, "item/GoldenLeather"));
+            AetherExItems.SkyrootSign.setTexture(of(MOD_ID, "item/SkyrootSign"));
+            AetherExBlocks.SkyrootLadder.asItem().setTextureId(SkyrootLadder);
         }
     }
 

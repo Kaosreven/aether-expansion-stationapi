@@ -1,2 +1,3 @@
 accessWidener v2 named
 accessible field net/minecraft/entity/LivingEntity jumping Z
+accessible field net/minecraft/client/render/block/BlockRenderManager flipTextureHorizontally Z

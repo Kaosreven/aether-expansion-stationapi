@@ -1,11 +1,13 @@
 package io.github.kaosreven.aetherex.item;
 
 import com.matthewperiut.aether.item.accessory.ItemMoreArmor;
+import io.github.kaosreven.aetherex.block.AetherExBlocks;
 import io.github.kaosreven.aetherex.item.accessory.*;
 import io.github.kaosreven.aetherex.item.misc.*;
 import io.github.kaosreven.aetherex.item.tool.*;
 import io.github.kaosreven.aetherex.optional.AetherExConfig;
 import net.mine_diver.unsafeevents.listener.EventListener;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
@@ -82,6 +84,8 @@ public class AetherExItems {
     public static Item AetherialChestplate;
     public static Item AetherialLeggings;
     public static Item AetherialBoots;
+    public static Item SkyrootSign;
+    public static Item SkyrootDoor;
 
     public static final ToolMaterial MineFistTool = ToolMaterialFactory.create("MineFist", 3, 3000, 10.0F, 2);
     public static final ToolMaterial JebHammerTool = ToolMaterialFactory.create("JebHammer", 3, 2000, 12.0F, 2);
@@ -96,8 +100,7 @@ public class AetherExItems {
     //TODO: Orange moa stuff
     //TODO: Make moa staff entity
     //TODO: Reimplement Zanite Shears more thoroughly as just TemplateShearsItem is lackluster
-    //TODO: Redraw inventory gui to AccessoryAPI format to restrain myself from mixin cancelling AccessoryAPI draw calls
-    //TODO: restore particles for freezer and enchanter
+    //TODO: Get cal to do AccessoryAPI replacement because i ain't bending to nonsense of AccessoryAPI inventory
 
 
     @EventListener
@@ -168,6 +171,8 @@ public class AetherExItems {
             AetherialChestplate = new PlatinumArmorItem(Identifier.of(MOD_ID, "aetherial_chestplate"), 2, 1).setTranslationKey(MOD_ID, "aetherial_chestplate");
             AetherialLeggings = new PlatinumArmorItem(Identifier.of(MOD_ID, "aetherial_leggings"), 2, 2).setTranslationKey(MOD_ID, "aetherial_leggings");
             AetherialBoots = new PlatinumArmorItem(Identifier.of(MOD_ID, "aetherial_boots"), 2, 3).setTranslationKey(MOD_ID, "aetherial_boots");
+            SkyrootSign = (new SkyrootSignItem(Identifier.of(MOD_ID, "skyroot_sign"))).setTranslationKey(MOD_ID, "skyroot_sign");
+            //SkyrootDoor = new DoorItem(Identifier.of(MOD_ID, "skyroot_door"), AetherExBlocks.SkyrootDoor.id).setTranslationKey(Identifier.of(MOD_ID, "skyroot_door"));
         }
     }
 }

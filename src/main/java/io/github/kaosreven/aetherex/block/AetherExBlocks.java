@@ -2,6 +2,7 @@ package io.github.kaosreven.aetherex.block;
 
 import com.slainlight.stonewall.block.WallBlock;
 import io.github.kaosreven.aetherex.block.template.*;
+import io.github.kaosreven.aetherex.client.AetherExTextures;
 import io.github.kaosreven.aetherex.optional.AetherExConfig;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
@@ -9,6 +10,9 @@ import net.minecraft.block.PressurePlateActivationRule;
 import net.minecraft.block.material.Material;
 import net.modificationstation.stationapi.api.event.registry.BlockRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
+import net.modificationstation.stationapi.api.template.block.TemplateBlock;
+import net.modificationstation.stationapi.api.template.block.TemplateDoorBlock;
+import net.modificationstation.stationapi.api.template.block.TemplateLadderBlock;
 import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
@@ -67,6 +71,16 @@ public class AetherExBlocks {
     public static Block LightDungeonStone;
     public static Block LockedDungeonStone;
     public static Block LockedLightDungeonStone;
+    public static Block Plank;
+    public static Block SkyrootSign;
+    public static Block SkyrootWallSign;
+    public static Block SkyrootDoor;
+    public static Block HolystoneFurnace;
+    public static Block HolystoneFurnaceLit;
+    public static Block SkyrootWorkbench;
+    public static Block VoidWorkbench;
+    public static Block SkyrootLadder;
+    public static Block VoidLadder;
 
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
@@ -122,6 +136,15 @@ public class AetherExBlocks {
             LightDungeonStone = (new AetherExDungeonBlock(Identifier.of(MOD_ID, "light_dungeon_stone"))).setHardness(0.5F).setSoundGroup(Block.STONE_SOUND_GROUP).setLuminance(0.75F).setTranslationKey(MOD_ID, "light_dungeon_stone");
             LockedDungeonStone = (new AetherExDungeonBlock(Identifier.of(MOD_ID, "locked_dungeon_stone"))).setHardness(-1.0F).setResistance(1000000.0F).setSoundGroup(Block.STONE_SOUND_GROUP).setTranslationKey(MOD_ID, "locked_dungeon_stone");
             LockedLightDungeonStone = (new AetherExDungeonBlock(Identifier.of(MOD_ID, "light_locked_dungeon_stone"))).setHardness(-1.0F).setResistance(1000000.0F).setSoundGroup(Block.STONE_SOUND_GROUP).setLuminance(0.5F).setTranslationKey(MOD_ID, "light_locked_dungeon_stone");
+            Plank = (new TemplateBlock(Identifier.of(MOD_ID, "void_planks"), Material.WOOD)).setHardness(2.0F).setResistance(5.0F).setSoundGroup(Block.WOOD_SOUND_GROUP).setTranslationKey(MOD_ID, "void_planks");
+            SkyrootSign = (new SkyrootSign(Identifier.of(MOD_ID, "skyroot_sign_unobtainable"), true)).setTranslationKey(MOD_ID, "skyroot_sign");
+            SkyrootWallSign = (new SkyrootSign(Identifier.of(MOD_ID, "skyroot_wall_sign"), false)).setTranslationKey(MOD_ID, "skyroot_sign");
+            HolystoneFurnace = (new HolystoneFurnaceBlock(Identifier.of(MOD_ID, "holystone_furnace"), false)).setTranslationKey(MOD_ID, "holystone_furnace");
+            HolystoneFurnaceLit = (new HolystoneFurnaceBlock(Identifier.of(MOD_ID, "holystone_furnace_lit"), true)).setLuminance(0.9375F).setTranslationKey(MOD_ID, "holystone_furnace");
+            SkyrootWorkbench = (new SkyrootWorkbenchBlock(Identifier.of(MOD_ID, "skyroot_workbench"))).setTranslationKey(MOD_ID, "skyroot_workbench");
+            VoidWorkbench = (new VoidWorkbenchBlock(Identifier.of(MOD_ID, "void_workbench"))).setTranslationKey(MOD_ID, "void_workbench");
+            SkyrootLadder = (new TemplateLadderBlock(Identifier.of(MOD_ID, "skyroot_ladder"), AetherExTextures.SkyrootLadder)).setSoundGroup(Block.WOOD_SOUND_GROUP).setHardness(2.0F).setResistance(5.0F).setTranslationKey(MOD_ID, "skyroot_ladder");
+            //SkyrootDoor = (AetherExDoorBlock) (new AetherExWoodDoorBlock(Identifier.of(MOD_ID, "skyroot_door_block"), Material.WOOD, Identifier.of(MOD_ID, "skyroot_door"))).setHardness(2.0F).setResistance(5.0F).setSoundGroup(Block.WOOD_SOUND_GROUP).setTranslationKey(MOD_ID, "skyroot_door_block");
         }
     }
 }
