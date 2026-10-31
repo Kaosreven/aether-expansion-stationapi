@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.client.gui;
 
-import com.matthewperiut.aether.client.gui.GuiIncubator;
+import io.github.kaosreven.aether.client.gui.GuiIncubator;
 import io.github.kaosreven.aetherex.blockentity.block.BlockEntityAdvancedIncubator;
 import net.minecraft.entity.player.PlayerInventory;
 

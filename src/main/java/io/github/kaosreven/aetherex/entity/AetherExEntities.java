@@ -1,6 +1,5 @@
 package io.github.kaosreven.aetherex.entity;
 
-import com.matthewperiut.aether.entity.living.EntityMoa;
 import io.github.kaosreven.aetherex.entity.projectile.*;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.modificationstation.stationapi.api.event.entity.EntityRegisterEvent;

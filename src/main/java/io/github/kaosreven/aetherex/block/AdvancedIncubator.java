@@ -1,7 +1,7 @@
 package io.github.kaosreven.aetherex.block;
 
-import com.matthewperiut.aether.block.Incubator;
-import com.matthewperiut.aether.blockentity.container.ContainerIncubator;
+import io.github.kaosreven.aether.block.Incubator;
+import io.github.kaosreven.aether.blockentity.container.ContainerIncubator;
 import io.github.kaosreven.aetherex.blockentity.block.BlockEntityAdvancedIncubator;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;

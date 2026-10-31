@@ -1,8 +1,8 @@
 package io.github.kaosreven.aetherex.util;
 
-import com.matthewperiut.aether.entity.living.EntityFlyingCow;
-import com.matthewperiut.aether.entity.living.EntityMoa;
-import com.matthewperiut.aether.entity.living.EntityPhyg;
+import io.github.kaosreven.aether.entity.living.EntityFlyingCow;
+import io.github.kaosreven.aether.entity.living.EntityMoa;
+import io.github.kaosreven.aether.entity.living.EntityPhyg;
 import com.periut.accessoryapi.api.helper.AccessoryAccess;
 import io.github.kaosreven.aetherex.entity.EntityOrangeMoa;
 import io.github.kaosreven.aetherex.item.AetherExItems;

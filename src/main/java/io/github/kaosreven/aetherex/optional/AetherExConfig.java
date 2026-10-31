@@ -2,6 +2,9 @@ package io.github.kaosreven.aetherex.optional;
 
 import net.glasslauncher.mods.gcapi3.api.ConfigEntry;
 import net.glasslauncher.mods.gcapi3.api.ConfigRoot;
+import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
+import net.modificationstation.stationapi.api.util.Namespace;
+import net.modificationstation.stationapi.api.util.Null;
 
 public class AetherExConfig {
     public static class AetherExConfigInit {

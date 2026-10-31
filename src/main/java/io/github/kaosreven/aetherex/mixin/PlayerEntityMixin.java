@@ -1,9 +1,9 @@
 package io.github.kaosreven.aetherex.mixin;
 
-import com.matthewperiut.aether.block.AetherBlocks;
-import com.matthewperiut.aether.entity.living.EntityFireMonster;
-import com.matthewperiut.aether.entity.living.EntitySlider;
-import com.matthewperiut.aether.entity.living.EntityValkyrie;
+import io.github.kaosreven.aether.block.AetherBlocks;
+import io.github.kaosreven.aether.entity.living.EntityFireMonster;
+import io.github.kaosreven.aether.entity.living.EntitySlider;
+import io.github.kaosreven.aether.entity.living.EntityValkyrie;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import io.github.kaosreven.aetherex.util.AccessoryUtils;
 import io.github.kaosreven.aetherex.util.Aerplosion;

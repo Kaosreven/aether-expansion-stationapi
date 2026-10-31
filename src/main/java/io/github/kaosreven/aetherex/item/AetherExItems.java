@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.item;
 
-import com.matthewperiut.aether.item.accessory.ItemMoreArmor;
+import io.github.kaosreven.aether.item.accessory.ItemMoreArmor;
 import io.github.kaosreven.aetherex.block.AetherExBlocks;
 import io.github.kaosreven.aetherex.item.accessory.*;
 import io.github.kaosreven.aetherex.item.misc.*;
@@ -20,7 +20,7 @@ import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
 
-import static com.matthewperiut.aether.util.MoaColor.getColour;
+import static io.github.kaosreven.aether.util.MoaColor.getColour;
 
 public class AetherExItems {
     @Entrypoint.Namespace

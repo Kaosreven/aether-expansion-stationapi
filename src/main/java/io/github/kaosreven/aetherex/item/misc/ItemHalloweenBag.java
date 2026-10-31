@@ -1,7 +1,7 @@
 package io.github.kaosreven.aetherex.item.misc;
 
-import com.matthewperiut.aether.block.AetherBlocks;
-import com.matthewperiut.aether.item.AetherItems;
+import io.github.kaosreven.aether.block.AetherBlocks;
+import io.github.kaosreven.aether.item.AetherItems;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;

@@ -1,7 +1,7 @@
 package io.github.kaosreven.aetherex.client.entity;
 
 
-import com.matthewperiut.aether.client.entity.model.ModelMoa;
+import io.github.kaosreven.aether.client.entity.model.ModelMoa;
 import io.github.kaosreven.aetherex.client.entity.renderer.living.RenderOrangeMoa;
 import io.github.kaosreven.aetherex.client.entity.renderer.projectile.RenderUnholyArrow;
 import io.github.kaosreven.aetherex.client.entity.renderer.projectile.RenderUnholySwordDart;

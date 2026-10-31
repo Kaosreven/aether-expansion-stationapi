@@ -1,8 +1,8 @@
 package io.github.kaosreven.aetherex.mixin;
 
 
-import com.matthewperiut.aether.block.AetherBlocks;
-import com.matthewperiut.aether.entity.living.EntityFireMonster;
+import io.github.kaosreven.aether.block.AetherBlocks;
+import io.github.kaosreven.aether.entity.living.EntityFireMonster;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import static com.matthewperiut.aether.achievement.AetherAchievements.defeatGold;
+import static io.github.kaosreven.aether.achievement.AetherAchievements.defeatGold;
 
 @Mixin(EntityFireMonster.class)
 public abstract class HijackFireMonsterMixin {

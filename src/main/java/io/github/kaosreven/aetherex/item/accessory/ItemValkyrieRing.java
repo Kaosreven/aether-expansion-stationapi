@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.item.accessory;
 
-import com.matthewperiut.aether.item.accessory.ItemMoreArmor;
+import io.github.kaosreven.aether.item.accessory.ItemMoreArmor;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.HitResultType;

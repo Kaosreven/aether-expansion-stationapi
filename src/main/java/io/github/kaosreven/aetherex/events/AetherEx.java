@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.events;
 
-import com.matthewperiut.aether.blockentity.block.BlockEntityEnchanter;
+import io.github.kaosreven.aether.blockentity.block.BlockEntityEnchanter;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import io.github.kaosreven.aetherex.optional.AetherExConfig;
 import net.fabricmc.api.EnvType;
@@ -10,13 +10,15 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.modificationstation.stationapi.api.recipe.CraftingRegistry;
-import org.apache.logging.log4j.LogManager;
+import net.modificationstation.stationapi.api.util.Namespace;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Calendar;
 
 public class AetherEx implements ModInitializer {
-    public static Logger LOGGER = LogManager.getLogger("AetherEx");
+    @SuppressWarnings("UnstableApiUsage")
+    public static final Namespace NAMESPACE = Namespace.resolve();
+    public static final Logger LOGGER = NAMESPACE.getLogger("AetherEx");
     public static boolean isHal;
     public static boolean speedRingToggle = true;
     public static boolean shieldToggle = true;

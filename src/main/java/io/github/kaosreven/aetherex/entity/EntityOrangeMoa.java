@@ -1,10 +1,9 @@
 package io.github.kaosreven.aetherex.entity;
 
-import com.matthewperiut.aether.block.UtilSkyroot;
-import com.matthewperiut.aether.entity.MountInput;
-import com.matthewperiut.aether.entity.living.EntityAetherAnimal;
-import com.matthewperiut.aether.item.AetherItems;
-import com.matthewperiut.aether.mixin.access.EntityAccessor;
+import io.github.kaosreven.aether.entity.MountInput;
+import io.github.kaosreven.aether.entity.living.EntityAetherAnimal;
+import io.github.kaosreven.aether.item.AetherItems;
+import io.github.kaosreven.aether.mixin.access.EntityAccessor;
 import io.github.kaosreven.aetherex.achievement.AetherExAchievements;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import net.minecraft.entity.Entity;
@@ -19,7 +18,7 @@ import net.modificationstation.stationapi.api.util.Identifier;
 
 import java.util.HashMap;
 
-import static com.matthewperiut.aether.entity.AetherEntities.MOD_ID;
+import static io.github.kaosreven.aetherex.entity.AetherExEntities.MOD_ID;
 
 public class EntityOrangeMoa extends EntityAetherAnimal implements MobSpawnDataProvider, MountInput {
     private float mountForward;
@@ -460,8 +459,7 @@ public class EntityOrangeMoa extends EntityAetherAnimal implements MobSpawnDataP
     }
 
     protected void dropItems() {
-        boolean skyrootSword = UtilSkyroot.sword(world.getClosestPlayer(x, y, z, 10));
-        this.dropItem(Item.FEATHER.id, 3 * (skyrootSword ? 2 : 1));
+        this.dropItem(Item.FEATHER.id, 3 * 1);
     }
 
     public String getTexture(boolean saddled) {

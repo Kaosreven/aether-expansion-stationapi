@@ -1,9 +1,9 @@
 package io.github.kaosreven.aetherex.mixin;
 
-import com.matthewperiut.aether.blockentity.block.BlockEntityEnchanter;
-import com.matthewperiut.aether.blockentity.block.BlockEntityFreezer;
-import com.matthewperiut.aether.blockentity.block.BlockEntityIncubator;
-import com.matthewperiut.aether.client.gui.AetherGuis;
+import io.github.kaosreven.aether.blockentity.block.BlockEntityEnchanter;
+import io.github.kaosreven.aether.blockentity.block.BlockEntityFreezer;
+import io.github.kaosreven.aether.blockentity.block.BlockEntityIncubator;
+import io.github.kaosreven.aether.client.gui.AetherGuis;
 import io.github.kaosreven.aetherex.client.gui.GuiEnchanterAlt;
 import io.github.kaosreven.aetherex.client.gui.GuiFreezerAlt;
 import io.github.kaosreven.aetherex.client.gui.GuiIncubatorAlt;

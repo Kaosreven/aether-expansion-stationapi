@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.item.tool;
 
-import com.matthewperiut.aether.block.AetherBlocks;
+import io.github.kaosreven.aether.block.AetherBlocks;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import io.github.kaosreven.aetherex.util.AccessoryUtils;
 import net.fabricmc.api.EnvType;

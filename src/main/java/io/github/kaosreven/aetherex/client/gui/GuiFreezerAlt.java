@@ -1,7 +1,7 @@
 package io.github.kaosreven.aetherex.client.gui;
 
-import com.matthewperiut.aether.blockentity.block.BlockEntityFreezer;
-import com.matthewperiut.aether.blockentity.container.ContainerFreezer;
+import io.github.kaosreven.aether.blockentity.block.BlockEntityFreezer;
+import io.github.kaosreven.aether.blockentity.container.ContainerFreezer;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import org.lwjgl.opengl.GL11;

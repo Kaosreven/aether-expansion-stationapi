@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.events;
 
-import com.matthewperiut.aether.gen.dim.AetherDimension;
+import io.github.kaosreven.aether.gen.dim.AetherDimension;
 import io.github.kaosreven.aetherex.world.gen.feature.VoidTreeNewFeature;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.modificationstation.stationapi.api.event.world.gen.WorldGenEvent;

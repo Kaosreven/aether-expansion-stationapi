@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.entity.projectile;
 
-import com.matthewperiut.aether.entity.projectile.EntityFiroBall;
+import io.github.kaosreven.aether.entity.projectile.EntityFiroBall;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.Vec3d;

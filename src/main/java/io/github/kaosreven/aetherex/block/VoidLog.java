@@ -1,7 +1,6 @@
 package io.github.kaosreven.aetherex.block;
 
-import com.matthewperiut.aether.block.AetherBlocks;
-import com.matthewperiut.aether.block.UtilSkyroot;
+import io.github.kaosreven.aether.block.AetherBlocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -42,9 +41,6 @@ public class VoidLog extends TemplateBlock {
             PlayerEntity player = world.getClosestPlayer(x,y,z,16.F);
 
             if (player != null) {
-                if (UtilSkyroot.axe(player)) {
-                    count = 2;
-                }
             }
 
             for(int i = 0; i < count; ++i) {

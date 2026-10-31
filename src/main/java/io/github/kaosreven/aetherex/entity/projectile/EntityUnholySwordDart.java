@@ -1,8 +1,8 @@
 package io.github.kaosreven.aetherex.entity.projectile;
 
-import com.matthewperiut.aether.entity.projectile.EntityDartPoison;
-import com.matthewperiut.aether.poison.AetherPoison;
-import com.matthewperiut.aether.poison.PoisonControl;
+import io.github.kaosreven.aether.entity.projectile.EntityDartPoison;
+import io.github.kaosreven.aether.poison.AetherPoison;
+import io.github.kaosreven.aether.poison.PoisonControl;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.LivingEntity;

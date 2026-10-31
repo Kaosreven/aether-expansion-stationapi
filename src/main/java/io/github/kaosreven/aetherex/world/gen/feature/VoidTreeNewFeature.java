@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.world.gen.feature;
 
-import com.matthewperiut.aether.block.AetherBlocks;
+import io.github.kaosreven.aether.block.AetherBlocks;
 import io.github.kaosreven.aetherex.block.AetherExBlocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.Feature;

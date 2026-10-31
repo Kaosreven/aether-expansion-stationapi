@@ -1,9 +1,9 @@
 package io.github.kaosreven.aetherex.client;
 
-import com.matthewperiut.aether.block.AetherBlocks;
-import com.matthewperiut.aether.block.DungeonBlock;
-import com.matthewperiut.aether.block.Holystone;
-import com.matthewperiut.aether.client.texture.AetherTextures;
+import io.github.kaosreven.aether.block.AetherBlocks;
+import io.github.kaosreven.aether.block.DungeonBlock;
+import io.github.kaosreven.aether.block.Holystone;
+import io.github.kaosreven.aether.client.AetherTextures;
 import io.github.kaosreven.aetherex.block.*;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import io.github.kaosreven.aetherex.item.misc.ItemBaseMoaStaff;

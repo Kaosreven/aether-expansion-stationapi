@@ -8,13 +8,13 @@
     "DropStackMixin",
     "PlayerEntityMixin",
     "CraftingResultSlotMixin",
-    "HijackTreasureChestLootMixin",
     "HijackAetherChestLootMixin",
     "ItemCustomReachImplMixin",
     "access.LivingEntityExAccessor",
     "HijackFireMonsterMixin",
     "access.FurnaceBlockAccessor",
-    "FurnaceBlockMixin"
+    "FurnaceBlockMixin",
+    "client.CraftingScreenHandlerMixin"
   ],
   "server": [
     "server.ServerPlayerEntityMixin"
@@ -25,8 +25,7 @@
     "HijackAetherGuiMixin",
     "HijackLoreBookMixin",
     "client.SignBlockEntityRendererMixin",
-    "client.SignEditScreenMixin",
-    "client.CraftingScreenHandlerMixin"
+    "client.SignEditScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

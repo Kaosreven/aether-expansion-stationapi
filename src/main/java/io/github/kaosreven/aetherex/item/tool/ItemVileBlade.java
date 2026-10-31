@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.item.tool;
 
-import com.matthewperiut.aether.entity.living.EntityValkyrie;
+import io.github.kaosreven.aether.entity.living.EntityValkyrie;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;

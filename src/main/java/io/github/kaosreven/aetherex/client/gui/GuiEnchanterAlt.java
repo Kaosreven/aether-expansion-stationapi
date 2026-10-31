@@ -1,7 +1,7 @@
 package io.github.kaosreven.aetherex.client.gui;
 
-import com.matthewperiut.aether.blockentity.block.BlockEntityEnchanter;
-import com.matthewperiut.aether.blockentity.container.ContainerEnchanter;
+import io.github.kaosreven.aether.blockentity.block.BlockEntityEnchanter;
+import io.github.kaosreven.aether.blockentity.container.ContainerEnchanter;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import org.lwjgl.opengl.GL11;

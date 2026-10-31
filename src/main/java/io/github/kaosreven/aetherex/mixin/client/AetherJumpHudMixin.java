@@ -17,7 +17,7 @@ public class AetherJumpHudMixin {
     private Minecraft minecraft;
 
     @TargetHandler(
-            mixin = "com.matthewperiut.aether.mixin.client.InGameHudMixinJumps",
+            mixin = "io.github.kaosreven.aether.mixin.client.InGameHudMixinJumps",
             name = "injectFeathers"
     )
     @Inject(method = "@MixinSquared:Handler", at = @At("HEAD"), cancellable = true)

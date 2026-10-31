@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.item.accessory;
 
-import com.matthewperiut.aether.item.accessory.ItemMoreArmor;
+import io.github.kaosreven.aether.item.accessory.ItemMoreArmor;
 import com.periut.accessoryapi.api.render.AccessoryRenderer;
 import com.periut.accessoryapi.api.render.HasCustomRenderer;
 import com.periut.accessoryapi.api.render.builtin.NecklaceRenderer;

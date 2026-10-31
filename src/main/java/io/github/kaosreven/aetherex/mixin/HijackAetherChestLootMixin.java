@@ -1,8 +1,8 @@
 package io.github.kaosreven.aetherex.mixin;
 
-import com.matthewperiut.aether.block.AetherBlocks;
-import com.matthewperiut.aether.block.AetherChest;
-import com.matthewperiut.aether.item.AetherItems;
+import io.github.kaosreven.aether.block.AetherBlocks;
+import io.github.kaosreven.aether.block.AetherChest;
+import io.github.kaosreven.aether.item.AetherItems;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

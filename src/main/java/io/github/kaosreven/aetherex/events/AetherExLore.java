@@ -1,7 +1,7 @@
 package io.github.kaosreven.aetherex.events;
 
-import static com.matthewperiut.aether.client.gui.GuiLore.Lore;
-import static com.matthewperiut.aether.client.gui.GuiLore.lores;
+import static io.github.kaosreven.aether.client.gui.GuiLore.Lore;
+import static io.github.kaosreven.aether.client.gui.GuiLore.lores;
 import static io.github.kaosreven.aetherex.events.AetherEx.isNFCAddonPresent;
 import static io.github.kaosreven.aetherex.events.AetherEx.isStoneWallPresent;
 

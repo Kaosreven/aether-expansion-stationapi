@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.item.accessory;
 
-import com.matthewperiut.aether.mixin.access.EntityAccessor;
+import io.github.kaosreven.aether.mixin.access.EntityAccessor;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.modificationstation.stationapi.api.util.Identifier;

@@ -1,8 +1,8 @@
 package io.github.kaosreven.aetherex.events;
 
-import com.matthewperiut.aether.block.AetherBlocks;
-import com.matthewperiut.aether.blockentity.block.BlockEntityEnchanter;
-import com.matthewperiut.aether.item.AetherItems;
+import io.github.kaosreven.aether.block.AetherBlocks;
+import io.github.kaosreven.aether.blockentity.block.BlockEntityEnchanter;
+import io.github.kaosreven.aether.item.AetherItems;
 import io.github.kaosreven.aetherex.block.AetherExBlocks;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import net.mine_diver.unsafeevents.listener.EventListener;

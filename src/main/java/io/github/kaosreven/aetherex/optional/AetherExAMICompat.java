@@ -1,12 +1,14 @@
 package io.github.kaosreven.aetherex.optional;
 
 import io.github.kaosreven.aetherex.block.AetherExBlocks;
+import io.github.kaosreven.aetherex.events.AetherEx;
 import net.glasslauncher.mods.alwaysmoreitems.api.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.modificationstation.stationapi.api.util.Identifier;
 
 public class AetherExAMICompat implements ModPluginProvider {
+    public static final Identifier ID = AetherEx.NAMESPACE.id("aetherex");
 
     @Override
     public String getName() {
@@ -15,7 +17,7 @@ public class AetherExAMICompat implements ModPluginProvider {
 
     @Override
     public Identifier getId() {
-        return AetherExBlocks.MOD_ID.id("aetherex");
+        return ID;
     }
 
     @Override

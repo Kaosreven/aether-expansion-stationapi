@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.client.entity.renderer.projectile;
 
-import com.matthewperiut.aether.entity.projectile.EntityDartGolden;
+import io.github.kaosreven.aether.entity.projectile.EntityDartGolden;
 import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.entity.Entity;

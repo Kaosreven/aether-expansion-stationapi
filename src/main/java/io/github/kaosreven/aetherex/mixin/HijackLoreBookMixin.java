@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.mixin;
 
-import com.matthewperiut.aether.item.misc.ItemLoreBook;
+import io.github.kaosreven.aether.item.misc.ItemLoreBook;
 import io.github.kaosreven.aetherex.client.gui.GuiLoreAlt;
 import io.github.kaosreven.aetherex.optional.AetherExConfig;
 import net.fabricmc.loader.api.FabricLoader;

@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.achievement;
 
-import com.matthewperiut.aether.block.DungeonBlock;
+import io.github.kaosreven.aether.block.DungeonBlock;
 import net.modificationstation.stationapi.api.client.gui.screen.achievement.AchievementPage;
 import net.modificationstation.stationapi.api.util.Identifier;
 

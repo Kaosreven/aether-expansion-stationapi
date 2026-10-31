@@ -2,6 +2,8 @@ package io.github.kaosreven.aetherex.achievement;
 
 import io.github.kaosreven.aetherex.block.AetherExBlocks;
 import io.github.kaosreven.aetherex.item.AetherExItems;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.loader.api.FabricLoader;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.achievement.Achievement;
@@ -14,6 +16,7 @@ import net.modificationstation.stationapi.api.event.container.slot.ItemUsedInCra
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.template.achievement.AchievementTemplate;
 import net.modificationstation.stationapi.api.util.Namespace;
+import net.modificationstation.stationapi.api.util.SideUtil;
 
 import java.util.ArrayList;
 
@@ -34,6 +37,11 @@ public class AetherExAchievements {
     public static Achievement knowledge;
 
     public static void giveAchievement(Achievement achievement, PlayerEntity player) {
+        SideUtil.run(() -> giveAchievementClient(achievement, player), () -> giveAchievementServer());
+    }
+
+    @Environment(EnvType.CLIENT)
+    public static void giveAchievementClient(Achievement achievement, PlayerEntity player) {
         if (FabricLoader.getInstance().getGameInstance() instanceof Minecraft mc) {
             if (!mc.stats.hasAchievement(achievement)) {
                 if (player == null) player = mc.player;
@@ -41,6 +49,10 @@ public class AetherExAchievements {
                 player.incrementStat(achievement);
             }
         }
+    }
+
+    @Environment(EnvType.SERVER)
+    public static void giveAchievementServer() {
     }
 
     @EventListener

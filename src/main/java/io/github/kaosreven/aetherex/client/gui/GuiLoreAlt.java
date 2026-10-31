@@ -1,6 +1,6 @@
 package io.github.kaosreven.aetherex.client.gui;
 
-import com.matthewperiut.aether.client.gui.GuiLore;
+import io.github.kaosreven.aether.client.gui.GuiLore;
 import io.github.kaosreven.aetherex.optional.AetherExConfig;
 import net.minecraft.entity.player.PlayerInventory;
 import org.lwjgl.opengl.GL11;

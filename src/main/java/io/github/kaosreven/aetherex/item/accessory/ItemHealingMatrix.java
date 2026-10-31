@@ -1,13 +1,13 @@
 package io.github.kaosreven.aetherex.item.accessory;
 
-import com.matthewperiut.aether.item.accessory.ItemMoreArmor;
+import io.github.kaosreven.aether.item.accessory.ItemMoreArmor;
 import com.periut.accessoryapi.api.PlayerExtraHP;
 import com.periut.accessoryapi.api.helper.AccessoryAccess;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.modificationstation.stationapi.api.util.Identifier;
-import com.matthewperiut.aether.item.AetherItems;
+import io.github.kaosreven.aether.item.AetherItems;
 
 public class ItemHealingMatrix extends ItemMoreArmor {
     public ItemHealingMatrix(Identifier i, int j, int k, int l) {

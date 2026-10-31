@@ -1,13 +1,13 @@
 package io.github.kaosreven.aetherex.item.misc;
 
-import com.matthewperiut.aether.entity.living.EntityMoa;
+import io.github.kaosreven.aether.entity.living.EntityMoa;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.modificationstation.stationapi.api.template.item.TemplateItem;
 import net.modificationstation.stationapi.api.util.Identifier;
-import com.matthewperiut.aether.util.MoaColor;
+import io.github.kaosreven.aether.util.MoaColor;
 
 public class ItemBaseMoaStaff extends TemplateItem {
     public static int moaStaffBlue;
