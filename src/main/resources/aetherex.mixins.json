@@ -10,7 +10,6 @@
     "CraftingResultSlotMixin",
     "HijackAetherChestLootMixin",
     "ItemCustomReachImplMixin",
-    "access.LivingEntityExAccessor",
     "HijackFireMonsterMixin",
     "access.FurnaceBlockAccessor",
     "FurnaceBlockMixin",

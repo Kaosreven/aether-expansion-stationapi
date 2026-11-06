@@ -2,6 +2,7 @@ package io.github.kaosreven.aetherex.optional;
 
 import io.github.kaosreven.aetherex.block.AetherExBlocks;
 import io.github.kaosreven.aetherex.events.AetherEx;
+import io.github.kaosreven.aetherex.item.AetherExItems;
 import net.glasslauncher.mods.alwaysmoreitems.api.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -45,9 +46,14 @@ public class AetherExAMICompat implements ModPluginProvider {
     public void updateBlacklist(AMIHelpers amiHelpers) {
         ItemBlacklist blacklist = amiHelpers.getItemBlacklist();
 
-        // Blocks
-        blacklist.addItemToBlacklist(new ItemStack(AetherExBlocks.SkyrootSign));
-        blacklist.addItemToBlacklist(new ItemStack(AetherExBlocks.SkyrootWallSign));
-        blacklist.addItemToBlacklist(new ItemStack(AetherExBlocks.HolystoneFurnaceLit));
+        if (AetherExConfig.CONFIG.EnableNewContent) {
+            // Blocks
+            blacklist.addItemToBlacklist(new ItemStack(AetherExBlocks.SkyrootSign));
+            blacklist.addItemToBlacklist(new ItemStack(AetherExBlocks.SkyrootWallSign));
+            blacklist.addItemToBlacklist(new ItemStack(AetherExBlocks.HolystoneFurnaceLit));
+
+            //Items
+            blacklist.addItemToBlacklist(new ItemStack(AetherExItems.DebugRing));
+        }
     }
 }

@@ -2,6 +2,7 @@ package io.github.kaosreven.aetherex.item.tool;
 
 import io.github.kaosreven.aetherex.optional.AetherExConfig;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.HitResultType;
@@ -46,19 +47,30 @@ public class ItemHealingStaff extends TemplateFoodItem implements CustomReachPro
     }
 
     @Override
+    public int getAttackDamage(Entity entity) {
+        return healReady ? 1:0;
+    }
+
+    @Override
     public void inventoryTick(ItemStack itemstack, World world, Entity entity, int i, boolean flag) {
         if(itemstack.getDamage() >= 0) itemstack.damage(-1, entity);
+    }
+
+    private void useHealStaff(LivingEntity healed, LivingEntity healer, ItemStack itemstack) {
+        itemstack.damage(600, healer);
+        healTick = 0;
+        healReady = false;
+        healReadySpoke = false;
+        healed.world.playSound(healed, "aetherex:other.heal", 1.0F, (healed.world.random.nextFloat() - healed.world.random.nextFloat()) * 0.3F + 1F);
     }
 
     @Override
     public ItemStack use(ItemStack itemstack, World world, PlayerEntity user) {
         if(!world.isRemote) {
             if(itemstack.getDamage() < (lesser ? 901:1201) && healReady) {
-                itemstack.damage(600, user);
                 user.heal(this.healAmount);
                 user.swingHand();
-                healReady = false;
-                healReadySpoke = false;
+                useHealStaff(user, user, itemstack);
             } else if(itemstack.getDamage() >= (lesser ? 901:1201)) {
                 user.sendMessage("Insufficient durability!");
             } else  {
@@ -70,12 +82,31 @@ public class ItemHealingStaff extends TemplateFoodItem implements CustomReachPro
         return itemstack;
     }
 
-    /*
     @Override
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-
+    public boolean postHit(ItemStack itemstack, LivingEntity target, LivingEntity attacker) {
+        if(!attacker.world.isRemote) {
+            if (attacker instanceof PlayerEntity user) {
+                if(itemstack.getDamage() < (lesser ? 901:1201) && healReady) {
+                    if (target.health > 0) {
+                        if (user.jumping) target.health += getHealthRestored()+1;
+                        else target.health += getHealthRestored()+2;
+                        if (target.health > target.maxHealth) {
+                            target.health = target.maxHealth;
+                        }
+                        target.hearts = target.maxHealth / 2;
+                    }
+                    useHealStaff(target, user, itemstack);
+                } else if(itemstack.getDamage() >= (lesser ? 901:1201)) {
+                    user.sendMessage("Insufficient durability!");
+                } else  {
+                    int seconds = healTick / 20;
+                    int display = 5 - seconds;
+                    user.sendMessage("You must wait seconds " + display + " seconds before doing that.");
+                }
+            }
+        }
+        return true;
     }
-     */
 
     @Override
     public int getHealthRestored() {

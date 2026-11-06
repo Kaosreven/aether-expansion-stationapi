@@ -217,15 +217,13 @@ public class EntityUnholyArrow extends Entity
             {
                 if(movingobjectposition.entity.damage(owner, mode.damage))
                 {
-                	if (!world.isRemote) {
-                        if(mode == BowMode.LIGHTNING)
-                            world.spawnEntity(new LightningEntity(world, (int)movingobjectposition.entity.x, (int)movingobjectposition.entity.y, (int)movingobjectposition.entity.z));
-                        else if (mode == BowMode.EXPLOSIVE) {
-                            Explosion explosion = new Explosion(world, owner, x, y, z, 2.5F);
-                            explosion.explode();
-                            explosion.playExplosionSound(true);
-                        }
-                	}
+                    if(mode == BowMode.LIGHTNING)
+                        world.spawnEntity(new LightningEntity(world, (int)movingobjectposition.entity.x, (int)movingobjectposition.entity.y, (int)movingobjectposition.entity.z));
+                    else if (mode == BowMode.EXPLOSIVE) {
+                        Explosion explosion = new Explosion(world, owner, x, y, z, 2.5F);
+                        explosion.explode();
+                        explosion.playExplosionSound(true);
+                    }
                     this.tickInVoid();
                     markDead();
                 } else
@@ -254,18 +252,17 @@ public class EntityUnholyArrow extends Entity
                 int xPos = MathHelper.floor(x);
                 int yPos = MathHelper.floor(y);
                 int zPos = MathHelper.floor(z);
-                if (!world.isRemote) {
-                    if (mode == BowMode.LIGHTNING)
-                        world.spawnEntity(new LightningEntity(world, xPos, yPos, zPos));
-                    else if (mode == BowMode.EXPLOSIVE) {
-                        Explosion explosion = new Explosion(world, owner, xPos, yPos, zPos, 2.5F);
-                        explosion.explode();
-                        explosion.playExplosionSound(true);
-                    }
+                if (mode == BowMode.LIGHTNING)
+                    world.spawnEntity(new LightningEntity(world, xPos, yPos, zPos));
+                else if (mode == BowMode.EXPLOSIVE) {
+                    Explosion explosion = new Explosion(world, owner, xPos, yPos, zPos, 2.5F);
+                    explosion.explode();
+                    explosion.playExplosionSound(true);
                 }
                 inGround = true;
                 arrowShake = 7;
                 this.tickInVoid();
+                markDead();
             }
         }
         x += velocityX;

@@ -68,6 +68,21 @@ item.@.resurrection_pendant.name=\u00A7aResurrection Pendant
 item.@.aer_cape.name=\u00A7aAer Cape
 item.@.chain_gloves.name=Chain Gloves
 
+item.@.aetherial_helmet.name=Aetherial Helmet
+item.@.aetherial_chestplate.name=Aetherial Chestplate
+item.@.aetherial_leggings.name=Aetherial Leggings
+item.@.aetherial_boots.name=Aetherial Boots
+item.@.santa_helmet.name=\u00a7bSanta\'s Hat
+item.@.santa_chestplate.name=\u00a7bSanta\'s Jacket
+item.@.santa_leggings.name=\u00a7bSanta\'s Boots
+item.@.santa_boots.name=\u00a7bSanta\'s gloves
+item.@.necro_helmet.name=\u00a74Necromancer Hood
+item.@.necro_chestplate.name=\u00a74Necromancer Robe
+item.@.necro_leggings.name=\u00a74Necromaner Leggings
+item.@.necro_boots.name=\u00a74Necromancer Boots
+item.@.necro_sword.name=\u00a74Necro Sword
+item.@.candy_cane_sword.name=\u00a7aCandy Cane Sword
+
 ## Halloween Bags
 item.@.halloween_bag0.name=\u00A7aCommon Halloween Bag
 item.@.halloween_bag1.name=\u00A7aRare Halloween Bag
@@ -105,6 +120,7 @@ item.@.golden_brew.name=\u00A7aGolden Brew
 item.@.golden_elixir.name=Golden Elixir
 item.@.orange_moa_egg.name=Orange Moa Egg
 item.@.unholy_arrow.name=\u00A74Unholy Arrow
+item.@.void_stick.name=
 
 item.@.clouds_disc.name=Clouds
 item.@.labyrinth_disc.name=\u00A74Labyrinth's Vengeance

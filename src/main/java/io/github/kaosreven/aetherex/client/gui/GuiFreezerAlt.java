@@ -2,23 +2,20 @@ package io.github.kaosreven.aetherex.client.gui;
 
 import io.github.kaosreven.aether.blockentity.block.BlockEntityFreezer;
 import io.github.kaosreven.aether.blockentity.container.ContainerFreezer;
+import io.github.kaosreven.aether.client.gui.GuiFreezer;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import org.lwjgl.opengl.GL11;
 
-public class GuiFreezerAlt extends HandledScreen {
+public class GuiFreezerAlt extends GuiFreezer {
     private final BlockEntityFreezer freezerInventory;
 
     public GuiFreezerAlt(PlayerInventory inventoryplayer, BlockEntityFreezer tileentityFreezer) {
-        super(new ContainerFreezer(inventoryplayer, tileentityFreezer));
+        super(inventoryplayer, tileentityFreezer);
         this.freezerInventory = tileentityFreezer;
     }
 
-    protected void drawForeground() {
-        this.textRenderer.draw("Freezer", 60, 6, 4210752);
-        this.textRenderer.draw("Inventory", 8, this.backgroundHeight - 96 + 2, 4210752);
-    }
-
+    @Override
     protected void drawBackground(float f) {
         int i = this.minecraft.textureManager.getTextureId("/assets/aetherex/stationapi/textures/gui/EnchanterAlt.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);

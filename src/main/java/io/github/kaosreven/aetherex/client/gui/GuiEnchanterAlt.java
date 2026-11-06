@@ -2,23 +2,20 @@ package io.github.kaosreven.aetherex.client.gui;
 
 import io.github.kaosreven.aether.blockentity.block.BlockEntityEnchanter;
 import io.github.kaosreven.aether.blockentity.container.ContainerEnchanter;
+import io.github.kaosreven.aether.client.gui.GuiEnchanter;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import org.lwjgl.opengl.GL11;
 
-public class GuiEnchanterAlt extends HandledScreen {
+public class GuiEnchanterAlt extends GuiEnchanter {
     private final BlockEntityEnchanter enchanterInventory;
 
     public GuiEnchanterAlt(PlayerInventory inventoryplayer, BlockEntityEnchanter tileentityEnchanter) {
-        super(new ContainerEnchanter(inventoryplayer, tileentityEnchanter));
+        super(inventoryplayer, tileentityEnchanter);
         this.enchanterInventory = tileentityEnchanter;
     }
 
-    protected void drawForeground() {
-        this.textRenderer.draw("Enchanter", 60, 6, 4210752);
-        this.textRenderer.draw("Inventory", 8, this.backgroundHeight - 96 + 2, 4210752);
-    }
-
+    @Override
     protected void drawBackground(float f) {
         int i = this.minecraft.textureManager.getTextureId("/assets/aetherex/stationapi/textures/gui/EnchanterAlt.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);

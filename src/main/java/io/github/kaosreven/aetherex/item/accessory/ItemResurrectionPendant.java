@@ -1,5 +1,6 @@
 package io.github.kaosreven.aetherex.item.accessory;
 
+import io.github.kaosreven.aether.item.accessory.ItemPendant;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.modificationstation.stationapi.api.util.Identifier;

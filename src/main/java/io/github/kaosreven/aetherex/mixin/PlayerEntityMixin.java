@@ -24,6 +24,7 @@ import java.util.Random;
 
 import static io.github.kaosreven.aetherex.events.AetherEx.*;
 import static io.github.kaosreven.aetherex.item.accessory.ItemAerShield.aerShieldRandomReady;
+import static io.github.kaosreven.aetherex.item.accessory.ItemDebugRing.debugReady;
 import static io.github.kaosreven.aetherex.item.accessory.ItemFlameGem.*;
 import static io.github.kaosreven.aetherex.item.accessory.ItemJebShield.jebShieldRandomReady;
 import static io.github.kaosreven.aetherex.item.accessory.ItemLuckyPendant.*;
@@ -66,8 +67,8 @@ public abstract class PlayerEntityMixin {
                 }
             }
         }
-        if (target != null && target instanceof LivingEntity) {
-            if (luckyRandomReady && ((LivingEntity)target).health <= 0 && (new Random()).nextInt(5) == 0) {
+        if (target != null && target instanceof LivingEntity entity) {
+            if (luckyRandomReady && entity.health <= 0 && (new Random()).nextInt(5) == 0) {
                 if (target instanceof EntitySlider) {
                     target.dropItem(new ItemStack(AetherExItems.CrepusculumDisc), 0F);
                     AccessoryUtils.UseAccessory(player, AetherExItems.LuckyPendant);
@@ -79,6 +80,14 @@ public abstract class PlayerEntityMixin {
                 else if (target instanceof EntityFireMonster) {
                     target.dropItem(new ItemStack(AetherExItems.BriseDisc), 0F);
                     AccessoryUtils.UseAccessory(player, AetherExItems.LuckyPendant);
+                }
+            }
+        }
+        if (debugReady) {
+            if (!(target instanceof PlayerEntity) && target instanceof LivingEntity entity) {
+                int i = (new Random()).nextInt(15);
+                if (i == 1 && (entity.hurtTime > 0 || entity.deathTime > 0)) {
+                    player.heal(1);
                 }
             }
         }
@@ -123,7 +132,7 @@ public abstract class PlayerEntityMixin {
             ++obsidianSwordTick;
         }
          */
-        if (AccessoryUtils.DoesPlayerHave(player, AetherExItems.SpeedRing)) {
+        if (AccessoryUtils.DoesPlayerHave(player, AetherExItems.SpeedRing) || debugReady) {
             if (speedRingToggle) {
                 if (player.onGround) {
                     int i = player.world.getBlockId((int) player.x, (int) (player.y - 2.0D), (int) player.z);
@@ -210,6 +219,10 @@ public abstract class PlayerEntityMixin {
                     cir.setReturnValue(true);
                 }
             }
+        }
+        if (debugReady && !(damageSource instanceof PlayerEntity)) {
+            amount = 0;
+            cir.setReturnValue(true);
         }
     }
 }

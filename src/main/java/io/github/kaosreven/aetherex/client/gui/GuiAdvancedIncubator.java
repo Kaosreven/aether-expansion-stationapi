@@ -4,7 +4,7 @@ import io.github.kaosreven.aether.client.gui.GuiIncubator;
 import io.github.kaosreven.aetherex.blockentity.block.BlockEntityAdvancedIncubator;
 import net.minecraft.entity.player.PlayerInventory;
 
-public class GuiAdvancedIncubator extends GuiIncubator {
+public class GuiAdvancedIncubator extends GuiIncubatorAlt {
 
     public GuiAdvancedIncubator(PlayerInventory inventoryplayer, BlockEntityAdvancedIncubator tileentityIncubator) {
         super(inventoryplayer, tileentityIncubator);

@@ -17,17 +17,18 @@ public class ItemUnholySword extends TemplateSwordItem {
 
     @Override
     public ItemStack use(ItemStack stack, World world, PlayerEntity user) {
-        if (unholySwordReady) {
-            EntityUnholySwordDart dart = new EntityUnholySwordDart(world, user);
-            world.spawnEntity(dart);
-            stack.damage(2, user);
-            unholySwordTick = 0;
-            unholySwordReady = false;
-        }
-        else {
-            int seconds = unholySwordTick / 20;
-            int display = 3 - seconds;
-            user.sendMessage("You must wait seconds " + display + " seconds before doing that.");
+        if (!world.isRemote) {
+            if (unholySwordReady) {
+                EntityUnholySwordDart dart = new EntityUnholySwordDart(world, user);
+                world.spawnEntity(dart);
+                stack.damage(2, user);
+                unholySwordTick = 0;
+                unholySwordReady = false;
+            } else {
+                int seconds = unholySwordTick / 20;
+                int display = 3 - seconds;
+                user.sendMessage("You must wait seconds " + display + " seconds before doing that.");
+            }
         }
         return stack;
     }

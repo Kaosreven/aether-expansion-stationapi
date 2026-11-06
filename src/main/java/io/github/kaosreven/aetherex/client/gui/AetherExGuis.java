@@ -25,10 +25,16 @@ public class AetherExGuis {
     public void registerGuiHandlers(GuiHandlerRegistryEvent event) {
         GuiHandlerRegistry registry = event.registry;
         Registry.register(registry, Identifier.of(MOD_ID, "advanced_incubator"), new GuiHandler((GuiHandler.ScreenFactoryNoMessage) this::openAdvancedIncubator, BlockEntityAdvancedIncubator::new));
+        Registry.register(registry, Identifier.of(MOD_ID, "openLoreBookshelf"), new GuiHandler((GuiHandler.ScreenFactoryNoMessage) this::openLoreBookshelf, () -> null));
     }
 
     @Environment(EnvType.CLIENT)
     public HandledScreen openAdvancedIncubator(PlayerEntity player, Inventory inventoryBase) {
         return new GuiAdvancedIncubator(player.inventory, (BlockEntityAdvancedIncubator) inventoryBase);
+    }
+
+    @Environment(EnvType.CLIENT)
+    public HandledScreen openLoreBookshelf(PlayerEntity player, Inventory inventoryBase) {
+        return new GuiLoreBookshelf(player.inventory, 0);
     }
 }

@@ -101,7 +101,7 @@ public class AetherExTextures {
         AetherExItems.BrownCape.setTextureId(AetherTextures.CapeTexture);
         AetherExItems.LimeCape.setTextureId(AetherTextures.CapeTexture);
         AetherExItems.BlackCape.setTextureId(AetherTextures.CapeTexture);
-        AetherExItems.HalloweenCape.setTexture(of(MOD_ID, "item/HalloweenCape"));
+        AetherExItems.HalloweenCape.setTexture(of(MOD_ID, "item/halloween/HalloweenCape"));
         AetherExItems.SpeedRing.setTextureId(AetherTextures.Ring);
         AetherExItems.ValkyrieRing.setTexture(of(MOD_ID, "item/ValkyrieRing"));
         AetherExItems.HealMatrix.setTexture(of(MOD_ID, "item/HealingMatrix"));
@@ -112,14 +112,14 @@ public class AetherExTextures {
         AetherExItems.ResurrectionPendant.setTexture(of(MOD_ID, "item/ResurrectionPendant"));
         AetherExItems.ChainGloves.setTexture(of(MOD_ID, "item/ChainGloves"));
 
-        ItemCandy.candy1 = items.addTexture(of(MOD_ID, "item/Candy1")).index;
-        ItemCandy.candy2 = items.addTexture(of(MOD_ID, "item/Candy2")).index;
-        ItemCandy.candy3 = items.addTexture(of(MOD_ID, "item/Candy3")).index;
-        ItemCandy.candy4 = items.addTexture(of(MOD_ID, "item/Candy4")).index;
-        ItemHalloweenBag.commonBag = items.addTexture(of(MOD_ID, "item/CommonBag")).index;
-        ItemHalloweenBag.rareBag = items.addTexture(of(MOD_ID, "item/RareBag")).index;
-        ItemHalloweenBag.legendaryBag = items.addTexture(of(MOD_ID, "item/LegendaryBag")).index;
-        AetherExItems.VileEssence.setTexture(of(MOD_ID, "item/VileEssence"));
+        ItemCandy.candy1 = items.addTexture(of(MOD_ID, "item/halloween/Candy1")).index;
+        ItemCandy.candy2 = items.addTexture(of(MOD_ID, "item/halloween/Candy2")).index;
+        ItemCandy.candy3 = items.addTexture(of(MOD_ID, "item/halloween/Candy3")).index;
+        ItemCandy.candy4 = items.addTexture(of(MOD_ID, "item/halloween/Candy4")).index;
+        ItemHalloweenBag.commonBag = items.addTexture(of(MOD_ID, "item/halloween/CommonBag")).index;
+        ItemHalloweenBag.rareBag = items.addTexture(of(MOD_ID, "item/halloween/RareBag")).index;
+        ItemHalloweenBag.legendaryBag = items.addTexture(of(MOD_ID, "item/halloween/LegendaryBag")).index;
+        AetherExItems.VileEssence.setTexture(of(MOD_ID, "item/halloween/VileEssence"));
         AetherExItems.VoidTomato.setTexture(of(MOD_ID, "item/VoidTomato"));
         AetherExItems.GoldenBrew.setTexture(of(MOD_ID, "item/GoldenBrew"));
         AetherExItems.GoldenElixir.setTexture(of(MOD_ID, "item/GoldenElixir"));
@@ -129,33 +129,34 @@ public class AetherExTextures {
         ItemMoaArmor.ZaniteMoaArmor = items.addTexture(of(MOD_ID, "item/ZaniteMoaArmor")).index;
         ItemMoaArmor.GravititeMoaArmor = items.addTexture(of(MOD_ID, "item/GravititeMoaArmor")).index;
         AetherExItems.OrangeMoaEgg.setTextureId(MoaEgg);
-        AetherExItems.UnholyArrow.setTexture(of(MOD_ID, "item/UnholyArrow"));
+        AetherExItems.UnholyArrow.setTexture(of(MOD_ID, "item/halloween/UnholyArrow"));
 
         AetherExItems.JebHammer.setTexture(of(MOD_ID, "item/HammerOfJeb"));
-        AetherExItems.VileSword.setTexture(of(MOD_ID, "item/VileBlade"));
+        AetherExItems.VileSword.setTexture(of(MOD_ID, "item/halloween/VileBlade"));
         AetherExItems.MineFist.setTexture(of(MOD_ID, "item/MineFist"));
-        ItemBaseMoaStaff.moaStaffBlue = items.addTexture(of(MOD_ID, "item/MoaStaffBlue")).index;
-        ItemBaseMoaStaff.moaStaffWhite = items.addTexture(of(MOD_ID, "item/MoaStaffWhite")).index;
-        ItemBaseMoaStaff.moaStaffBlack = items.addTexture(of(MOD_ID, "item/MoaStaffBlack")).index;
-        ItemHealingStaff.LesserHealingLow = items.addTexture(of(MOD_ID, "item/LesserHealingLow")).index;
-        ItemHealingStaff.LesserHealingMiddle = items.addTexture(of(MOD_ID, "item/LesserHealingMiddle")).index;
-        ItemHealingStaff.LesserHealingHigh = items.addTexture(of(MOD_ID, "item/LesserHealingHigh")).index;
-        ItemHealingStaff.HealingLow = items.addTexture(of(MOD_ID, "item/HealingLow")).index;
-        ItemHealingStaff.HealingMiddle = items.addTexture(of(MOD_ID, "item/HealingMiddle")).index;
-        ItemHealingStaff.HealingHigh = items.addTexture(of(MOD_ID, "item/HealingHigh")).index;
+        ItemBaseMoaStaff.moaStaffBlue = items.addTexture(of(MOD_ID, "item/moastaff/MoaStaffBlue")).index;
+        ItemBaseMoaStaff.moaStaffWhite = items.addTexture(of(MOD_ID, "item/moastaff/MoaStaffWhite")).index;
+        ItemBaseMoaStaff.moaStaffBlack = items.addTexture(of(MOD_ID, "item/moastaff/MoaStaffBlack")).index;
+        ItemBaseMoaStaff.moaStaffBlueUnusable = items.addTexture(of(MOD_ID, "item/moastaff/MoaStaffBlueUnusable")).index;
+        ItemBaseMoaStaff.moaStaffWhiteUnusable = items.addTexture(of(MOD_ID, "item/moastaff/MoaStaffWhiteUnusable")).index;
+        ItemBaseMoaStaff.moaStaffBlackUnusable = items.addTexture(of(MOD_ID, "item/moastaff/MoaStaffBlackUnusable")).index;
+        ItemHealingStaff.LesserHealingLow = items.addTexture(of(MOD_ID, "item/healingwand/LesserHealingLow")).index;
+        ItemHealingStaff.LesserHealingMiddle = items.addTexture(of(MOD_ID, "item/healingwand/LesserHealingMiddle")).index;
+        ItemHealingStaff.LesserHealingHigh = items.addTexture(of(MOD_ID, "item/healingwand/LesserHealingHigh")).index;
+        ItemHealingStaff.HealingLow = items.addTexture(of(MOD_ID, "item/healingwand/HealingLow")).index;
+        ItemHealingStaff.HealingMiddle = items.addTexture(of(MOD_ID, "item/healingwand/HealingMiddle")).index;
+        ItemHealingStaff.HealingHigh = items.addTexture(of(MOD_ID, "item/healingwand/HealingHigh")).index;
         AetherExItems.PhoenixPick.setTexture(of(MOD_ID, "item/PhoenixPickaxe"));
         AetherExItems.PhoenixAxe.setTexture(of(MOD_ID, "item/PhoenixAxe"));
         AetherExItems.PhoenixShovel.setTexture(of(MOD_ID, "item/PhoenixShovel"));
-        //AetherExItems.PhoenixSword.setTexture(of(MOD_ID, "item/PhoenixSword"));
-        AetherExItems.PhoenixSword.setTexture(of(MOD_ID, "item/animations/PhoenixFlameAnim"));
         ItemPhoenixSword.PhoenixSwordTexture = items.addTexture(of(MOD_ID, "item/PhoenixSword")).index;
         ItemPhoenixSword.PhoenixAnimTexture = items.addTexture(of(MOD_ID, "item/animations/PhoenixFlameAnim")).index;
+        ItemPhoenixSword.ObsidianSwordTexture = items.addTexture(of(MOD_ID, "item/ObsidianSword")).index;
         AetherExItems.SentryShield.setTexture(of(MOD_ID, "item/SentryShield"));
         AetherExItems.AerCape.setTexture(of(MOD_ID, "item/AerCape"));
-        AetherExItems.UnholySword.setTexture(of(MOD_ID, "item/UnholySword"));
-        AetherExItems.UnholyBow.setTexture(of(MOD_ID, "item/UnholyBow"));
+        AetherExItems.UnholySword.setTexture(of(MOD_ID, "item/halloween/UnholySword"));
+        AetherExItems.UnholyBow.setTexture(of(MOD_ID, "item/halloween/UnholyBow"));
         AetherExItems.ZaniteShears.setTexture(of(MOD_ID, "item/ZaniteShears"));
-        //AetherExItems.ObsidianSword.setTexture(of(MOD_ID, "item/ObsidianSword"));
 
         //AetherExItems.CloudsDisc.setTexture(of(MOD_ID, "item/discs/DiscClouds"));
         AetherExItems.LabyrinthDisc.setTexture(of(MOD_ID, "item/discs/DiscLabyrinth"));
@@ -169,6 +170,17 @@ public class AetherExTextures {
             AetherExItems.GoldenLeather.setTexture(of(MOD_ID, "item/GoldenLeather"));
             AetherExItems.SkyrootSign.setTexture(of(MOD_ID, "item/SkyrootSign"));
             AetherExBlocks.SkyrootLadder.asItem().setTextureId(SkyrootLadder);
+            AetherExItems.ChristmasCape.setTexture(of(MOD_ID, "item/christmas/ChristmasCape"));
+            AetherExItems.SantaHelmet.setTexture(of(MOD_ID, "item/christmas/SantaHelmet"));
+            AetherExItems.SantaChestplate.setTexture(of(MOD_ID, "item/christmas/SantaChestplate"));
+            AetherExItems.SantaLeggings.setTexture(of(MOD_ID, "item/christmas/SantaLeggings"));
+            AetherExItems.SantaBoots.setTexture(of(MOD_ID, "item/christmas/SantaBoots"));
+            AetherExItems.CandyCaneSword.setTexture(of(MOD_ID, "item/christmas/CandyCaneSword"));
+            AetherExItems.VoidStick.setTexture(of(MOD_ID, "item/VoidStick"));
+            AetherExItems.DebugRing.setTextureId(AetherTextures.Ring);
+            AetherExItems.ObsidianPick.setTexture(of(MOD_ID, "item/ObsidianPickaxe"));
+            AetherExItems.ObsidianAxe.setTexture(of(MOD_ID, "item/ObsidianAxe"));
+            AetherExItems.ObsidianShovel.setTexture(of(MOD_ID, "item/ObsidianShovel"));
         }
     }
 

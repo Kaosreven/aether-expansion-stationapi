@@ -16,12 +16,6 @@ public class EntityFiroBallEx extends EntityFiroBall {
     public EntityFiroBallEx(World world, double d, double d1, double d2, PlayerEntity entityplayer, boolean frosty) {
         super(world, d, d1, d2, frosty);
         this.setBoundingBoxSpacing(1.2F, 1.2F);
-        if (entityplayer != null) {
-            Vec3d vec3d = entityplayer.getLookVector();
-            this.smotionX = vec3d.x;
-            this.smotionY = vec3d.y;
-            this.smotionZ = vec3d.z;
-        }
     }
 
     public EntityFiroBallEx(World world, double x, double y, double z) {
@@ -34,11 +28,13 @@ public class EntityFiroBallEx extends EntityFiroBall {
         this.velocityY = this.smotionY;
         this.velocityZ = this.smotionZ;
 
-        for(int i = 0; i < 5; ++i) {
-            double d = this.random.nextGaussian() * (double)0.02F;
-            double d1 = this.random.nextGaussian() * (double)0.02F;
-            double d2 = this.random.nextGaussian() * (double)0.02F;
-            this.world.addParticle("flame", this.x, this.y + 0.45D, this.z, d, d1, d2);
+        if(!frosty) {
+            for (int i = 0; i < 5; ++i) {
+                double d = this.random.nextGaussian() * (double) 0.02F;
+                double d1 = this.random.nextGaussian() * (double) 0.02F;
+                double d2 = this.random.nextGaussian() * (double) 0.02F;
+                this.world.addParticle("flame", this.x, this.y + 0.45D, this.z, d, d1, d2);
+            }
         }
 
         if(this.hasCollided) {
@@ -61,10 +57,13 @@ public class EntityFiroBallEx extends EntityFiroBall {
             for(int i = 0; i < 2; ++i) {
                 for(int j = 0; j < 2; ++j) {
                     for(int k = 0; k < 2; ++k) {
-                        if(this.world.getBlockId(ai[i], ai1[j], ai2[k]) == 0 && this.world.getBlockId(ai[i], ai1[j] - 1, ai2[k]) != 0) {
-                            this.world.playSound((double)ai[i] + 0.5D, (double)ai1[j] + 0.5D, (double)ai2[k] + 0.5D, "fire.ignite", 1.0F, this.random.nextFloat() * 0.4F + 0.8F);
-                            this.world.setBlock(ai[i], ai1[j], ai2[k], Block.FIRE.id);
-                        }
+                        if(!frosty) {
+                            if (this.world.getBlockId(ai[i], ai1[j], ai2[k]) == 0 && this.world.getBlockId(ai[i], ai1[j] - 1, ai2[k]) != 0) {
+                                this.world.playSound((double) ai[i] + 0.5D, (double) ai1[j] + 0.5D, (double) ai2[k] + 0.5D, "fire.ignite", 1.0F, this.random.nextFloat() * 0.4F + 0.8F);
+                                this.world.setBlock(ai[i], ai1[j], ai2[k], Block.FIRE.id);
+                            }
+                        } else
+                            this.world.playSound(this, "random.glass", 2.0F, (random.nextFloat() - random.nextFloat()) * 0.2F + 1.2F);
                     }
                 }
             }

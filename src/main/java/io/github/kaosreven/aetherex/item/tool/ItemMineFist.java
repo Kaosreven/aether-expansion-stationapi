@@ -1,5 +1,6 @@
 package io.github.kaosreven.aetherex.item.tool;
 
+import io.github.kaosreven.aether.util.AetherMpUtils;
 import net.minecraft.block.Block;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -31,9 +32,11 @@ public class ItemMineFist extends ItemGenericAetherPaxel implements CustomReachP
             boolean pitch1 = pitch <= -60;
             boolean pitch2 = pitch >= 60;
             int i;
+            world.playSound(x, y, z, "random.explode", 4.0F, (1.0F + (world.random.nextFloat() - world.random.nextFloat()) * 0.2F) * 0.7F);
+            if (AetherMpUtils.isEnvServ()) {
+                AetherMpUtils.soundPacket(world, x, y, z, "random.explode", 4.0F, (1.0F + (world.random.nextFloat() - world.random.nextFloat()) * 0.2F) * 0.7F);
+            }
             if(pitch1) {
-                world.playSound(x, y, z, "random.explode", 4.0F, (1.0F + (world.random.nextFloat() - world.random.nextFloat()) * 0.2F) * 0.7F);
-
                 for(i = 0; i <= 6; ++i) {
                     this.breakBlockAt(x, y + i, z, user);
                     this.breakBlockAt(x + 1, y + i, z, user);
@@ -64,8 +67,6 @@ public class ItemMineFist extends ItemGenericAetherPaxel implements CustomReachP
             }
 
             if(pitch2) {
-                world.playSound(x, y, z, "random.explode", 4.0F, (1.0F + (world.random.nextFloat() - world.random.nextFloat()) * 0.2F) * 0.7F);
-
                 for(i = 0; i <= 6; ++i) {
                     this.breakBlockAt(x, y - i, z, user);
                     this.breakBlockAt(x + 1, y - i, z, user);
@@ -96,8 +97,6 @@ public class ItemMineFist extends ItemGenericAetherPaxel implements CustomReachP
             }
 
             if(yaw == 0 && !pitch1 && !pitch2) {
-                world.playSound(x, y, z, "random.explode", 4.0F, (1.0F + (world.random.nextFloat() - world.random.nextFloat()) * 0.2F) * 0.7F);
-
                 for(i = 0; i <= 6; ++i) {
                     this.breakBlockAt(x, y, z + i, user);
                     this.breakBlockAt(x, y + 1, z + i, user);
@@ -128,8 +127,6 @@ public class ItemMineFist extends ItemGenericAetherPaxel implements CustomReachP
             }
 
             if(yaw == 2 && !pitch1 && !pitch2) {
-                world.playSound(x, y, z, "random.explode", 4.0F, (1.0F + (world.random.nextFloat() - world.random.nextFloat()) * 0.2F) * 0.7F);
-
                 for(i = 0; i <= 6; ++i) {
                     this.breakBlockAt(x, y, z - i, user);
                     this.breakBlockAt(x, y + 1, z - i, user);
@@ -160,8 +157,6 @@ public class ItemMineFist extends ItemGenericAetherPaxel implements CustomReachP
             }
 
             if(yaw == 1 && !pitch1 && !pitch2) {
-                world.playSound(x, y, z, "random.explode", 4.0F, (1.0F + (world.random.nextFloat() - world.random.nextFloat()) * 0.2F) * 0.7F);
-
                 for(i = 0; i <= 6; ++i) {
                     this.breakBlockAt(x - i, y, z, user);
                     this.breakBlockAt(x - i, y, z - 1, user);
@@ -192,8 +187,6 @@ public class ItemMineFist extends ItemGenericAetherPaxel implements CustomReachP
             }
 
             if(yaw == 3 && !pitch1 && !pitch2) {
-                world.playSound(x, y, z, "random.explode", 4.0F, (1.0F + (world.random.nextFloat() - world.random.nextFloat()) * 0.2F) * 0.7F);
-
                 for(i = 0; i <= 6; ++i) {
                     this.breakBlockAt(x + i, y, z, user);
                     this.breakBlockAt(x + i, y, z - 1, user);

@@ -1,6 +1,7 @@
 package io.github.kaosreven.aetherex.events;
 
 import io.github.kaosreven.aether.blockentity.block.BlockEntityEnchanter;
+import io.github.kaosreven.aether.item.AetherItems;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import io.github.kaosreven.aetherex.optional.AetherExConfig;
 import net.fabricmc.api.EnvType;

@@ -1,21 +1,21 @@
 package io.github.kaosreven.aetherex.item;
 
+import io.github.kaosreven.aether.item.accessory.ItemCape;
+import io.github.kaosreven.aether.item.accessory.ItemGloves;
 import io.github.kaosreven.aether.item.accessory.ItemMoreArmor;
-import io.github.kaosreven.aetherex.block.AetherExBlocks;
+import io.github.kaosreven.aether.item.misc.ItemAetherRecord;
 import io.github.kaosreven.aetherex.item.accessory.*;
 import io.github.kaosreven.aetherex.item.misc.*;
 import io.github.kaosreven.aetherex.item.tool.*;
 import io.github.kaosreven.aetherex.optional.AetherExConfig;
 import net.mine_diver.unsafeevents.listener.EventListener;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.item.tool.ToolLevel;
 import net.modificationstation.stationapi.api.item.tool.ToolMaterialFactory;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
-import net.modificationstation.stationapi.api.template.item.TemplateItem;
-import net.modificationstation.stationapi.api.template.item.TemplateShearsItem;
+import net.modificationstation.stationapi.api.template.item.*;
 import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
@@ -50,14 +50,6 @@ public class AetherExItems {
     public static Item BrownCape;
     public static Item LimeCape;
     public static Item BlackCape;
-    public static Item HalloweenBag;
-    public static Item VileEssence;
-    public static Item VileSword;
-    public static Item UnholySword;
-    public static Item UnholyBow;
-    public static Item Candy;
-    public static Item HalloweenCape;
-    public static Item UnholyArrow;
     public static Item BlueMoaStaff;
     public static Item WhiteMoaStaff;
     public static Item BlackMoaStaff;
@@ -75,7 +67,22 @@ public class AetherExItems {
     public static Item AscendingDisc;
     public static Item LightNightDisc;
     public static Item ZaniteShears;
-    public static Item ObsidianSword;
+
+    public static Item HalloweenBag;
+    public static Item VileEssence;
+    public static Item VileSword;
+    public static Item UnholySword;
+    public static Item UnholyBow;
+    public static Item Candy;
+    public static Item HalloweenCape;
+    public static Item UnholyArrow;
+    public static Item CandyCaneSword;
+
+    public static Item SantaHelmet;
+    public static Item SantaChestplate;
+    public static Item SantaLeggings;
+    public static Item SantaBoots;
+    public static Item ChristmasCape;
 
     public static Item GoldenLeather;
     public static Item PlatinumKey;
@@ -86,6 +93,11 @@ public class AetherExItems {
     public static Item AetherialBoots;
     public static Item SkyrootSign;
     public static Item SkyrootDoor;
+    public static Item ObsidianSword;
+    public static Item ObsidianPick;
+    public static Item ObsidianAxe;
+    public static Item ObsidianShovel;
+    public static Item DebugRing;
 
     public static final ToolMaterial MineFistTool = ToolMaterialFactory.create("MineFist", 3, 3000, 10.0F, 2);
     public static final ToolMaterial JebHammerTool = ToolMaterialFactory.create("JebHammer", 3, 2000, 12.0F, 2);
@@ -100,8 +112,8 @@ public class AetherExItems {
     //TODO: Orange moa stuff
     //TODO: Make moa staff entity
     //TODO: Reimplement Zanite Shears more thoroughly as just TemplateShearsItem is lackluster
+    //TODO: Figure out why trap block spawns clientside desynced model nonsense
     //TODO: Get cal to do AccessoryAPI replacement because i ain't bending to nonsense of AccessoryAPI inventory
-
 
     @EventListener
     public void registerItems(ItemRegistryEvent event) {
@@ -116,14 +128,14 @@ public class AetherExItems {
         MoaArmor = (new ItemMoaArmor(Identifier.of(MOD_ID, "moa_armor"))).setTranslationKey(MOD_ID, "moa_armor");
         OrangeMoaEgg = (new ItemOrangeMoaEgg(Identifier.of(MOD_ID, "orange_moa_egg"))).setTranslationKey(MOD_ID, "orange_moa_egg");
 
-        AerCape = (new ItemAerCape(Identifier.of(MOD_ID, "aer_cape"), 0, "aetherex:stationapi/textures/other/AerCape.png", 5)).setTranslationKey(MOD_ID, "aer_cape");
-        PurpleCape = (new ItemCape(Identifier.of(MOD_ID, "purple_cape"), 0, "aetherex:stationapi/textures/other/PurpleCape.png", 5, 5445265, false)).setTranslationKey(MOD_ID, "purple_cape");
-        PinkCape = (new ItemCape(Identifier.of(MOD_ID, "pink_cape"), 0, "aetherex:stationapi/textures/other/PinkCape.png", 5, 9705348, false)).setTranslationKey(MOD_ID, "pink_cape");
-        OrangeCape = (new ItemCape(Identifier.of(MOD_ID, "orange_cape"), 0, "aetherex:stationapi/textures/other/OrangeCape.png", 5, 13395456, false)).setTranslationKey(MOD_ID, "orange_cape");
-        BrownCape = (new ItemCape(Identifier.of(MOD_ID, "brown_cape"), 0, "aetherex:stationapi/textures/other/BrownCape.png", 5, 6237199, false)).setTranslationKey(MOD_ID, "brown_cape");
-        LimeCape = (new ItemCape(Identifier.of(MOD_ID, "lime_cape"), 0, "aetherex:stationapi/textures/other/GreenCape.png", 5, '\ued18', false)).setTranslationKey(MOD_ID, "lime_cape");
-        BlackCape = (new ItemCape(Identifier.of(MOD_ID, "black_cape"), 0, "aetherex:stationapi/textures/other/BlackCape.png", 5, 2562843, false)).setTranslationKey(MOD_ID, "black_cape");
-        HalloweenCape = (new ItemCape(Identifier.of(MOD_ID, "halloween_cape"), 0, "aetherex:stationapi/textures/other/HalloweenCape.png", 5)).setTranslationKey(MOD_ID, "halloween_cape");
+        AerCape = (new ItemAerCape(Identifier.of(MOD_ID, "aer_cape"), 0, "aetherex:stationapi/textures/armor/cape/AerCape.png", 5)).setTranslationKey(MOD_ID, "aer_cape");
+        PurpleCape = (new ItemCape(Identifier.of(MOD_ID, "purple_cape"), 0, "aetherex:stationapi/textures/armor/cape/PurpleCape.png", 5, 5445265, false)).setTranslationKey(MOD_ID, "purple_cape");
+        PinkCape = (new ItemCape(Identifier.of(MOD_ID, "pink_cape"), 0, "aetherex:stationapi/textures/armor/cape/PinkCape.png", 5, 9705348, false)).setTranslationKey(MOD_ID, "pink_cape");
+        OrangeCape = (new ItemCape(Identifier.of(MOD_ID, "orange_cape"), 0, "aetherex:stationapi/textures/armor/cape/OrangeCape.png", 5, 13395456, false)).setTranslationKey(MOD_ID, "orange_cape");
+        BrownCape = (new ItemCape(Identifier.of(MOD_ID, "brown_cape"), 0, "aetherex:stationapi/textures/armor/cape/BrownCape.png", 5, 6237199, false)).setTranslationKey(MOD_ID, "brown_cape");
+        LimeCape = (new ItemCape(Identifier.of(MOD_ID, "lime_cape"), 0, "aetherex:stationapi/textures/armor/cape/GreenCape.png", 5, '\ued18', false)).setTranslationKey(MOD_ID, "lime_cape");
+        BlackCape = (new ItemCape(Identifier.of(MOD_ID, "black_cape"), 0, "aetherex:stationapi/textures/armor/cape/BlackCape.png", 5, 2562843, false)).setTranslationKey(MOD_ID, "black_cape");
+        HalloweenCape = (new ItemCape(Identifier.of(MOD_ID, "halloween_cape"), 0, "aetherex:stationapi/textures/armor/cape/HalloweenCape.png", 5)).setTranslationKey(MOD_ID, "halloween_cape");
         SpeedRing = (new ItemMoreArmor(Identifier.of(MOD_ID, "speed_ring"), 0, 0, 8, 2359040)).setTranslationKey(MOD_ID, "speed_ring");
         HealMatrix = (new ItemHealingMatrix(Identifier.of(MOD_ID, "healing_matrix"), 0, 0, 7)).setTranslationKey(MOD_ID, "healing_matrix");
         FlameGem = (new ItemFlameGem(Identifier.of(MOD_ID, "flame_gem"), 0, 0, 7)).setTranslationKey(MOD_ID, "flame_gem");
@@ -142,10 +154,11 @@ public class AetherExItems {
         BlackMoaStaff = (new ItemBaseMoaStaff(Identifier.of(MOD_ID, "moa_staff_black"), getColour(1)).setTranslationKey(MOD_ID, "moa_staff_black"));
         StrongHealStaff = (new ItemHealingStaff(Identifier.of(MOD_ID, "healing_staff"), false).setTranslationKey(MOD_ID, "healing_staff"));
         WeakHealStaff = (new ItemHealingStaff(Identifier.of(MOD_ID, "lesser_healing_staff"), true).setTranslationKey(MOD_ID, "lesser_healing_staff"));
-        PhoenixPick = (new ItemPhoenixPickaxe(Identifier.of(MOD_ID, "phoenix_pickaxe"), PhoenixTools).setTranslationKey(MOD_ID, "phoenix_pickaxe"));
-        PhoenixAxe = (new ItemPhoenixAxe(Identifier.of(MOD_ID, "phoenix_axe"), PhoenixTools).setTranslationKey(MOD_ID, "phoenix_axe"));
-        PhoenixShovel = (new ItemPhoenixShovel(Identifier.of(MOD_ID, "phoenix_shovel"), PhoenixTools).setTranslationKey(MOD_ID, "phoenix_shovel"));
-        PhoenixSword = (new ItemPhoenixSword(Identifier.of(MOD_ID, "phoenix_sword"), PhoenixTools).setTranslationKey(MOD_ID, "phoenix_sword"));
+        ToolMaterial mat = PhoenixTools;
+        PhoenixPick = (new ItemPhoenixPickaxe(Identifier.of(MOD_ID, "phoenix_pickaxe"), mat).setTranslationKey(MOD_ID, "phoenix_pickaxe"));
+        PhoenixAxe = (new ItemPhoenixAxe(Identifier.of(MOD_ID, "phoenix_axe"), mat).setTranslationKey(MOD_ID, "phoenix_axe"));
+        PhoenixShovel = (new ItemPhoenixShovel(Identifier.of(MOD_ID, "phoenix_shovel"), mat).setTranslationKey(MOD_ID, "phoenix_shovel"));
+        PhoenixSword = (new ItemPhoenixSword(Identifier.of(MOD_ID, "phoenix_sword"), mat, false).setTranslationKey(MOD_ID, "phoenix_sword"));
         UnholySword = (new ItemUnholySword(Identifier.of(MOD_ID, "unholy_sword"), UnholySwordTool).setTranslationKey(MOD_ID, "unholy_sword"));
         UnholyBow = (new ItemUnholyBow(Identifier.of(MOD_ID, "unholy_bow")).setTranslationKey(MOD_ID, "unholy_bow").setMaxDamage(1500).setMaxCount(1).setHandheld());
         ZaniteShears = (new TemplateShearsItem(Identifier.of(MOD_ID, "zanite_shears"))).setTranslationKey(MOD_ID, "zanite_shears").setMaxDamage(Item.SHEARS.getMaxDamage());
@@ -155,23 +168,36 @@ public class AetherExItems {
 
         //Music Discs
         //CloudsDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "clouds_disc"), "aetherex:clouds", "Emile Van Krieken - Clouds").setTranslationKey(MOD_ID, "clouds_disc");
-        LabyrinthDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "labyrinth_disc"), "aetherex:labyrinthsvengeance", "Emile Van Krieken - Labyrinth's Vengeance").setTranslationKey(MOD_ID, "labyrinth_disc");
-        ApproachesDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "approaches_disc"), "aetherex:approaches", "Emile Van Krieken - Approaches").setTranslationKey(MOD_ID, "approaches_disc");
-        CrepusculumDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "crepusculum_disc"), "aetherex:crepusculum", "Emile Van Krieken - Crepusculum").setTranslationKey(MOD_ID, "crepusculum_disc");
-        BriseDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "brise_disc"), "aetherex:brise", "Emile Van Krieken - Brise").setTranslationKey(MOD_ID, "brise_disc");
-        AscendingDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "ascending_disc"), "aetherex:ascendingdawn", "Emile Van Krieken - Ascending Dawn").setTranslationKey(MOD_ID, "ascending_disc");
-        LightNightDisc = new AetherExRecordItem(Identifier.of(MOD_ID, "light_night_disc"), "aetherex:alightinthenight", "Emile Van Krieken - A Light in the Night").setTranslationKey(MOD_ID, "light_night_disc");
+        LabyrinthDisc = new ItemAetherRecord(Identifier.of(MOD_ID, "labyrinth_disc"), "aetherex:labyrinthsvengeance", "Emile Van Krieken - Labyrinth's Vengeance").setTranslationKey(MOD_ID, "labyrinth_disc");
+        ApproachesDisc = new ItemAetherRecord(Identifier.of(MOD_ID, "approaches_disc"), "aetherex:approaches", "Emile Van Krieken - Approaches").setTranslationKey(MOD_ID, "approaches_disc");
+        CrepusculumDisc = new ItemAetherRecord(Identifier.of(MOD_ID, "crepusculum_disc"), "aetherex:crepusculum", "Emile Van Krieken - Crepusculum").setTranslationKey(MOD_ID, "crepusculum_disc");
+        BriseDisc = new ItemAetherRecord(Identifier.of(MOD_ID, "brise_disc"), "aetherex:brise", "Emile Van Krieken - Brise").setTranslationKey(MOD_ID, "brise_disc");
+        AscendingDisc = new ItemAetherRecord(Identifier.of(MOD_ID, "ascending_disc"), "aetherex:ascendingdawn", "Emile Van Krieken - Ascending Dawn").setTranslationKey(MOD_ID, "ascending_disc");
+        LightNightDisc = new ItemAetherRecord(Identifier.of(MOD_ID, "light_night_disc"), "aetherex:alightinthenight", "Emile Van Krieken - A Light in the Night").setTranslationKey(MOD_ID, "light_night_disc");
 
         //unfinished
         SentryShield = (new ItemSentryShield(Identifier.of(MOD_ID, "sentry_shield"), 0, 0, 6)).setTranslationKey(MOD_ID, "sentry_shield");
 
         if (AetherExConfig.CONFIG.EnableNewContent) {
             GoldenLeather = (new TemplateItem(Identifier.of(MOD_ID, "golden_leather"))).setTranslationKey(MOD_ID, "golden_leather");
+            VoidStick = (new TemplateItem(Identifier.of(MOD_ID, "void_stick"))).setTranslationKey(MOD_ID, "void_stick");
             AetherialHelmet = new PlatinumArmorItem(Identifier.of(MOD_ID, "aetherial_helmet"), 2, 0).setTranslationKey(MOD_ID, "aetherial_helmet");
             AetherialChestplate = new PlatinumArmorItem(Identifier.of(MOD_ID, "aetherial_chestplate"), 2, 1).setTranslationKey(MOD_ID, "aetherial_chestplate");
             AetherialLeggings = new PlatinumArmorItem(Identifier.of(MOD_ID, "aetherial_leggings"), 2, 2).setTranslationKey(MOD_ID, "aetherial_leggings");
             AetherialBoots = new PlatinumArmorItem(Identifier.of(MOD_ID, "aetherial_boots"), 2, 3).setTranslationKey(MOD_ID, "aetherial_boots");
             SkyrootSign = (new SkyrootSignItem(Identifier.of(MOD_ID, "skyroot_sign"))).setTranslationKey(MOD_ID, "skyroot_sign");
+            DebugRing = (new ItemDebugRing(Identifier.of(MOD_ID, "debug_ring"), 0, 0, 8)).setTranslationKey(MOD_ID, "debug_ring");
+            SantaHelmet = new SantaArmorItem(Identifier.of(MOD_ID, "santa_helmet"), 2, 0).setTranslationKey(MOD_ID, "santa_helmet");
+            SantaChestplate = new SantaArmorItem(Identifier.of(MOD_ID, "santa_chestplate"), 2, 1).setTranslationKey(MOD_ID, "santa_chestplate");
+            SantaLeggings = new SantaArmorItem(Identifier.of(MOD_ID, "santa_leggings"), 2, 2).setTranslationKey(MOD_ID, "santa_leggings");
+            SantaBoots = new SantaArmorItem(Identifier.of(MOD_ID, "santa_boots"), 2, 3).setTranslationKey(MOD_ID, "santa_boots");
+            ChristmasCape = (new ItemCape(Identifier.of(MOD_ID, "christmas_cape"), 0, "aetherex:stationapi/textures/armor/cape/ChristmasCape.png", 5)).setTranslationKey(MOD_ID, "christmas_cape");
+            CandyCaneSword = (new TemplateSwordItem(Identifier.of(MOD_ID, "candy_cane_sword"), UnholySwordTool)).setTranslationKey(MOD_ID, "candy_cane_sword").setMaxDamage(2000);
+            mat = ObsidianTools;
+            ObsidianSword = (new ItemPhoenixSword(Identifier.of(MOD_ID, "obsidian_sword"), mat, true).setTranslationKey(MOD_ID, "obsidian_sword"));
+            ObsidianPick = (new TemplatePickaxeItem(Identifier.of(MOD_ID, "skyroot_pickaxe"), mat)).setTranslationKey(MOD_ID, "skyroot_pickaxe");
+            ObsidianAxe = (new TemplateAxeItem(Identifier.of(MOD_ID, "skyroot_axe"), mat)).setTranslationKey(MOD_ID, "skyroot_axe");
+            ObsidianShovel = (new TemplateShovelItem(Identifier.of(MOD_ID, "skyroot_shovel"), mat)).setTranslationKey(MOD_ID, "skyroot_shovel");
             //SkyrootDoor = new DoorItem(Identifier.of(MOD_ID, "skyroot_door"), AetherExBlocks.SkyrootDoor.id).setTranslationKey(Identifier.of(MOD_ID, "skyroot_door"));
         }
     }

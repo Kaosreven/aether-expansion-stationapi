@@ -13,22 +13,35 @@ public class ItemBaseMoaStaff extends TemplateItem {
     public static int moaStaffBlue;
     public static int moaStaffWhite;
     public static int moaStaffBlack;
+    public static int moaStaffBlueUnusable;
+    public static int moaStaffWhiteUnusable;
+    public static int moaStaffBlackUnusable;
     private final MoaColor color;
     public ItemBaseMoaStaff(Identifier i, MoaColor color) {
         super(i);
         this.maxCount = 1;
         this.setMaxDamage(40);
-        this.setHasSubtypes(true);
+        this.setHasSubtypes(false);
         this.color = color;
         this.setHandheld();
     }
 
+    @Override
     public int getTextureId(int damage) {
-        return switch (color.ID) {
-            case 1 -> moaStaffBlack;
-            case 2 -> moaStaffWhite;
-            default -> moaStaffBlue;
-        };
+        if (damage == 40) {
+            return switch (color.ID) {
+                case 1 -> moaStaffBlackUnusable;
+                case 2 -> moaStaffWhiteUnusable;
+                default -> moaStaffBlueUnusable;
+            };
+        }
+        else {
+            return switch (color.ID) {
+                case 1 -> moaStaffBlack;
+                case 2 -> moaStaffWhite;
+                default -> moaStaffBlue;
+            };
+        }
     }
 
     @Override

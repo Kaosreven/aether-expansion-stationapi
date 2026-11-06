@@ -1,25 +1,42 @@
 package io.github.kaosreven.aetherex.client;
 
 import com.periut.accessoryapi.api.helper.AccessoryAccess;
+import io.github.kaosreven.aether.gen.dim.AetherDimensions;
+import io.github.kaosreven.aether.gen.dim.BareAetherTravelAgent;
+import io.github.kaosreven.aether.util.VoidUtil;
 import io.github.kaosreven.aetherex.entity.EntityOrangeMoa;
 import io.github.kaosreven.aetherex.entity.projectile.EntityFiroBallEx;
 import io.github.kaosreven.aetherex.item.AetherExItems;
 import io.github.kaosreven.aetherex.util.Aerplosion;
+import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.option.KeyBinding;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.hit.HitResultType;
 import net.minecraft.util.math.Vec3d;
 import net.modificationstation.stationapi.api.client.event.keyboard.KeyStateChangedEvent;
 import net.modificationstation.stationapi.api.client.event.option.KeyBindingRegisterEvent;
+import net.modificationstation.stationapi.api.registry.DimensionRegistry;
+import net.modificationstation.stationapi.api.world.dimension.DimensionHelper;
+import net.modificationstation.stationapi.api.world.dimension.VanillaDimensions;
+import org.jetbrains.annotations.NotNull;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
 
 import java.util.List;
+import java.util.OptionalInt;
 
+import static io.github.kaosreven.aether.gen.dim.AetherDimensions.MOD_ID;
 import static io.github.kaosreven.aetherex.events.AetherEx.*;
 import static io.github.kaosreven.aetherex.item.accessory.ItemAerCape.jumpsRemaining;
+import static io.github.kaosreven.aetherex.item.accessory.ItemDebugRing.debugReady;
 import static io.github.kaosreven.aetherex.item.accessory.ItemSentryShield.sentryActiveReady;
 import static io.github.kaosreven.aetherex.item.accessory.ItemSentryShield.sentryActiveTick;
 
@@ -39,6 +56,11 @@ public class AetherExKeybinds {
         list.add(keyOrangeMoa = new KeyBinding("key.aetherex.moagui", Keyboard.KEY_X));
         list.add(keyFireballMoa = new KeyBinding("key.aetherex.moaattack", Keyboard.KEY_Z));
         list.add(keySpeedRingToggle = new KeyBinding("key.aetherex.speedringtoggle", Keyboard.KEY_N));
+    }
+
+    private double getTemperature(PlayerEntity player) {
+        player.world.method_1781().temperatureMap = player.world.method_1781().temperatureSampler.sample(player.world.method_1781().temperatureMap, player.x, player.z, 1, 1, 0.025F, 0.025F, 0.5F);
+        return player.world.method_1781().temperatureMap[0];
     }
 
     @EventListener
@@ -116,6 +138,46 @@ public class AetherExKeybinds {
                             --jumpsRemaining;
                             mc.player.velocityY = 1.0D;
                             itemStack.damage(1, mc.player);
+                        }
+                    }
+                }
+                if (debugReady) {
+                    if (Keyboard.isKeyDown(mc.options.sneakKey.code)) {
+                        PlayerEntity player = mc.player;
+                        if (Mouse.isButtonDown(1)) {
+                            for (int i = 0; i < player.world.entities.size(); i++) {
+                                Entity entity = (Entity) player.world.entities.get(i);
+                                if (!(entity instanceof PlayerEntity)) {
+                                    entity.damage(player, 9000);
+                                }
+                            }
+                        }
+                        if (Keyboard.isKeyDown(mc.options.dropKey.code)) {
+                            @NotNull OptionalInt dimensionId = DimensionRegistry.INSTANCE.getLegacyId(MOD_ID.id("the_aether"));
+                            if (dimensionId.isPresent() && player.dimensionId == dimensionId.getAsInt()) {
+                                if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {
+                                    if (!player.world.isRemote) {
+                                        DimensionHelper.switchDimension(player, VanillaDimensions.OVERWORLD, 1, new BareAetherTravelAgent());
+                                    }
+                                } else {
+                                    DimensionHelper.switchDimension(player, VanillaDimensions.OVERWORLD, 1, new BareAetherTravelAgent());
+                                }
+                            }
+                            else {
+                                if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {
+                                    if (!player.world.isRemote) {
+                                        DimensionHelper.switchDimension(player, AetherDimensions.THE_AETHER, 1, new BareAetherTravelAgent());
+                                    }
+                                } else {
+                                    DimensionHelper.switchDimension(player, AetherDimensions.THE_AETHER, 1, new BareAetherTravelAgent());
+                                }
+                            }
+                        }
+                        if (Keyboard.isKeyDown(Keyboard.KEY_1)) {
+                            VoidUtil.teleport(player, -140000, 200, -140000);
+                        }
+                        if (Keyboard.isKeyDown(Keyboard.KEY_2)) {
+                            player.sendMessage("Biome temperature: "+getTemperature(player));
                         }
                     }
                 }

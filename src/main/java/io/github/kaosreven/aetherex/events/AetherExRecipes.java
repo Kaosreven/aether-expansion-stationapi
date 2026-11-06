@@ -5,6 +5,7 @@ import io.github.kaosreven.aether.blockentity.block.BlockEntityEnchanter;
 import io.github.kaosreven.aether.item.AetherItems;
 import io.github.kaosreven.aetherex.block.AetherExBlocks;
 import io.github.kaosreven.aetherex.item.AetherExItems;
+import io.github.kaosreven.aetherex.optional.AetherExConfig;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
@@ -19,8 +20,7 @@ import static io.github.kaosreven.aetherex.events.AetherEx.isStoneWallPresent;
 public class AetherExRecipes {
     @EventListener
     public void registerRecipes(RecipeRegisterEvent event) {
-        RecipeRegisterEvent.Vanilla type = RecipeRegisterEvent.Vanilla.fromType(event.recipeId);
-        if (Objects.requireNonNull(type) == RecipeRegisterEvent.Vanilla.CRAFTING_SHAPED) {
+        if (event.recipeId.equals(RecipeRegisterEvent.Vanilla.CRAFTING_SHAPED.type())) {
             CraftingRegistry.addShapedRecipe(new ItemStack(AetherExItems.PinkCape), "XX", "XX", "XX", 'X', new ItemStack(Block.WOOL, 1, 6));
             CraftingRegistry.addShapedRecipe(new ItemStack(AetherExItems.PinkCape), "XX", "XX", "XX", 'X', new ItemStack(Block.WOOL, 1, 2));
             CraftingRegistry.addShapedRecipe(new ItemStack(AetherExItems.PurpleCape), "XX", "XX", "XX", 'X', new ItemStack(Block.WOOL, 1, 10));
@@ -75,6 +75,11 @@ public class AetherExRecipes {
                 CraftingRegistry.addShapedRecipe(new ItemStack(AetherExBlocks.CarvedWall, 6), "###", "###", '#', new ItemStack(AetherBlocks.DungeonStone, 1, 0));
                 CraftingRegistry.addShapedRecipe(new ItemStack(AetherExBlocks.AngelicWall, 6), "###", "###", '#', new ItemStack(AetherBlocks.DungeonStone, 1, 1));
                 CraftingRegistry.addShapedRecipe(new ItemStack(AetherExBlocks.HellfireWall, 6), "###", "###", '#', new ItemStack(AetherBlocks.DungeonStone, 1, 2));
+            }
+        }
+        else if (event.recipeId.equals(RecipeRegisterEvent.Vanilla.CRAFTING_SHAPELESS.type())) {
+            if (AetherExConfig.CONFIG.EnableNewContent) {
+                CraftingRegistry.addShapelessRecipe(new ItemStack(AetherExBlocks.Plank, 4), AetherExBlocks.VoidWood);
             }
         }
         BlockEntityEnchanter.addEnchantment(new ItemStack(AetherExItems.SentryShield, 1), new ItemStack(AetherExItems.SentryShield, 1), 20000);

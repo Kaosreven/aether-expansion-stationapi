@@ -1,5 +1,8 @@
 package io.github.kaosreven.aetherex.block;
 
+import io.github.kaosreven.aether.blockentity.container.ContainerLore;
+import io.github.kaosreven.aetherex.blockentity.AetherExBlockEntities;
+import io.github.kaosreven.aetherex.client.gui.AetherExGuis;
 import io.github.kaosreven.aetherex.client.gui.GuiLoreBookshelf;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -8,6 +11,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
+import net.modificationstation.stationapi.api.gui.screen.container.GuiHelper;
 import net.modificationstation.stationapi.api.template.block.TemplateBlock;
 import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.SideUtil;
@@ -31,9 +35,8 @@ public class LoreBookshelf extends TemplateBlock {
 
     @Override
     public boolean onUse(World world, int i, int j, int k, PlayerEntity player) {
-        if (!world.isRemote) {
-            SideUtil.run(() -> useLoreClient(player), () -> useLoreServer(player));
-        }
+            GuiHelper.openGUI(player, Identifier.of(AetherExBlockEntities.MOD_ID, "openLoreBookshelf"), player.inventory, new ContainerLore(player.inventory));
+            //SideUtil.run(() -> useLoreClient(player), () -> useLoreServer(player));
         return true;
     }
 
